@@ -1,44 +1,40 @@
 # --- Archivos de JetBrains (CLion y PyCharm) ---
-.idea/             # Carpeta de configuración del proyecto (Indispensable ignorar)
-cmake-build-*/     # Carpetas de compilación de CMake creadas por CLion
-*.iws              # Información de espacio de trabajo de JetBrains
-*.iml              # Archivos de módulos de IntelliJ/PyCharm
-out/               # Carpeta de salida de compilación genérica
+.idea/
+cmake-build-*/
+*.iws
+*.iml
+out/
 
 # --- Archivos específicos de TeXstudio ---
-*.bak              # Copias de seguridad automáticas de TeXstudio
-*.undo             # Historial de "deshacer" local
-*.txsscfg          # Configuración de sesión de TeXstudio
-texstudio_*.txss   # Archivos de sesión (pestañas abiertas, etc.)
+*.bak
+*.undo
+*.txsscfg
+texstudio_*.txss
 
 # --- Archivos auxiliares de LaTeX (Fundamentales) ---
-*.aux              # Archivo auxiliar principal
-*.log              # Registro de la compilación
-*.toc              # Tabla de contenidos
-*.out              # Marcadores de PDF y enlaces
-*.gz               # Archivo comprimido para sincronización con el PDF
-*.pdfsync          # Sincronización antigua entre código y PDF
-*.fdb_latexmk      # Base de datos de cambios de Latexmk
-*.fls              # Lista de archivos usados en la compilación
-*.synctex
+*.aux
+*.log
+*.toc
+*.out
+*.gz
+*.pdfsync
+*.fdb_latexmk
+*.fls
+*.synctex.gz
 
 # --- Bibliografía y Citaciones ---
-*.bbl              # Bibliografía procesada
-*.blg              # Registro de errores de BibTeX
-*-blx.bib          # Bibliografía auxiliar de BibLaTeX
-*.run.xml          # Archivo de control de Biber
+*.bbl
+*.blg
+*-blx.bib
+*.run.xml
 
 # --- Otros paquetes (TikZ, Listings, etc.) ---
-*.makefile         # Archivos generados por TikZ/External
-*.figlist          # Listado de figuras externas
-*.pdfview          # Archivos temporales de visualizadores
+*.makefile
+*.figlist
+*.pdfview
 
 # --- Python (Pycharm y Entornos) ---
-__pycache__/       # Archivos compilados de Python
-*.py[cod]          # Archivos .pyc, .pyo y .pyd
-venv/              # Entorno virtual de Python
-.env               # Variables de entorno sensibles (tokens, claves)
-
-# --- OPCIONAL: El PDF final ---
-# Si quieres que tus PDFs se suban a GitHub, pon un # delante de la siguiente línea:
-# *.pdf
+__pycache__/
+*.py[cod]
+venv/
+.env
