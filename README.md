@@ -1,10 +1,19 @@
 # Óptica II
 
-Profesor: Rafael Huertas Roa
+Profesores: 
+ 
+* Rafael Huertas Roa
+* Ana Carrasco Sanz
 
-Despacho: N144 Mecenas
+Despachos (respectivamente): 
 
-Correo: rhuertas@ugr.es
+* N144 Edf Mecenas
+* N115 Edf Mecenas
+
+Correos (respectivamente): 
+
+* rhuertas@ugr.es
+* acarrasco@ugr.es
 
 ## Contenidos
 *
