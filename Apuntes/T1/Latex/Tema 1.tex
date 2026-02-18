@@ -16,6 +16,23 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[most]{tcolorbox}
 
+% Caption
+
+\usepackage{caption}
+
+% Gráficos
+
+\usepackage{graphicx}
+
+% Espaciadora
+
+\newcommand{\esp}{\vspace{0.5cm}}
+
+% Bibliografía
+
+\usepackage[style=apa, backend=biber]{biblatex} % Estilo APA
+\addbibresource{biblio.bib} % Nombre de tu archivo .bib
+
 % Configuración de cajas personalizadas
 \newtcolorbox{importante}{
 	colback=red!5!white,
@@ -35,10 +52,24 @@
 \newtcolorbox{bibliografia}{
 	colback=gray!5!white,
 	colframe=gray!75!black,
-	title=Bibliografía / Referencias,
+	title=Bibliografías útiles,
 	fonttitle=\bfseries,
 	breakable
 }
+
+% Socrative
+
+\newtcolorbox{Socrative}{
+	colback=orange!5!white,
+	colframe=orange!75!black,
+	title=Socrative,
+	fonttitle=\bfseries,
+	breakable
+}
+
+% Float
+
+\usepackage{float}
 
 % --- Hipervínculos ---
 \usepackage{hyperref}
@@ -79,43 +110,68 @@
 	
 	\subsection{Coherencia temporal, tiempo de coherencia y longitud de coherencia.}
 	
-	Supongamos ahora que tenemos un interferómetro Michelson iluminado con una fuente casi puntual
-	$\sigma$ que emite con un ancho de banda en frecuencias $\Delta\nu$.
+	Supongamos ahora que tenemos un interferómetro Michelson iluminado con una fuente casi puntual $\sigma$ que emite con un ancho de banda en frecuencias $\Delta\nu$. (\cite{Resumen})
+	
+	\esp
 	
 	\begin{nota}
 		En la realidad no existen rayos monocromáticos debido al principio de incertidumbre de Heisenberg, los rayos siempre tienen un ancho de banda $\Delta\nu$
 	\end{nota}
 	
+	\esp
+	
 	A la diferencia de recorrido máxima en distancias entre los dos haces para que haya interferencias,
-	que se calcula como $c\Delta\tau$, denominamos \textit{longitud de coherencia} de la fuente.
+	que se calcula como $c\Delta\tau$, denominamos \textbf{longitud de coherencia} de la fuente.
 	
 	\begin{equation}
 		\Delta = 2(d_2-d_1)\cos\theta = c\Delta\tau = l_C
 	\end{equation}
 	
-	Experimentalmente se ha determinado que para que existan interferencias necesitamos que 
-	
-	\begin{equation}
-		\Delta\nu\Delta\tau < 1
-	\end{equation}
-	
-	\noindent esto es que
-	
-	\begin{equation}
-		\Delta\nu = \tau_C < \frac{1}{\Delta\nu}
-		\label{eq:coherencia}
-	\end{equation}
-	
-	\noindent Usando la ecuación (\ref{eq:coherencia}) y $c=\lambda\nu$ podemos relacionarlo con la longitud de onda
+	Experimentalmente se ha determinado que para que existan interferencias necesitamos que $\Delta\nu\Delta\tau < 1$ esto es que $\Delta\tau = \tau_C < 1/\Delta\nu$. Usando el resultado anterior y $c=\lambda\nu$, podemos relacionarlo con la longitud de onda
 	
 	\begin{equation}
 		l_C = c\tau_C = c\Delta\tau = \frac{c}{\Delta\nu} \implies l_C = \frac{\bar{\lambda}^2}{\Delta\lambda}
 	\end{equation}
 	
+	\begin{Socrative}
+		Si $\Delta = 3$cm y tenemos $l_C = 1.5$cm, ¿qué ocurrirá? $\implies$ Sol: Se ve bien la periferia, pero el centro se verá mal.
+	\end{Socrative}
+	
 	\subsection{Coherencia espacial y área de coherencia.}
 	
 	En el apartado anterior, considerábamos fuentes casi-puntuales pero no monocromáticas, con lo cual
 	estudiábamos algunos aspectos de la coherencia temporal.En este,vamos a ponernos en la otra situación
-	extrema: fuentes cuasi-monocromáticas pero extensas.
+	extrema: fuentes cuasi-monocromáticas pero extensas. (\cite{Resumen})
 	
+	\esp
+	
+	Nos ocupamos ahora de definir el área subtendida desde el centro de la fuente que va a permitir que se forme patrón interferencial. Si los dos orificios $P_1$ y $P_2$ están dentro de este área, entonces se
+	podrá producir el patrón interferencial. (\cite{Resumen})
+	
+	\esp
+	
+	Sea $\Delta A$ el área que contiene $P_1$ y $P_2$, que es aproximadamente $(R\Delta\theta)^2$, donde $\Delta\theta$ es el ángulo sólido. Al igual que antes, se ha obtenido experimentalmente que para que existan interferencias necesitamos que $\Delta\theta \Delta s \leq \bar{\lambda}$, de esta forma obtenemos
+	
+	\begin{equation}
+		\Delta A \approx (R\Delta\theta)^2 \approx \frac{R^2\bar{\lambda}^2}{(\Delta s)^2}
+	\end{equation}
+	
+	\textit{R} sería la distancia desde el centro \textit{S} de $\sigma$ y cada fuente secundaria. A esta área ($\Delta A$) sobre el plano de los orificios denominamos \textbf{área de coherencia}, y a su longitud ($C_T=\sqrt{\Delta A}$) llamamos coherencia transversal, recordemos que a la longitud de coherencia la llamábamos \textbf{coherencia longitudinal}. (\cite{Resumen})
+	
+	\esp
+	
+	La coherencia transversal recibe su nombre del hecho de que representa un segmento de longitud dada perpendicular o transversal a la dirección de propagación de la luz que proviene de la fuente. (\cite{Resumen})
+	
+	\section{Caracterización estadística de las perturbaciones luminosas.}
+	
+	\subsection{Función de autocorrelación: ejemplo}
+	
+	Consiste en el área encerrado entre dos copias de la misma función en diferentes posiciones.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/autocorrelacionej.png}
+	\end{figure}
+	
+	\printbibliography[title={Bibliografía}]
 \end{document}
