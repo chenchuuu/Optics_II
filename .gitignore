@@ -27,6 +27,7 @@ texstudio_*.txss
 *.blg
 *-blx.bib
 *.run.xml
+*.bcf
 
 # --- Otros paquetes (TikZ, Listings, etc.) ---
 *.makefile
