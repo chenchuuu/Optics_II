@@ -2,7 +2,7 @@
 
 Profesor: Rafael Huertas Roa
 
-Despacho: Despacho 144 Mecenas
+Despacho: N144 Mecenas
 
 Correo: rhuertas@ugr.es
 
