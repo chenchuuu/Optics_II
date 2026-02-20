@@ -110,6 +110,11 @@
 	
 	\subsection{Coherencia temporal, tiempo de coherencia y longitud de coherencia.}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/repaso1.png}
+	\end{figure}
+	
 	Supongamos ahora que tenemos un interferómetro Michelson iluminado con una fuente casi puntual $\sigma$ que emite con un ancho de banda en frecuencias $\Delta\nu$. (\cite{Resumen})
 	
 	\esp
@@ -134,10 +139,15 @@
 	\end{equation}
 	
 	\begin{Socrative}
-		Si $\Delta = 3$cm y tenemos $l_C = 1.5$cm, ¿qué ocurrirá? $\implies$ Sol: Se ve bien la periferia, pero el centro se verá mal.
+		Si $\Delta = 3$cm y tenemos $l_C = 1.5$cm, ¿qué ocurrirá en el interferómetro de Michelson? Sol: Se verá bien la periferia, pero el centro se verá mal.
 	\end{Socrative}
 	
 	\subsection{Coherencia espacial y área de coherencia.}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/repaso2.png}
+	\end{figure}
 	
 	En el apartado anterior, considerábamos fuentes casi-puntuales pero no monocromáticas, con lo cual
 	estudiábamos algunos aspectos de la coherencia temporal.En este,vamos a ponernos en la otra situación
@@ -172,6 +182,203 @@
 		\centering
 		\includegraphics[width=0.7\textwidth]{IMG/autocorrelacionej.png}
 	\end{figure}
+	
+	\subsection{Función de coherencia temporal. Relación con el tiempo de coherencia}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cohetemp.png}
+	\end{figure}
+	
+	\esp
+	
+	Vamos a empezar ahora con la sistematización del estudio de la coherencia en base a propiedades estadísticas de las emisiones de los diferentes puntos de la fuente y en los distintos instantes de tiempo. Como punto de inicio, representamos una onda luminosa arbitraria estacionaria mediante la función $U(r, t)$. Vamos ahora a caracterizar ambas funciones mediante una serie de promedios o parámetros estadísticos, de forma similar a cuando introdujimos el concepto de intensidad óptica. (\cite{Resumen})
+	
+	\esp
+	
+	En primer lugar, caracterizamos la coherencia temporal de nuestra fuente. Para ello, consideramos las fluctuaciones de una fuente estacionaria en una posición fija del espacio r, entre dos instantes separados un período de tiempo $\tau$. Ya dijimos que la clave era la correlación entre las funciones de onda, con lo cual vamos a definir la función de autocorrelación como el promedio temporal del producto de
+	la función de onda conjugada por la misma función de onda desplazada el intervalo temporal. O sea, desplazamos la función y la multiplicamos por el conjugado de sí misma en un instante anterior. A esta operación, que no es más que una función puramente estadística de autocorrelación, la denominamos en nuestro contexto \textbf{función de coherencia temporal}. (\cite{Resumen})
+	
+	\begin{equation}
+		\Gamma(\vec{r}, \tau) \equiv \Gamma(\tau) = \left< U^*(\vec{r}, t) U(\vec{r}, t + \tau) \right> = \underset{T \rightarrow \infty}{lim} \quad \frac{1}{2T} \int_{-T}^T U^*(\vec{r}, t) U(\vec{r}, t + \tau) dt
+	\end{equation}
+	
+	\esp
+	
+	Si recordamos nuestra definición de intensidad, nos daremos cuenta de que coincide con la función de coherencia temporal cuando el intervalo es cero ($\tau = 0$). Así que la función de coherencia temporal lleva implícita una dependencia con la intensidad de la fuente. (\cite{Resumen})
+	
+	\esp
+	
+	\begin{equation}
+		\Gamma(0) = I 
+	\end{equation}
+	
+	\esp
+	
+	Si nos interesa trabajar con una función normalizada, resulta muy conveniente utilizar la función denominada \textbf{Grado Complejo de Coherencia}. Lo de grado viene porque al estar normalizada su módulo varía entre 0 y 1, correspondiendo el valor 0 a una \textbf{ausencia total de coherencia temporal}, y el valor 1 a una \textbf{coherencia temporal completa}. (\cite{Resumen})
+	
+	\esp
+	
+	\begin{equation}
+		\gamma(\vec{r}, \tau) \equiv \gamma(\tau) =  \frac{\Gamma(\tau)}{\Gamma(0)} = \frac{\left< U^*(\vec{r}, t) U(\vec{r}, t + \tau) \right>}{I}
+	\end{equation}
+	
+	\esp
+	
+	Vemos con un ejemplo cómo un pulso monocromático de longitud infinita (onda plana) presenta precisamente un grado complejo de coherencia de módulo unidad. (\cite{Resumen})
+	
+	\begin{equation*}
+		U(\vec{r}, t) = Ae^{i\omega_0 t} \implies \Gamma(\vec{r}, \tau) = |A|^2 e^{i\omega_0 \tau} \implies \gamma(\tau) = 1 \quad \forall \tau
+	\end{equation*}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tiempocohe.png}
+	\end{figure}
+	
+	Normalmente, el módulo del grado complejo de coherencia \textbf{decrece} conforme el intervalo temporal crece, a partir del valor unidad correspondiente a \textbf{intervalo cero} ($\tau = 0$). Esto es lógico, pues muestra que conforme vamos separando más los pulsos, la correlación temporal va siendo menor, debido a las fluctuaciones en la emisión. El valor $\tau_C$ para el cual el módulo del grado complejo de coherencia vale la mitad de su valor máximo se corresponde con el tiempo de coherencia definido antes intuitivamente. (\cite{Resumen})
+	
+	\subsection{Función de coherencia mutua. Relación con el área de coherencia.}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intmutua.png}
+	\end{figure}
+	
+	Veamos ahora qué sucede con las fluctuaciones en dos puntos del espacio diferentes (relacionadas, como ya vimos intuitivamente, con la coherencia espacial). Definimos la intensidad mutua como
+	
+	\begin{equation}
+		\Gamma(\vec{r}_1, \vec{r}_2, 0) \equiv \Gamma_{12}(0) = \left< U^*(\vec{r}_1, t) U(\vec{r}_2, t)\right>
+	\end{equation}
+	
+	\esp
+	
+	Ahora vamos a considerar también dos instantes de tiempo separados un cierto intervalo. La correspondiente función estadística de correlación la denominamos \textbf{función de coherencia mutua}. (\cite{Resumen}) 
+	
+	\begin{equation}
+		\Gamma(\vec{r}_1, \vec{r}_2, \tau) \equiv \Gamma_{12}(\tau) = \left< U^*(\vec{r}_1, t) U(\vec{r}_2, t+\tau)\right>
+	\end{equation}
+	
+	\esp
+	
+	Proporciona información sobre la coherencia temporal y espacial de una fuente (recordemos que, aunque las hemos tratado hasta ahora por separado para simplificar, generalmente siempre van unidas). La función de coherencia mutua normalizada se denomina también grado complejo de coherencia. La
+	definición es equivalente a la función de coherencia temporal si hacemos que $\vec{r}_1 = \vec{r}_2$ (posición fija
+	del espacio). (\cite{Resumen})
+	
+	\begin{equation}
+		\gamma(\vec{r}_1, \vec{r}_2, \tau) = \gamma_{12}(\tau) \frac{\Gamma_{12}(\tau)}{\sqrt{I(\vec{r}_1)I(\vec{r}_2)}}
+	\end{equation}
+	
+	\esp
+	
+	\textbf{Ejemplo}: Determinar la función de coherencia mutua y el grado complejo de coherencia para una onda plana de amplitud constante. Discutid cuál sería el lugar geométrico de todos los puntos cuya emisión este totalmente correlacionada en este tipo de onda, es decir, cuyo grado complejo de coherencia vale la unidad, considerando sólo la coherencia espacial.
+	
+	\esp
+	
+	\textbf{Sol}: 
+	
+	\begin{equation*}
+		U(\vec{r}, t) = A(\vec{r})e^{i \omega_0 t} \implies \Gamma_{12}(\tau) = A^*(\vec{r}_1)A(\vec{r}_2) e^{i\omega_0 \tau} \implies \gamma_{12} = e^{i\omega_o \tau}
+	\end{equation*}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/areacohe.png}
+	\end{figure}
+	
+	Vamos a ver ahora la relación de la función de coherencia mutua con el área de coherencia definida antes. Para ello, consideramos una fuente cuasi-monocromática, y nos planteamos estudiar su coherencia espacial en un plano dado (por ejemplo, este plano sería el plano donde situamos las dos rendijas en un experimento tipo Young). Ésta quedaría descrita por el módulo del grado complejo de coherencia mutuo evaluado para intervalo nulo. Si fijamos un punto en el plano de evaluación y vamos considerando todos los otros puntos del mismo plano y evaluando la correspondiente función, podemos luego representar el módulo del grado complejo de coherencia mutuo evaluado en cero en función de la distancia al punto de referencia. Se ve de inmediato que si $\vec{r}_1 = \vec{r}_2$ (distancia cero), entonces la correlación espacial es completa (módulo 1), y el módulo va disminuyendo conforme nos alejamos del punto de referencia. El área alrededor del punto de referencia para la cual el módulo es mayor que un determinado valor umbral coincide con el área de coherencia. Podemos decir, entonces, que el área de coherencia es la anchura a mitad de altura del módulo del grado complejo de coherencia mutuo evaluado a intervalo cero. Si realizamos un experimento de doble rendija, por ejemplo, podemos evaluar el área de coherencia, y si las dos rendijas están situadas dentro del área de coherencia (centrada en el punto medio del segmento de unión entre ambas), entonces el patrón sería observable desde el punto de vista de la coherencia espacial. Las limitaciones por coherencia temporal se considerarían en este experimento teniendo en cuenta la diferencia de camino óptico máxima y comparándola con la longitud de coherencia.
+	
+	\esp
+	
+	La importancia del área de coherencia radica en que permite la caracterización de una fuente como coherente, incoherente o parcialmente coherente en función de las dimensiones del sistema óptico que intervenga en el experimento. Así, si el área de coherencia es mayor que el área de la Pupila de Entrada del sistema óptico, toda la luz que atraviese el mismo puede ser considerada como coherente. En el otro extremo, si el área de coherencia es menor que el área de resolución del sistema óptico, toda la luz que lo atraviese será incoherente.(\cite{Resumen})
+	
+	\esp
+	
+	\begin{Socrative}
+		En un experimento de Franjas de Young, las dos rendijas podrán  estar más separadas entre sí cuanto mayor sea el área de coherencia de la fuente. Sol: Sí
+	\end{Socrative}
+	
+	\section{Medida de la coherencia parcial.}
+	
+	En secciones anteriores, hemos descrito cómo calcular la función de coherencia mutua y el grado complejo de coherencia, pero para determinar estas funciones necesitamos saber la forma funcional
+	precisa de la onda luminosa que se propaga, y esto no siempre es fácil de obtener, especialmente cuando hay factores dependientes del espacio y del tiempo que modulan la amplitud de la onda. Resulta entonces interesante estudiar la posibilidad de medir la coherencia utilizando parámetros del patrón interferencial formado por el haz utilizando un dispositivo común de generar interferencias. Veremos en esta sección que hay una relación directa entre la intensidad resultante para fenómenos de interferencia y el grado complejo de coherencia, que hará que podamos estimar este parámetro a partir de medidas de la visibilidad de la configuración interferencial. Además, veremos la conexión entre las funciones de coherencia espacial y temporal con las transformadas de Fourier de la distribución de intensidad y de
+	la función de modulación en amplitud de la onda, a través de un teorema que nos ayuda a simplificar el cálculo de las funciones relacionadas con la coherencia parcial de la luz. (\cite{Resumen})
+	
+	
+	\subsection{Visibilidad y grado complejo de coherencia.}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/visibilidad.png}
+	\end{figure}
+	
+	Utilizamos un experimento de doble rendija de Young, con dos ondas $U_1(\vec{r}, t)$ y $U_2(\vec{r}, t)$ que se superponen en un instante de tiempo dado. Ya sabemos que cada intensidad es la función de coherencia temporal evaluada para intervalo cero, y en el punto de superposición, podemos calcular la intensidad resultante en función del las intensidades individuales y el módulo del grado complejo de coherencia. (\cite{Resumen})
+	
+	\begin{eqnarray}
+		I_r = \left< (U_1+U_2)^*(U_1+U_2) \right> = \left< U*_1U_1 \right> + \left< U*_2U_2 \right> + 2Re\left< U*_1U_2 \right> = \\
+		= I_1 + I_2 + 2Re(\Gamma_{12}(0))
+	\end{eqnarray}
+
+	\noindent multiplicando y dividiendo por $\sqrt{I_1I_2} \in \mathbb{R}$ podemos obtener la expresión en función del grado complejo de coherencia
+	
+	\begin{equation}
+		I_r = I_1 + I_2 +2\sqrt{I_1I_2}Re(\gamma_{12}(0)) = I_1 + I_2 +
+		\underset{\text{Término de interferencia}}{\underline{2\sqrt{I_1I_2}|\gamma_{12}(0)|\cos\phi}}
+	\end{equation}
+
+	\esp
+	
+	Al término que contiene este módulo denominamos (ya nos debe sonar de temas anteriores) término de interferencia. Va expresado en función del coseno del argumento del grado complejo de coherencia. Tenemos entonces dos casos límite: las dos ondas completamente correlacionadas o que ambas presente ausencia total de correlación. En el primer caso, el módulo del grado complejo de coherencia vale la unidad, y nos queda la expresión para la intensidad de fenómenos interferenciales ya vista en el tema anterior, una vez demostremos que el argumento del grado complejo de coherencia coincide con el desfase entre $U_1$ y $U_2$. (\cite{Resumen})
+	
+	\esp
+	
+	\noindent \textbf{Demostración}. En el caso de dos ondas planas (pulsos monocromáticos de duración infinita) tenemos
+	
+	\begin{equation}
+		U_1 = A_1e^{i\omega_0 t} \quad U_2 = A_2e^{i(\omega_0 t + \phi)} \implies \gamma_{12}(0) = \gamma_{12}=\frac{\left< U^*_1 U_2 \right>}{\sqrt{I_1 I_2}} = e^{i\phi}
+	\end{equation}
+
+	\esp
+
+	\noindent tomando la parte real obtendríamos $\cos\phi$.
+	
+	\esp
+	
+	El segundo caso límite es el opuesto al anterior: ausencia total de correlación, con lo cual el módulo del grado complejo de coherencia es nulo, y la intensidad resultante es la suma de las intensidades de las dos ondas que se superponen, con lo que no puede producirse la interferencia. Queda así demostrada nuestra afirmación anterior de que la coherencia de la fuente es condición necesaria para la interferencia. (\cite{Resumen})
+	
+	\esp
+	
+	El contraste del fenómeno interferencial lo calculamos en función de los valores máximos y mínimos de intensidad expresados en función del módulo del grado complejo de coherencia, y nos queda en general una relación directa entre dicho módulo y la visibilidad de las franjas. Si las dos intensidades son iguales, entonces la visibilidad es directamente el módulo del grado complejo de coherencia, lo que
+	nos da una forma indirecta de medirlo, y por extensión de valorar la coherencia parcial de la fuente. (\cite{Resumen})
+	
+	\begin{equation*}
+		I_{max} = I_1 + I_2 + 2\sqrt{I_1I_2}|\gamma_{12}(0)| \quad I_{min} = I_1 + I_2 - 2\sqrt{I_1I_2}|\gamma_{12}(0)|
+	\end{equation*}
+	
+	\begin{equation}
+		V = \dfrac{I_{max}+I_{min}}{I_{max}-I_{min}} = \dfrac{2\sqrt{I_1I_2}}{I_1+I_2}|\gamma_{12}(0)|
+	\end{equation}
+	
+	\esp
+	
+	\noindent Si $I_1=I_2$ entonces
+	
+	\begin{equation}
+		V = |\gamma_{12}(0)|
+	\end{equation}
+	
+	\esp
+	
+	Si consideramos una onda que interfiere consigo misma retrasada un período de tiempo (p.ej. en el interferómetro de Michelson o en las franjas de Young), sólo tenemos que preocuparnos de la coherencia
+	temporal, y queda la expresión correspondiente para la intensidad en función del módulo del grado complejo de coherencia temporal. (\cite{Resumen})
+	
+	\begin{equation}
+		I_r = 2I_0[1+\gamma(\tau)\cos\phi]
+	\end{equation}
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
