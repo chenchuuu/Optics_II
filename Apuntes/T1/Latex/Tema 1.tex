@@ -28,6 +28,22 @@
 
 \newcommand{\esp}{\vspace{0.5cm}}
 
+% promedio
+
+\newcommand{\prom}[1]{\left\langle #1 \right\rangle}
+
+% ket
+
+\newcommand{\ket}[1]{| #1 \rangle}
+
+% bra
+
+\newcommand{\bra}[1]{\langle #1 |}
+
+% braket
+
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+
 % Bibliografía
 
 \usepackage[style=apa, backend=biber]{biblatex} % Estilo APA
@@ -379,6 +395,156 @@
 	\begin{equation}
 		I_r = 2I_0[1+\gamma(\tau)\cos\phi]
 	\end{equation}
+	
+	\esp
+	
+	\subsection{Teorema de Van Cittert-Zernike}
+	
+	Repasemos la \textbf{Transformada de Fourier}, hay varias versiones que varían en la constante de normalización, pero nosotros usaremos la siguiente versión de la transformada de Fourier directa e inversa respectivamente
+	
+	\begin{equation}
+		g(\omega)=\int_{-\infty}^\infty f(t) e^{-i\omega t}dt \qquad f(t) = \frac{1}{2\pi}\int_{-\infty}^\infty f(t) e^{i\omega t}d\omega
+	\end{equation}
+	
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/Fourier.png}
+	\end{figure}
+	
+	\esp
+	
+	Veamos un ejemplo de transformada de Fourier. En la realidad, las ondas planas no existen. Un modelo más realista sería la de una onda plana de \textbf{duración finita}. Apliquemos la transformada de Fourier para este caso.
+	
+	\esp
+	
+	Vamos a calcular primero la intensidad mutua. Las funciones de onda globales U1 y U2 se calculan como suma de las contribuciones debidas a cada uno de los elementos m infinitesimales en los que dividimos a la fuente emisora.
+	
+	\esp
+	
+	$$
+	f(t) = \left\{
+	\begin{aligned}
+		e^{i\omega_0t} \qquad if\ -\frac{\tau_0}{2} < x < \frac{\tau_0}{2} \\
+		0 \qquad elsewhere
+	\end{aligned}
+	\right.
+	$$
+	
+	\begin{eqnarray*}
+		g(\omega)=\int_{-\infty}^{\infty} f(t) e^{-i\omega t}dt = \int_{-\tau_0/2}^{\tau_0/2} e^{i\omega_0 t} e^{-i\omega t} dt = \frac{1}{i(\omega_0-\omega)}(e^{i(\omega_0-\omega)\tau_0/2}-e^{-i(\omega_0-\omega)\tau_0/2}) = \\
+		= \frac{2}{(\omega_0-\omega)} \sin( (\omega_0-\omega)\tau_0/2) =  \frac{\sin((\omega_0-\omega)\tau_0/2)}{(\omega_0-\omega)\tau_0/2} \tau_0 = sinc((\omega_0-\omega)\tau_0/2) \tau_0
+	\end{eqnarray*}
+	
+	\esp
+	
+	\noindent En este caso las anchuras mitad del pico central son $\Delta \omega = \frac{4\pi}{\tau_0} \quad y\ \Delta \nu = \frac{2}{\tau_0}$. La semi-anchura mirad de pico $\Delta \nu_{mp} = 1/\tau_0$
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/teoremavan.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{nota}
+		Lo que se va a desarrollar a continuación \textbf{SOLO SIRVE PARA COHERENCIA ESPACIAL}
+	\end{nota}
+	
+	\esp
+	
+	Seguimos viendo formas de evaluar la coherencia, en este caso la coherencia espacial en un plano iluminado por una \textbf{fuente extensa casi-monocromática} e incoherente de distribución de intensidad conocida. Suponemos que el medio entre la fuente y el plano de observación es homogéneo, y que las dimensiones de la fuente son pequeñas comparadas con la distancia fuente-plano de observación.
+	
+	\esp
+	
+	Entonces, para calcular los promedios temporales globales sumamos en los casos $m = n$ y $m$ distinto de $n$. La parte con m distinto de n se anula, puesto que m y n son \textbf{estadísticamente independientes}, y las emisiones de \textbf{dos puntos diferentes no están correlacionadas para nuestra fuente}.
+	
+	\begin{equation*}
+		\Gamma_{12}=\sum_m \prom{U^*_{m1}(t)\cdot U_{m2}(t)} + \sum_m \sum_{m\neq n} \underset{\text{Estadísticamente indp.}\implies 0}{\underline{\prom{U^*_{m1}(t)\cdot U_{n2}(t)}}} = \sum_m \prom{U^*_{m1}(t)\cdot U_{m2}(t)}
+	\end{equation*}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/ondasphe.png}
+	\end{figure}
+	
+	\esp 
+	
+	Para el otro término, escribimos las funciones $U_{m1}$ y $U_{m2}$ en función de $R_{m1}$ y $R_{m2}$, con la correspondiente función $A_m$ que lleva la información de la dependencia temporal de la amplitud, y $v_0$ es la frecuencia central de emisión de la fuente. Como \textbf{onda esférica}:
+	
+	\begin{align*}
+		U_{m1}(t) &= \frac{A_m(t)}{R_{m1}} e^{i \left[ 2\pi\nu_o \left( t - \frac{R_{m1}}{v} \right) \right]} \\
+		U_{m2}(t) &= \frac{A_m(t)}{R_{m2}} e^{i \left[ 2\pi\nu_o \left( t - \frac{R_{m2}}{v} \right) \right]}
+	\end{align*}
+	
+	\esp
+	
+	Las ondas no tienen por qué llegar a la vez a $P_1$ y $P_2$. Añadimos esa consideración el variable t (tiempo retardado).
+	
+	\begin{align*}
+		U_{m1}(t) &= \frac{A_m(t)}{R_{m1}} e^{i \left[ 2\pi\nu_o \left( t - \frac{R_{m1}}{v} \right) \right]} \\
+		U_{m2}(t) &= \frac{A_m(t)}{R_{m2}} e^{i \left[ 2\pi\nu_o \left( t - \frac{R_{m2}}{v} \right) \right]}
+	\end{align*}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intmutuacohe.png}
+	\end{figure}
+	
+	\esp
+	
+	\noindent Ahora calculamos la intensidad mutua:
+	
+	\begin{equation*}
+		\Gamma_{12}(0) = \sum_{m} \left\langle A_m^* \left( t - \frac{R_{m1}}{v} \right) \cdot A_m \left( t - \frac{R_{m2}}{v} \right) \right\rangle \frac{1}{R_{m1}R_{m2}} e^{-i\omega_o \left( \frac{R_{m2}-R_{m1}}{v} \right)}
+	\end{equation*}
+	
+	\esp
+	
+	\noindent hacemos el cambio de variable $t' = t-R_{m1}/v$ y tenemos
+	
+	\begin{equation*}
+		\Gamma_{12}(0) = \sum_{m} \left\langle A_m^*(t') \cdot A_m \left( t' - \frac{R_{m2} - R_{m1}}{v} \right) \right\rangle \frac{1}{R_{m1}R_{m2}} e^{-i\omega_o \left( \frac{R_{m2}-R_{m1}}{v} \right)}
+	\end{equation*}
+	
+	\esp
+	
+	Calculamos el promedio correspondiente en función del promedio de las funciones amplitud, y cambiamos de variable para que quede $A^*_m(t) A_m(t -(R_{m2}-R_{m1})/v))$, y si la distancia $R_{m2} - R_{m1}$ es \textbf{pequeña} comparada con la longitud de coherencia de la luz, podemos \textbf{aproximar} el \textbf{factor de retardo} que aparece en el \textbf{promedio temporal} de $\mathbf{A_m}$ y la intensidad mutua queda en función de $A^*_m(t)A_m(t)$.
+	
+	\esp
+	
+	\begin{equation*}
+		\Gamma_{12}(0) = \sum_{m} \langle A_m^*(t) \cdot A_m(t) \rangle \frac{1}{R_{m1}R_{m2}} e^{-i\omega_o \left( \frac{R_{m2}-R_{m1}}{v} \right)}
+	\end{equation*}
+	
+	\esp
+	
+	Extrapolando a un número infinito de elementos diferenciales y definiendo la función $I(S)$ como
+	el \textbf{promedio temporal} de $A^*_m(t)A_m(t)$ (función de distribución de intensidad de la fuente), queda la
+	expresión integral para la intensidad mutua en función de $R_1$, $R_2$ y $K_0$ (introduciendo el número de
+	onda en vez de la frecuencia central de emisión $K_0=\omega_=/v$).
+	
+	\esp
+	
+	\begin{equation*}
+		I(S)dS=\langle A_m^*(t) \cdot A_m(t) \rangle
+	\end{equation*}
+	
+	\esp
+	
+	\begin{equation}
+		\Gamma_{12}(0)=\int_\sigma I(S) \frac{1}{R_1 R_2}e^{iK_0(R_2-R_1)}dS
+	\end{equation}
+	
+	\esp
+	
+	\noindent $\sigma$ es toda la superficie de la fuente.
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
