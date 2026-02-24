@@ -540,7 +540,7 @@
 	Extrapolando a un número infinito de elementos diferenciales y definiendo la función $I(S)$ como
 	el \textbf{promedio temporal} de $A^*_m(t)A_m(t)$ (función de distribución de intensidad de la fuente), queda la
 	expresión integral para la intensidad mutua en función de $R_1$, $R_2$ y $K_0$ (introduciendo el número de
-	onda en vez de la frecuencia central de emisión $K_0=\omega_=/v$).
+	onda en vez de la frecuencia central de emisión $K_0=\omega_0/v$).
 	
 	\esp
 	
@@ -557,6 +557,139 @@
 	\esp
 	
 	\noindent $\sigma$ es toda la superficie de la fuente.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/gradocohe.png}
+	\end{figure}
+	
+	\esp
+	
+	En cuanto al grado complejo de coherencia, calculando las intensidades correspondientes a $R_1$ y $R_ 2$, se normaliza la función de intensidad mutua y ya está.
+	
+	\esp
+	
+	\begin{equation}
+		\gamma_{12}(0) = \frac{1}{\sqrt{I(P_1)I(P_2)}} \int_{\sigma} I(S) \frac{1}{R_1 R_2} e^{-ik_0(R_2 - R_1)} dS
+	\end{equation}
+	
+	\esp
+	
+	\noindent si sustituimos en la ecuación
+	
+	\esp
+	
+	\begin{equation*}
+		I(P_1) = \int_{\sigma} \frac{\text{I}(S)}{R_1^2} dS \qquad I(P_2) = \int_{\sigma} \frac{\text{I}(S)}{R_2^2} dS
+	\end{equation*}
+	
+	\esp
+	
+	\noindent tanto $R_1$ y $R_2$ se pueden aproximar como constantes. En función de las coordenadas del plano de emisión $(\xi, \eta)$ nos quedaría finalmente
+	
+	\esp
+	
+	\begin{equation}
+		\gamma_{12}(0) = \frac{\int_{\sigma} I_S(\xi, \eta) e^{-ik_o(R_2-R_1)} d\xi d\eta}{\int_{\sigma} I_S(\xi, \eta) d\xi d\eta}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aproxcohe.png}
+	\end{figure}
+	
+	\esp Centramos el $P_2$ en el origen del plano de observación por comodidad. $S$ es un punto cualquiera del plano de emisión con coordenadas $S=(\xi, \eta)$, el punto $P_2=(0,0,R_0)$ está en el origen del plano de observación, que se encuentra a una distancia $R_0$ del plano de emisión, y el punto $P_1=(x,y,R_0)$, un punto cualquiera del plano de observación. Los vectores $R_1$ y $R_2$ son $\vec{R}_1=\overline{SP_1}=(x-\xi, y-\eta,R_0)$ y $\vec{R}_2=\overline{SP_2}=(-\xi, -\eta, R_0)$. Los módulos valen
+	
+	\esp
+	
+	\begin{equation}
+		R_1 = \sqrt{R_o^2 + (x - \xi)^2 + (y - \eta)^2} \qquad R_2 = \sqrt{R_o^2 + \xi^2 + \eta^2}
+	\end{equation}
+	
+	\esp
+	
+	Si hacemos una expansión de Taylor hasta el primer término, ya que suponemos que las dimensiones de la fuente son pequeñas con respecto a $R_0$ (la distancia entre $S$ y el origen y la distancia entre los puntos $P_1$ y $P_2$ son muy pequeñas comparadas con $R_0$), entonces tenemos que
+	
+	\begin{equation*}
+		R_1 = \sqrt{R_0^2 + (x - \xi)^2 + (y - \eta)^2} \approx R_0 + \frac{(x - \xi)^2 + (y - \eta)^2}{2R_0}
+	\end{equation*}
+	
+	\begin{equation*}
+		R_2 = \sqrt{R_0^2 + \xi^2 + \eta^2} \approx R_0 + \frac{\xi^2 + \eta^2}{2R_0}
+	\end{equation*}
+	
+	\esp
+	
+	\noindent Restando ambos valores tenemos que (se ha despreciado el término $-(x^2+y^2)/2R_0$ ya que $x^2+y^2 \ll 2R_0$) 
+	
+	\esp
+	
+	\begin{equation}
+		R_2 - R_1 \approx \frac{x}{R_0} \xi + \frac{y}{R_0} \eta
+	\end{equation}
+	
+	\noindent Y nuestra expresión final para el grado complejo de coherencia quedaría (la integral se expresa formalmente como una transformada de Fourier)
+	
+	\esp
+	
+	\begin{equation}
+		\gamma_{12}(0) = \frac{\int_{-\infty}^{+\infty} I_S(\xi, \eta) e^{-i 2\pi \left( \frac{x}{\lambda_o R_o} \xi + \frac{y}{\lambda_o R_o} \eta \right)} d\xi d\eta}{\int_{\sigma} I_S(\xi, \eta) d\xi d\eta}
+	\end{equation}	
+	
+	\esp
+	
+	\noindent \textbf{Ejemplo.} (Esperar que Rafa Huertas suba las diapositivas actualizadas para poner el enunciado)
+	
+	\esp
+	
+	\noindent Haciendo el cambio de variable $\xi= \rho \cos \alpha$ y $\eta= \rho \sen \alpha$ la integral queda
+	
+	\begin{equation}
+		\gamma_{12}(0) = \frac{\int_{\sigma} I_S(\xi, \eta) e^{-i \frac{k_o}{R_o}(x\xi + y\eta)} d\xi d\eta}{\int_{\sigma} I_S(\xi, \eta) d\xi d\eta} = \frac{\int_{0}^{a} \int_{0}^{2\pi} e^{-i \frac{k_o}{R_o}(x \rho \cos \alpha + y \rho \sin \alpha)} \rho d\rho d\alpha}{\int_{0}^{a} \int_{0}^{2\pi} \rho d\rho d\alpha}
+	\end{equation}
+	
+	\esp
+	
+	\noindent Suponiendo que la fuente emite de forma uniforme (aproximación), esto es que $I_S(\xi, \eta)=1$. Si nos centramos en la dirección $x$, la integral quedaría y la solución sería la función de Bessel
+	
+	\esp
+	
+	\begin{equation}
+		\gamma_{12}(0) = \frac{1}{\pi R^2} \int_0^{R} \int_0^{2\pi} e^{-i \frac{k_0}{R_0} x \rho \cos \alpha} \rho d\rho d\alpha = - \frac{2 R_0}{R k_0 x} J_1 \left( \frac{k_0 R x}{R_0} \right) = - \frac{2 J_1(v)}{v}
+	\end{equation}
+	
+	\esp
+	
+	\noindent Podemos generalizarlo llamando $d=x^2+y^2$ como la distancia entre los puntos $P_1$ y $P_2$. Obteniendo
+	
+	\esp
+	
+	\begin{equation}
+		\gamma_{12}(0) = - \frac{2 R_0}{R k_0 d} J_1 \left( \frac{k_0 R d}{R_0} \right)
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/ejemp.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{equation*}
+		\tan \theta = 2R/R_0 \approx \theta \implies \frac{k_0}{R_0}d R = \frac{2\pi dR}{\lambda_0 R_0} = \frac{\pi d \theta R_0}{\lambda_0 R_0} = \frac{\pi \theta d}{\lambda_0}
+	\end{equation*}
+	
+	\esp
+	
+	\begin{equation*}
+		|\gamma_{12}|=0.88 = 2 \left| \frac{J_1(z)}{z} \right| \implies z= \frac{\pi \theta d}{\lambda_0} =1 \implies d \leq \frac{\lambda_0}{\pi 2 \alpha}
+	\end{equation*}
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
