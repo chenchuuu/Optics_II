@@ -640,6 +640,15 @@
 		\gamma_{12}(0) = \frac{\int_{-\infty}^{+\infty} I_S(\xi, \eta) e^{-i 2\pi \left( \frac{x}{\lambda_o R_o} \xi + \frac{y}{\lambda_o R_o} \eta \right)} d\xi d\eta}{\int_{\sigma} I_S(\xi, \eta) d\xi d\eta}
 	\end{equation}	
 	
+	\section{Aplicaciones}
+	
+	\subsection{Fuente extensa circular}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/circular.png}
+	\end{figure}
+	
 	\esp
 	
 	\noindent \textbf{Ejemplo.} (Esperar que Rafa Huertas suba las diapositivas actualizadas para poner el enunciado)
@@ -654,7 +663,7 @@
 	
 	\esp
 	
-	\noindent Suponiendo que la fuente emite de forma uniforme (aproximación), esto es que $I_S(\xi, \eta)=I_0$. Si nos centramos en la dirección $x$, la integral quedaría y la solución sería la función de Bessel
+	\noindent Suponiendo que la fuente emite de forma \textbf{uniforme} (aproximación), esto es que $I_S(\xi, \eta)=I_0$. Si nos centramos en la dirección $x$, la integral quedaría y la solución sería la función de Bessel
 	
 	\esp
 	
@@ -690,6 +699,60 @@
 	\begin{equation*}
 		|\gamma_{12}|=0.88 = 2 \left| \frac{J_1(z)}{z} \right| \implies z= \frac{\pi \theta d}{\lambda_0} =1 \implies d \leq \frac{\lambda_0}{\pi 2 \alpha}
 	\end{equation*}
+	
+	\subsection{Interferómetro estelar de Michelson}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/michelson.png}
+	\end{figure}
+	
+	\begin{nota}
+		UN INTERFERÓMETRO ESTELAR DE MICHELSON NO ES UN INTERFERÓMETRO, SINO UNA DOBLE RENDIJA DE YOUNG.
+	\end{nota}
+	
+	\esp
+	
+	Si tenemos una fuente circular extensa de irradiancia uniforme (que sería el caso de interés si queremos medir el diámetro angular de una estrella con el interferómetro estelar), vamos a comenzar aplicando el teorema de Van Cittert-Zernike para este caso. La transformada de Fourier de la función círculo es la siguiente:
+	
+	\begin{equation}
+		2 \left| \frac{J_1(Z)}{Z} \right|
+	\end{equation}
+	
+	\esp
+	
+	donde $Z = \frac{\pi d \theta}{\lambda}$, siendo $d$ la separación entre rendijas (valor correspondiente a la variable $x$ en la expresión del Teorema de Van Cittert-Zernike) y $\theta$ el ángulo subtendido por la estrella desde el origen en el plano de las rendijas.
+	
+	\esp
+	
+	El máximo de la función $\left| \frac{J_1(Z)}{Z} \right|$ es $\frac{1}{2}$, por lo que al ir multiplicada por dos tendremos un máximo unidad para el módulo del grado complejo de coherencia. Pero lo que nos interesa es dónde se sitúa el primer mínimo: la función nos dice que se da para un valor del argumento de 3,83; sustituyendo, nos sale la nueva relación entre el ángulo $\theta$ que subtiende la estrella desde el plano de las rendijas (diámetro angular, que es la magnitud que queremos estimar), y la longitud de onda media de la fuente (supuesta con un grado de coherencia temporal suficiente para que no tengamos que considerarla en el cálculo de la intensidad del patrón).
+	
+	\esp
+	
+	Entonces, supongamos que colocamos una doble rendija a la altura del espejo primario de un telescopio, y vamos aumentando la distancia $d$ de separación y observando los cambios en el patrón interferencial producido por la luz de la estrella en el plano focal imagen del espejo. Al aumentar la distancia $d$, estaríamos aumentando la diferencia de camino óptico en el patrón y cambiando también el valor de $Z$ en la función grado complejo de coherencia. Por tanto, la visibilidad del mismo irá disminuyendo conforme aumenta $Z$, hasta que se alcance ese primer mínimo para el valor de $Z = 3,83$ que hemos comentado antes. Conociendo el valor de $d$ correspondiente a este primer mínimo de visibilidad, tendremos entonces el valor de $\theta$ y por tanto el diámetro angular de la estrella.
+	
+	\esp
+	
+	Con este dispositivo modificado para aumentar la distancia $d$, Michelson midió el diámetro angular de la estrella $\alpha$ Orionis o Betelgeuse, resultando un valor de $d$ de 121 pulgadas, lo que resultó en un valor de diámetro angular 0,047 segundos de arco, y un diámetro en longitud mucho mayor que la órbita de la Tierra. Aumentar la máxima distancia $d$ posible para el dispositivo es interesante porque la mínima distancia angular que puede medirse con el dispositivo es inversamente proporcional al valor máximo de $d$. Para aumentar esta separación máxima, Michelson colocó cuatro espejos planos como se muestra en la figura y en la foto. Para el telescopio de $2,54 \, m$ de diámetro, consiguió una $d$ máxima de $6,1 \, m$, y un poder resolutivo de 0,02 segundos de arco. Pero actualmente existen dispositivos basados en esta idea del interferómetro estelar aunque utilizando procedimientos más complejos de medida, que llegan hasta una resolución 100 veces superior, como el del centro $CHARA$.
+	
+	\subsection{Tomografía de coherencia óptica (OCT)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tomografia.png}
+	\end{figure}
+	
+	\esp
+	
+	Por último, vemos una aplicación importante de iluminación con fuentes incoherentes: la tomografía de coherencia óptica (OCT según las siglas en inglés, Optical Coherence Tomography).
+	
+	\esp
+	
+	Se trata de iluminar con una fuente incoherente una muestra de tejido, y utilizar una configuración similar al Michelson para estudiar la luz reflejada por el tejido. Hacemos interferir el haz de referencia (que va a un espejo) con el haz procedente del tejido, y vamos escaneando la muestra, con lo que finalmente podemos obtener una imagen 2-D o 3-D de la misma. ¿Por qué es interesante que la fuente sea incoherente? Porque la resolución espacial con la que vamos a obtener la imagen depende de la longitud de coherencia de la fuente, así que no interesa precisamente que ésta sea muy grande. La zona de tejido (en corte de profundidad) que puede observarse depende de la longitud de coherencia, por lo que se hacen varias pasadas a distintos niveles de profundidad para obtener la reconstrucción 3D del tejido. Las fuentes de luz utilizadas son LED o láseres con pulsos muy cortos, para tener longitud de coherencia baja. Para facilitar la penetración en el tejido, las longitudes de onda utilizadas pueden estar en la zona del NIR o infrarrojo cercano. Los campos de aplicación van desde cirugía vascular hasta oftalmología. Vemos algunos ejemplos de diferentes imágenes obtenidas con esta técnica, que precisamente por utilizar fuentes con baja coherencia, presenta mucha mejor resolución espacial que la técnica de ultrasonidos.
+	
+	\esp
+	
+	Es también interesante conocer cómo se produce el proceso de escaneo en profundidad: el brazo de referencia se va acortando o alargando, de forma que la luz del tejido que es susceptible de provocar interferencias sea la que corresponde a la profundidad que dé lugar a una diferencia de camino óptico muy parecida entre ambos brazos. Para que la técnica funcione, es entonces esencial que la fuente sea relativamente poco coherente, para que la radiación que interfiere proceda de una zona muy fina de tejido.
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
