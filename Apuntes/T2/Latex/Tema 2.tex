@@ -191,7 +191,7 @@
 	\esp
 	
 	\begin{equation*}
-		\int_V (u\nabla^2u' - u'\nabla^2u) \, dV = \int_S \left( u\frac{\partial u'}{\partial n} - u'\frac{\partial u}{\partial n} \right) \, dS %
+		\int_V (u\nabla^2u' - u'\nabla^2u) \, dV = \int_S \left( u\frac{\partial u'}{\partial n} - u'\frac{\partial u}{\partial n} \right) \, dS
 	\end{equation*}
 	
 	\esp
@@ -218,6 +218,96 @@
 	\esp
 	
 	Ya sabemos que $U'$ y su derivada normal en $S$ deben estar definidas y ser continuas en todo $V$, así que se nos plantea el problema de la discontinuidad de $U'$ en $P$. Para soslayarlo, lo que hacemos es tomar una segunda superficie esférica $\Sigma$ de radio $r'$ tan reducido como queramos, que rodea a $P$. Aplicaremos el teorema de Green al volumen $V$ comprendido entre las superficies $S$ y $\Sigma$, y la superficie de integración será la superficie suma de ambas (superficie de dos hojas). Como función $U$, tomamos la onda procedente de la fuente, cuyo valor en $P$ pretendemos conocer.
+	
+	\esp
+	
+	\noindent Al aplicar el teorema de Green en esta situación, nos damos cuenta rápidamente de que el integrando de la integral de volumen se anula, ya que tanto la función de prueba $U'$ como nuestra onda $U$ verifican la ecuación escalar de ondas de Helmholtz, y el resultado del integrando se hace cero para cualquier punto dentro del volumen $V$. 
+	
+	\begin{equation}
+		\int_V (u\nabla^2u' - u'\nabla^2u) \, dV \implies \int_V (u(-k^2u') - u'(-k^2u) \, dV = 0
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/neumann.png}
+	\end{figure}
+	
+	\esp
+	
+	Nos queda una igualdad a cero del integrando de superficie, así que podemos separarlo en dos términos correspondientes a $S$ y $S_{\Sigma}$ y ponerlos en miembros opuestos de la ecuación. Si nos centramos en el integrando para la superficie $S_{\Sigma}$, calculamos la derivada normal en $S_{\Sigma}$ de la función $U'$, y hacemos el límite cuando $r'$ tiende a cero, poniendo el $dS_{\Sigma}$ como $r'^2d\Omega$ (diferencial de ángulo sólido). Por continuidad de $U$ nos queda al final que la parte en $S_{\Sigma}$ es igual a $-4\pi U(P)$. Despejamos $U(P)$, reordenamos términos y obtenemos la expresión denominada \textit{teorema integral de Helmholtz-Kirchhoff}, que básicamente establece que para conocer el campo (eléctrico o magnético) resultante en $P$, basta conocer dicho campo y su primera derivada en una superficie cerrada alrededor de $P$. 
+	
+	\esp La imposición arbitraria de valores para $U$ y su derivada normal contemporáneamente en $S$ (condiciones de Cauchy) en realidad nos hace sobre-especificar el problema, pudiendo resultar en condiciones de contorno incompatibles. Como veremos posteriormente, basta con conocer el valor de $U$ en $S$ (condición de Dirichlet) o el valor de su derivada normal en $S$ (condición de Neumann) para determinar $U$ en $P$ de una manera única. Usualmente, se aplica el teorema integral que acabamos de ver a distintas aberturas u objetos difractantes, debiendo entonces seleccionar con cuidado la superficie de integración.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/casogen.png}
+	\end{figure}
+	
+	\esp
+	
+	La geometría más utilizada es tomar $S$ como suma de dos superficies, tal como muestra la figura: $S_1$ es una superficie plana situada justo detrás de la pantalla que contiene a la abertura difractante, y $S_2$ es una esfera de radio $R$ centrada en el punto de observación $P$. Además, debemos imponer condiciones de contorno, que siguiendo a Kirchhoff, son las siguientes:
+	
+	\esp
+	
+	\begin{enumerate}
+		\item La distribución del campo $U$ y de su derivada normal en $\Sigma$ coincide exactamente con la que habrá en ausencia de pantalla.
+		\item La distribución del campo $U$ y de su derivada normal en $S_1$ es nula fuera de la abertura (despreciamos la interacción luz-materia en el plano $S_1$).
+	\end{enumerate}
+	
+	\esp
+	
+	A pesar de que estas condiciones sobre-especifican el problema, se obtienen resultados muy similares a los experimentales \textbf{SIEMPRE QUE LAS DIMENSIONES DE LA ABERTURA SEAN GRANDES COMPARADAS CON LA LONGITUD DE ONDA} (rango de validez de la teoría escalar).
+
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/raysommer.png}
+	\end{figure}
+	
+	\esp
+	
+	La teoría de Kirchhoff presenta ciertas inconsistencias que motivaron un ulterior (y más perfeccionado) modelo teórico para la difracción. Ya lo comentamos en su momento: las condiciones de contorno impuestas por Kirchhoff conciernen tanto a la función $U$ como a su derivada normal en la superficie. Recordemos que Kirchhoff impuso que ambas fuesen nulas en $S_1$ salvo en la zona de la abertura. Pero hay un resultado matemático que concierne a esta condición, y establece que si una función potencial bidimensional y su derivada normal se \textbf{anulan} ambas a lo largo de cualquier segmento de curva, entonces la función es nula en el plano completo que contiene al segmento.
+	
+	\esp
+	
+	También se extiende a una función tridimensional que se anule junto con su derivada normal en un elemento finito de superficie, que es el caso más aplicable al desarrollo de Kirchhoff. Así que, a partir de este teorema, el aplicar las dos condiciones de contorno de Kirchhoff nos lleva a que el campo se anularía en todo el plano de la abertura o incluso en todo el espacio, en clara contradicción con los resultados experimentales.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/raysommer2.png}
+	\end{figure}
+	
+	\esp
+	
+	Estas inconsistencias fueron eliminadas por Sommerfeld, dando lugar a la teoría conocida como \textit{Rayleigh-Sommerfeld}. La modificación que introdujeron fue tomar una función de prueba llamada $G_-$, que es la diferencia de dos funciones de prueba $U'$ de Kirchhoff, pero evaluadas en dos puntos $P$ y $P'$ que ocupan posiciones simétricas con respecto a la abertura. Esto hace que $G_-$ sea nula en la propia abertura, mientras que su derivada normal es dos veces la derivada normal de la anterior función de prueba $U'$. Utilizando entonces esta función de prueba, no hace falta imponer condiciones sobre la derivada normal de $U$ en la zona fuera de la pantalla, y por tanto se resuelve la inconsistencia matemática de la teoría de Kirchhoff. Al resultado obtenido utilizando la función de prueba $G_-$ se le llama \textit{Primera solución de Rayleigh-Sommerfeld}. Hay una segunda solución de Rayleigh-Sommerfeld obtenida utilizando una función de prueba que verifica que es anula su derivada normal en la pantalla, y puede comprobarse que la solución de Kirchhoff es la media de las dos soluciones de Rayleigh-Sommerfeld.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/raysommer3.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/raysommer4.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/raysommer5.png}
+	\end{figure}
 
 	\printbibliography[title={Bibliografía}]
 \end{document}
