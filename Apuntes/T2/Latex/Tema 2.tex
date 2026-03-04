@@ -224,7 +224,7 @@
 	\noindent Al aplicar el teorema de Green en esta situación, nos damos cuenta rápidamente de que el integrando de la integral de volumen se anula, ya que tanto la función de prueba $U'$ como nuestra onda $U$ verifican la ecuación escalar de ondas de Helmholtz, y el resultado del integrando se hace cero para cualquier punto dentro del volumen $V$. 
 	
 	\begin{equation}
-		\int_V (u\nabla^2u' - u'\nabla^2u) \, dV \implies \int_V (u(-k^2u') - u'(-k^2u) \, dV = 0
+		\int_V (u\nabla^2u' - u'\nabla^2u) \, dV \implies \int_V (u(-k^2u') - u'(-k^2u)) \, dV = 0
 	\end{equation}
 	
 	\esp
@@ -286,7 +286,7 @@
 	
 	\esp
 	
-	Estas inconsistencias fueron eliminadas por Sommerfeld, dando lugar a la teoría conocida como \textit{Rayleigh-Sommerfeld}. La modificación que introdujeron fue tomar una función de prueba llamada $G_-$, que es la diferencia de dos funciones de prueba $U'$ de Kirchhoff, pero evaluadas en dos puntos $P$ y $P'$ que ocupan posiciones simétricas con respecto a la abertura. Esto hace que $G_-$ sea nula en la propia abertura, mientras que su derivada normal es dos veces la derivada normal de la anterior función de prueba $U'$. Utilizando entonces esta función de prueba, no hace falta imponer condiciones sobre la derivada normal de $U$ en la zona fuera de la pantalla, y por tanto se resuelve la inconsistencia matemática de la teoría de Kirchhoff. Al resultado obtenido utilizando la función de prueba $G_-$ se le llama \textit{Primera solución de Rayleigh-Sommerfeld}. Hay una segunda solución de Rayleigh-Sommerfeld obtenida utilizando una función de prueba que verifica que es anula su derivada normal en la pantalla, y puede comprobarse que la solución de Kirchhoff es la media de las dos soluciones de Rayleigh-Sommerfeld.
+	Estas inconsistencias fueron eliminadas por Sommerfeld, dando lugar a la teoría conocida como \textit{Rayleigh-Sommerfeld}. La modificación que introdujeron fue tomar una función de prueba llamada $G_-$, que es la diferencia de dos funciones de prueba $U'$ de Kirchhoff, pero evaluadas en dos puntos $P$ y $P'$ que ocupan posiciones \textbf{simétricas} con respecto a la abertura. Esto hace que $G_-$ sea nula en la propia abertura, mientras que su derivada normal es dos veces la derivada normal de la anterior función de prueba $U'$. Utilizando entonces esta función de prueba, no hace falta imponer condiciones sobre la derivada normal de $U$ en la zona fuera de la pantalla, y por tanto se resuelve la inconsistencia matemática de la teoría de Kirchhoff. Al resultado obtenido utilizando la función de prueba $G_-$ se le llama \textit{Primera solución de Rayleigh-Sommerfeld}. Hay una segunda solución de Rayleigh-Sommerfeld obtenida utilizando una función de prueba que verifica que es anula su derivada normal en la pantalla, y puede comprobarse que la solución de Kirchhoff es la media de las dos soluciones de Rayleigh-Sommerfeld.
 	
 	\esp
 	
@@ -308,6 +308,85 @@
 		\centering
 		\includegraphics[width=0.7\textwidth]{IMG/raysommer5.png}
 	\end{figure}
+	
+	\esp
+	
+	\subsubsection{Caso particular: fuente puntual monocromática y abertura}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/casopar.png}
+	\end{figure}
+	
+	\esp
+	
+	Hasta ahora, hemos mantenido completamente general la forma funcional de $U$. Vamos a particularizar para el caso de que se trate de una onda esférica monocromática emitida por una fuente puntual. Calculamos entonces la derivada normal tanto de la función de prueba como de $U$, que quedan en función de un factor $\cos(\hat{n}, \vec{r})$ o $\cos(\hat{n}, \vec{r}_s)$.
+	
+	\esp
+	
+	Aplicando la aproximación $r, r_s \gg \lambda$ y sustituyendo en la fórmula de difracción de Kirchhoff, obtenemos la expresión denominada \textit{fórmula de difracción de Fresnel-Kirchhoff}.
+	
+	\esp
+	
+	Puede observarse que la fórmula es simétrica respecto a las posiciones de la fuente puntual y el punto de observación: obtenemos el mismo resultado si intercambiamos $P$ y $S$: Esto se denomina \textbf{teorema de reciprocidad de Helmholtz}.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/casopar2.png}
+	\end{figure}
+
+	\subsection{Aproximaciones de campo lejano y de campo cercano}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aprox.png}
+	\end{figure}
+
+	\esp
+	
+	En las secciones anteriores, hemos llegado a resultados interesantes pero de carácter muy general sobre los patrones difraccionales (distribuciones de intensidad en el plano de observación). En esta seccion, vamos a ver algunas aproximaciones que permiten simplificar notablemente el cálculo de estas distribuciones de intensidad en determinadas condiciones de trabajo, y las aplicaremos a objetos o aberturas de formas sencillas.
+	
+	\esp
+	
+	Partimos de la \textit{Primera solución de Rayleigh-Sommerfeld} para la difracción, que se obtenía tomando la función $G_-$ como función de prueba. $U$ es la amplitud compleja en el plano de observación. La integral se realiza sobre $\Sigma$(superficie de la abertura u objeto difractante). $P$ es un punto cualquiera del plano de observación. Vamos a centrarnos en el término exponencial $\frac{\exp ikr}{r}$. En este término, el numerador (término de fase) varía más notablemente con $r$ que el denominador, ya que va multiplicado por un factor elevado ($k$).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aprox2.png}
+	\end{figure}
+
+	\esp
+	
+	Consideramos ahora coordenadas cartesianas en los tres planos fundamentales: la abertura $(\xi, \eta, 0)$, el plano de observación $(x', y', z')$ y el plano de la fuente $(x,y,z)$, como se ilustra en la figura. Es importante tenerlas en mente para saber en todo momento de qué plano estamos hablando. En el plano de la abertura tomamos el punto $Q$ y el origen $O$, en el de la fuente $S=(x,y,z)$ y en el de observación el punto $P=(x',y',z')$ , en el que queremos calcular la amplitud del frente de ondas difractado. Tomamos las distancias $r=\overline{QP}$, $r_S=\overline{QS}$, $r_{S0}=\overline{OS}$ y $r_0=\overline{OP}$
+	
+	\esp
+	
+	Si la distancia $z$ es \textbf{mucho mayor} que las \textbf{dimensiones de la abertura y de la región de observación}, podemos aproximar el factor de oblicuidad $\cos(\hat{n}, \vec{r})$ por la unidad, y la distancia $r$ en el denominador por $z$. Pero en el término de fase, no podemos aproximar $r$ por $z$ directamente. Sacamos factor común $z$, y obtenemos la expresión para $r$ como raíz cuadrada. Las aproximaciones de Fresnel y Fraunhöfer se basan en considerar distancias $r$\textbf{ mucho mayores que las dimensiones de la abertura}, y también que las \textbf{dimensiones lineales de la región de observación} (y fuente). O sea, fuente lejos de la abertura, abertura lejos del plano de observación, y observación de la intensidad en puntos cercanos al eje. Consideramos entonces estas aproximaciones y desarrollamos hasta \textbf{segundo orden} las raíces cuadradas.
+	
+	\subsubsection{Aproximación de Fraunhöfer (lineal)}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aprox3.png}
+	\end{figure}
+	
+	\esp
+	
+	\noindent Si ahora consideramos unas condiciones algo más restrictivas sobre $z$, de forma que se cumpla que $\frac{k}{2z}(x_1^2 + y_1^2)_{max} \ll 1$, podemos entonces aproximar el factor de fase que acompaña a la función de transmitancia compleja del objeto difractante a la unidad, y tendríamos que la amplitud en el plano de observación es la Transformada de Fourier de la función de transmitancia compleja de la abertura directamente. Este resultado se denomina \textit{aproximación de campo lejano o de Fraunhöfer}, y dedicaremos las próximas secciones a determinar patrones de difracción según esta aproximación, abordando los resultados más significativos para campo cercano en la última sección del tema.
+	
+	\esp
+	
+	Hay un criterio aproximado para determinar en qué caso estamos, que se basa en el llamado \textbf{número de Fresnel}, que se define en función de las dimensiones de la abertura, la longitud de onda y la distancia abertura-plano de observación. En cuanto a las dimensiones de la abertura, tomamos de forma indicativa el parámetro $a$ como el doble de la mayor distancia que pueda alcanzarse entre el centro de la abertura u obstáculo y alguno de sus bordes. Por ejemplo, en el caso de la abertura circular, $a$ sería el diámetro (pero nótese que en este caso, el numerador de la expresión sería $\frac{k}{2z}(x_1^2 + y_1^2)_{max} = \pi \frac{(a/2)^2}{\lambda z}$ y por tanto exactamente el área de la abertura); en el caso de abertura cuadrada, sería la diagonal aproximando el valor de $\pi$ por cuatro, y en el caso de tener dos aberturas cuadradas, sería el doble de la distancia desde el centro al vértice más lejano al mismo. Sin embargo, hay una cierta flexibilidad en cuanto a qué valor de $a$ puede ser aceptable, puesto que raramente el tomar $a$ de forma lo más precisa posible va a suponer una diferencia entre clasificar un patrón como de campo cercano o de campo lejano, con los criterios que veremos a continuación.
+	
+	\esp
+	
+	Si el número de Fresnel es mucho menor que la unidad ($10^{-3}$ como máximo), podemos aplicar la aproximación de Fraunhöfer con seguridad. La zona intermedia entre $10^{-3}$ y la unidad sería la frontera entre ambas aproximaciones. Si $F$ es mayor o igual que la unidad, estamos en \textit{difracción de Fresnel o de campo cercano}, con lo cual los cálculos de la distribución de amplitudes o intensidad en el plano de observación se complican bastante, y vamos a desarrollar este caso sólo con un par de ejemplos al final del tema.
 
 	\printbibliography[title={Bibliografía}]
 \end{document}
