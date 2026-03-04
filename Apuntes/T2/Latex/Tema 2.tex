@@ -264,6 +264,8 @@
 
 	\esp
 	
+	\subsection{Teoría de Rayleigh-Sommefeld}
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\textwidth]{IMG/raysommer.png}
@@ -311,7 +313,7 @@
 	
 	\esp
 	
-	\subsubsection{Caso particular: fuente puntual monocromática y abertura}
+	\subsection{Caso particular: fuente puntual monocromática y abertura}
 	
 	\begin{figure}[H]
 		\centering
@@ -352,7 +354,7 @@
 	
 	Partimos de la \textit{Primera solución de Rayleigh-Sommerfeld} para la difracción, que se obtenía tomando la función $G_-$ como función de prueba. $U$ es la amplitud compleja en el plano de observación. La integral se realiza sobre $\Sigma$(superficie de la abertura u objeto difractante). $P$ es un punto cualquiera del plano de observación. Vamos a centrarnos en el término exponencial $\frac{\exp ikr}{r}$. En este término, el numerador (término de fase) varía más notablemente con $r$ que el denominador, ya que va multiplicado por un factor elevado ($k$).
 	
-	\esp
+	\subsubsection{Aproximación de Fresnel}
 	
 	\begin{figure}[H]
 		\centering
@@ -382,11 +384,129 @@
 	
 	\esp
 	
-	Hay un criterio aproximado para determinar en qué caso estamos, que se basa en el llamado \textbf{número de Fresnel}, que se define en función de las dimensiones de la abertura, la longitud de onda y la distancia abertura-plano de observación. En cuanto a las dimensiones de la abertura, tomamos de forma indicativa el parámetro $a$ como el doble de la mayor distancia que pueda alcanzarse entre el centro de la abertura u obstáculo y alguno de sus bordes. Por ejemplo, en el caso de la abertura circular, $a$ sería el diámetro (pero nótese que en este caso, el numerador de la expresión sería $\frac{k}{2z}(x_1^2 + y_1^2)_{max} = \pi \frac{(a/2)^2}{\lambda z}$ y por tanto exactamente el área de la abertura); en el caso de abertura cuadrada, sería la diagonal aproximando el valor de $\pi$ por cuatro, y en el caso de tener dos aberturas cuadradas, sería el doble de la distancia desde el centro al vértice más lejano al mismo. Sin embargo, hay una cierta flexibilidad en cuanto a qué valor de $a$ puede ser aceptable, puesto que raramente el tomar $a$ de forma lo más precisa posible va a suponer una diferencia entre clasificar un patrón como de campo cercano o de campo lejano, con los criterios que veremos a continuación.
+	Hay un criterio aproximado para determinar en qué caso estamos, que se basa en el llamado \textbf{número de Fresnel}, que se define en función de las dimensiones de la abertura, la longitud de onda y la distancia abertura-plano de observación. En cuanto a las dimensiones de la abertura, tomamos de forma indicativa el parámetro $a$ como el doble de la \textbf{mayor distancia} que pueda alcanzarse entre el centro de la abertura u obstáculo y alguno de sus bordes. Por ejemplo, en el caso de la abertura circular, $a$ sería el diámetro (pero nótese que en este caso, el numerador de la expresión sería $\frac{k}{2z}(x_1^2 + y_1^2)_{max} = \pi \frac{(a/2)^2}{\lambda z}$ y por tanto exactamente el área de la abertura); en el caso de abertura cuadrada, sería la diagonal aproximando el valor de $\pi$ por cuatro, y en el caso de tener dos aberturas cuadradas, sería el doble de la distancia desde el centro al vértice más lejano al mismo. Sin embargo, hay una cierta flexibilidad en cuanto a qué valor de $a$ puede ser aceptable, puesto que raramente el tomar $a$ de forma lo más precisa posible va a suponer una diferencia entre clasificar un patrón como de campo cercano o de campo lejano, con los criterios que veremos a continuación.
 	
 	\esp
 	
-	Si el número de Fresnel es mucho menor que la unidad ($10^{-3}$ como máximo), podemos aplicar la aproximación de Fraunhöfer con seguridad. La zona intermedia entre $10^{-3}$ y la unidad sería la frontera entre ambas aproximaciones. Si $F$ es mayor o igual que la unidad, estamos en \textit{difracción de Fresnel o de campo cercano}, con lo cual los cálculos de la distribución de amplitudes o intensidad en el plano de observación se complican bastante, y vamos a desarrollar este caso sólo con un par de ejemplos al final del tema.
+	\noindent \textbf{Fuente en el $\infty$}
+	
+	\esp
+	
+	\begin{equation}
+		F = \frac{a^2}{\lambda R}
+	\end{equation}
+	
+	\esp
+	
+	\noindent \textbf{Fuente que no está en el $\infty$}
+	
+	\esp
+	
+	\begin{equation}
+		F = \frac{a^2}{\lambda R R_S} (Rs+R)
+	\end{equation}
+	
+	\esp
+	
+	Si el número de Fresnel es mucho menor que la unidad ($10^{-3}$ como máximo), podemos aplicar la aproximación de \textbf{Fraunhöfer} con seguridad. La zona intermedia entre $10^{-3}$ y la unidad sería la frontera entre ambas aproximaciones. Si $F$ es mayor o igual que la unidad, estamos en \textit{difracción de \textbf{Fresnel} o de campo cercano}, con lo cual los cálculos de la distribución de amplitudes o intensidad en el plano de observación se complican bastante, y vamos a desarrollar este caso sólo con un par de ejemplos al final del tema.
 
+	\section{Difracción de Fraunhöfer o campo lejano}
+	
+	\begin{nota}
+		Fuera de la exponencial podemos despreciar $\xi$ y $\eta$ porque son despreciables frente a $z'$. Recordemos, las aproximaciones de Fresnel y Fraunhöfer se basan en considerar distancias $r$\textbf{ mucho mayores que las dimensiones de la abertura}, y también que las \textbf{dimensiones lineales de la región de observación} (y fuente). Dentro de la exponencial la aproximación es muy mala, por lo que lo dejamos como está.
+	\end{nota}
+	
+	\noindent \textbf{Aproximación de Fraunhöfer: solución de Kirchhoff}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aproxfranKirch.png}
+	\end{figure}
+
+	\noindent \textbf{Aproximación de Fraunhöfer: primera solución R-S}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aproxfranRS.png}
+	\end{figure}
+
+	\subsection{Difracción de Fraunhöfer para algunas aberturas}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aberrec.png}
+	\end{figure}
+	
+	\esp
+	
+	En el caso de una abertura rectangular de lados $2a$ y $2b$, para asegurar que se cumplen las condiciones de la aproximación de Fraunhöfer vamos a suponer que está iluminada con luz \textbf{colimada} (así la fuente está en el infinito $z\rightarrow\infty$), y que los rayos de salida de la abertura los recogemos mediante una lente en su plano focal imagen. Señalamos los tres sistemas coordenados correspondientes, y en el caso del eje $x'$ notamos como $\theta$ el ángulo cuyo seno nos da el coseno director de la dirección de salida hacia $P$, $\alpha' = \frac{x'}{r'} = \sin \theta$. Si la distancia $z$ es lo suficientemente grande y la región de observación pequeña, entonces podemos aplicar la aproximación vista en el desarrollo de la integral de difracción: $\alpha' \approx \frac{x'}{z'}$. Recordemos que la expresión de la integral fue obtenida haciendo uso por defecto de esta aproximación, pero siempre debemos plantearnos si realmente resulta válida o no para un caso concreto.
+	
+	\esp
+	
+	La función de transmitancia de una abertura rectangular es muy simple (es real, no compleja), con lo cual sustituyendo en la expresión de $U(P)$, y separando las variables en la integración, resolvemos ambas integrales, sustituimos las diferencias de exponenciales por los senos, e introducimos las constantes $a$ y $b$ en los denominadores por conveniencia, quedando la expresión para la amplitud en $P$ y la correspondiente intensidad en $P$ (módulo cuadrado de la amplitud).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aberrec2.png}
+	\end{figure}
+	
+	\esp
+	
+	La intensidad queda entonces como producto de una constante por dos funciones $sinc$ ($\frac{\sin x}{x}$) separadas para los ejes horizontal y vertical.
+	
+	\esp
+	
+	Como ambas son muy similares, vamos a centrarnos en la intensidad en el eje $x'$. La función correspondiente presenta una serie de mínimos nulos cada vez que se anula el seno del numerador, o sea, en:
+	
+	\esp
+	
+	\begin{equation}
+		2a \sin \theta = m\lambda, \quad \text{con } m \text{ un entero no nulo.}
+	\end{equation}
+	
+	\esp
+	
+	Cuando $m = 0$, tenemos el máximo central, el de mayor intensidad, y entre cada dos mínimos hay otra serie de máximos de intensidad decreciente. Para calcular sus posiciones angulares, hacemos nula la derivada de la función $\left(\frac{\sin x}{x}\right)^2$, obteniendo la ecuación:
+	
+	\esp
+	
+	\begin{equation}
+		u = \tan u, \quad \text{con } u = ka'a,
+	\end{equation}
+	
+	\esp
+	
+	con lo cual los máximos estarán en aquellas posiciones en las que se cortan ambas funciones.
+	
+	\esp
+	
+	La gráfica de la figura 3 muestra dichas posiciones, algunas de las cuales tenemos también en la tabla, junto con la intensidad relativa al máximo central del máximo correspondiente. La anchura angular del máximo central será de $\frac{\lambda}{a}$ (distancia entre los dos primeros mínimos). Para determinar la distancia de separación en el plano focal de la lente, necesitamos conocer la distancia focal de la misma.
+	
+	\esp
+	
+	\begin{equation}
+		\alpha' \approx x'/z' \implies \Delta x' = \lambda z'/2a
+	\end{equation}
+	
+	\esp
+	
+	\begin{nota}
+		Supuestamente $z'=f'$, no se porqué, es lo que pone en la diapositiva.
+	\end{nota}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aberrec3.png}
+	\end{figure}
+	
+	\esp
+	
+	Si una de las dimensiones de la abertura rectangular es mucho mayor que la otra (en nuestro caso tomamos $2a \ll 2b$), tenemos una rendija orientada en vertical. Si las dimensiones de un lado de la abertura crecen, el patrón tiende a comprimirse en la dimensión correspondiente, así que si $2b \gg z$ podemos presumir que el patrón en la dirección $y'$ estará muy comprimido cerca del eje, tanto que sea imposible apreciarlo, con lo cual sólo podremos ver la distribución correspondiente a $x'$ que hemos estudiado antes. Vemos un ejemplo obtenido con láser (fuente que ya está colimada de por sí) en figura 4.
+	
+	
 	\printbibliography[title={Bibliografía}]
 \end{document}
