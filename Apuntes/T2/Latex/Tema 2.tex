@@ -553,7 +553,76 @@
 	
 	Esto implica que la imagen de un punto va a ser una mancha circular, como podemos ver en las aplicaciones de simulación de patrones. Obtenemos el radio de dicha mancha como el valor $Z = 3,83$ (primer mínimo), lo que teniendo en cuenta la relación entre $Z$ y $\rho'$ nos da un radio de la mancha de Airy de $1,22\frac{\lambda f'}{D}$, siendo $D$ el \textbf{diámetro} de la abertura difractante (Pupila de Entrada del sistema óptico en su caso). El radio angular de la mancha de Airy sería $\frac{\rho'}{f'}$, o sea, $1,22\frac{\lambda}{D}$.
 	
+	\esp
 	
+	\subsection{Poder resolutivo de los instrumentos ópticos}
+	
+	\subsubsection{Abertura circular}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/res.png}
+	\end{figure}
+	
+	\esp
+	
+	Resulta bastante claro, después de lo dicho en el apartado anterior, que uno de los parámetros de interés para caracterizar un sistema óptico formador de imágenes será su capacidad de separar dos puntos objeto muy próximos entre sí. Definimos entonces el límite de resolución de un sistema óptico como la mínima distancia entre dos objetos puntuales que se ven justamente resueltos (separados) a través de él. Esta distancia puede ser lineal o angular, según el tipo de instrumento de que se trate. Por ejemplo, para un telescopio sería angular, mientras que para un microscopio sería lineal.
+	
+	\esp
+	
+	Ya hemos visto que en el caso de monturas circulares y aun en ausencia de aberraciones, la imagen de un punto va a ser una mancha de Airy. Incluso la formación de imágenes para objetos cercanos puede tratarse con este formalismo basado en la difracción de Fraunhöfer, pues puede siempre construirse un sistema óptico equivalente que trabaje en campo lejano.
+	
+	\esp
+	
+	Dado que el radio de la mancha de Airy es inversamente proporcional al diámetro de la abertura limitante (P.E.), para un sistema óptico limitado sólo por difracción interesaría una P.E. grande, pero debemos recordar que a mayor P.E., también tenemos mayor incidencia de aberraciones geométricas, que aumentan con la abertura del sistema.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/res2.png}
+	\end{figure}
+	
+	\esp
+	
+	Para completar la definición de límite de resolución, necesitamos un criterio que determine cuándo vamos a considerar que dos puntos imagen están justamente resueltos por el sistema. Como vemos en la foto de la parte izquierda de la figura 6, tenemos dos manchas de Airy que pueden estar parcialmente superpuestas y sin embargo somos aún capaz de separar ambos puntos imagen. Uno de los criterios más utilizados es el de Rayleigh, que establece que dos puntos imagen estarán justamente resueltos cuando el máximo central de la mancha de Airy de uno de ellos coincida con el primer mínimo de la mancha de Airy del otro. En la parte derecha de la figura 6, se muestran los perfiles individuales y el perfil suma (intensidad observada) para tres casos distintos: puntos imagen perfectamente separados, puntos justamente resueltos según el criterio de Rayleigh (obsérvese la pequeña depresión en la cumbre del máximo global) y dos puntos no resueltos según el criterio de Rayleigh. La distancia angular entre los dos máximos de las imágenes será entonces igual al radio angular de la mancha de Airy, que ya hemos calculado en el apartado anterior.
+	
+	\esp
+	
+	\begin{nota}
+		El criterio que más se va a utilizar es el criterio de Rayleigh
+	\end{nota}
+	
+	\esp
+	
+	Obviamente, un sistema será tanto mejor cuanto menor sea este radio angular mínimo, puesto que será capaz de resolver puntos objeto situados más próximos entre sí.
+	
+	\esp
+	
+	En el caso de que estemos hablando de instrumentos para observación visual o subjetivos, debemos tener en cuenta que el último integrante del sistema óptico va a ser el ojo humano, con lo cual hay que conocer también sus límites de resolución. Dado que la P.E. del ojo es el iris, resulta claro que su tamaño va a depender de las condiciones de visión, y por tanto también el límite de resolución angular del ojo. Usualmente, se considera este límite como un minuto de arco, para un tamaño de pupila aproximado de unos 2 mm, por tanto en condiciones de iluminación alta (el tamaño de la pupila puede variar entre $2$ y $8$ $mm$ en función de la cantidad de luz recibida).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/res3.png}
+	\end{figure}
+	
+	\esp
+	
+	Igual que hemos visto para el ojo, en el caso de un instrumento con varias lentes, el límite de resolución lo marca la lente con peor resolución, puesto que las otras nunca van a ser capaces de bajar el límite de resolución de dicha lente. Así, lo que no resuelva un objetivo de telescopio no va a ser capaz de resolverlo el ocular, en todo caso puede incluso empeorar el límite de resolución del sistema.
+	
+	\esp
+	
+	En el caso de un objetivo de microscopio, con iluminación incoherente y si satisface la condición de Abbe, obtenemos una resolución (por extensión se llama también poder resolutivo, aunque la relación sea inversa con la resolución lineal) de $0,61\lambda / A.N.$. Para aumentar la $A.N.$ y por tanto bajar $r$ (mayor poder resolutivo), se emplean en ocasiones objetivos cuyo espacio objeto no es aire sino un aceite especial de alto índice de refracción. Se llaman objetivos de inmersión. Otra posible estrategia es utilizar longitudes de onda muy pequeñas y cambiar de tecnología de formación de imagen, como se hace en los microscopios electrónicos.
+	
+	\esp
+	
+	En el caso de un telescopio, dado que opera con objeto e imagen en el infinito, el límite de resolución es angular y viene dado según el criterio de Rayleigh por $1,22\lambda/D$, siendo $D$ el diámetro del objetivo (generalmente éste actúa como P.E.).
+	
+	\esp
+	
+	En general, para utilizar de forma práctica el dato de límite de resolución, debemos tener en cuenta que dos objetos separados una distancia (angular o lineal) menor que el límite de resolución del sistema no se verán resueltos, mientras que si su separación supera el límite de resolución, el sistema óptico sí que podrá resolverlos.
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
