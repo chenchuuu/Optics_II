@@ -432,6 +432,8 @@
 
 	\subsection{Difracción de Fraunhöfer para algunas aberturas}
 	
+	\subsubsection{Abertura cuadrada}
+	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.7\textwidth]{IMG/aberrec.png}
@@ -493,7 +495,7 @@
 	\esp
 	
 	\begin{nota}
-		Supuestamente $z'=f'$, no se porqué, es lo que pone en la diapositiva.
+		$z'=\infty$ para cuando calculamos F, pero para el resto de los cálculos usaremos la distancia focal imagen $f'$. Esto se debe a que la luz viene del infinito y lo único que hace la lente colector es recolectar la luz, podemos considerar como que la luz viene directamente del infinito a mi plano de observación.
 	\end{nota}
 	
 	\esp
@@ -505,7 +507,52 @@
 	
 	\esp
 	
+	\noindent \textbf{Caso particular: Rendija}
+	
+	\esp
+	
 	Si una de las dimensiones de la abertura rectangular es mucho mayor que la otra (en nuestro caso tomamos $2a \ll 2b$), tenemos una rendija orientada en vertical. Si las dimensiones de un lado de la abertura crecen, el patrón tiende a comprimirse en la dimensión correspondiente, así que si $2b \gg z$ podemos presumir que el patrón en la dirección $y'$ estará muy comprimido cerca del eje, tanto que sea imposible apreciarlo, con lo cual sólo podremos ver la distribución correspondiente a $x'$ que hemos estudiado antes. Vemos un ejemplo obtenido con láser (fuente que ya está colimada de por sí) en figura 4.
+	
+	\esp
+	
+	\noindent Del \textbf{Teorema de Babinet} sacamos que las aperturas y obstáculos con la misma forma difracta de la misma forma, esto es que podemos usar las mismas fórmulas.
+	
+	\subsubsection{Abertura circular}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abercir.png}
+	\end{figure}
+	
+	\esp
+	
+	En el caso de una abertura circular, consideramos de nuevo iluminación con una fuente \textbf{colimada} situada en el eje, y tomamos coordenadas polares en los planos de la abertura y de observación. La función de transmitancia será de nuevo real y muy simple, y al sustituir en la expresión para la amplitud tendremos que tener en cuenta la transformación de coordenadas polares de $\xi, \eta$ a $\rho, \Psi$.
+	
+	\esp
+	
+	\begin{nota}
+		Al igual que antes, la luz colimada provoca que $\alpha = \beta = 0$
+	\end{nota}
+	
+	\esp
+	
+	Si nos centramos en el eje $\xi$ (esto equivale a tomar $\eta = 0$ en el integrando), lo que está justificado porque tenemos simetría circular, tendremos una integral doble en función de $\rho, \rho'$ y $\Psi$ con límites de $0$ a $2\pi$ y de $0$ a $R$ (radio de la abertura circular). Para resolver esta integral, necesitamos acudir a las funciones de Bessel de orden cero y de orden uno. Con la función de Bessel de orden cero, resolvemos la integral en $\Psi$, y con un cambio de variable adecuado ($Z = \frac{k\rho' R}{f'}$) y la función de Bessel de orden $1$ resolvemos la segunda integral. Agrupamos constantes, y obtenemos la expresión para la distribución de intensidad, que queda en función de $\left(\frac{2J_1(Z)}{Z}\right)^2$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abercir2.png}
+	\end{figure}
+	
+	\esp
+	
+	La intensidad en el eje $x'$ relativa a la del máximo central será entonces directamente $\left( \frac{2J_1(Z)}{Z} \right)^2$. El aspecto que presenta la distribución podemos verlo en la figura 5, junto con un perfil en altura de la intensidad. De nuevo, encontramos un máximo central y una sucesión simétrica de mínimos y máximos (en este caso, con simetría radial). En el eje $x'$, podemos localizar los valores de $Z$ para cualquier extremo de intensidad utilizando las tablas correspondientes para las funciones de Bessel, o cualquier programa de cálculo matemático que tenga estas funciones implementadas. La figura de difracción, denominada \textbf{Mancha de Airy}, aparece (con más o menos visibilidad) cada vez que un sistema óptico con pupila circular forma la imagen de un punto, aun cuando se tratase de un sistema óptico perfecto (sin aberraciones), puesto que la mancha de Airy está causada por difracción.
+	
+	\esp
+	
+	Esto implica que la imagen de un punto va a ser una mancha circular, como podemos ver en las aplicaciones de simulación de patrones. Obtenemos el radio de dicha mancha como el valor $Z = 3,83$ (primer mínimo), lo que teniendo en cuenta la relación entre $Z$ y $\rho'$ nos da un radio de la mancha de Airy de $1,22\frac{\lambda f'}{D}$, siendo $D$ el \textbf{diámetro} de la abertura difractante (Pupila de Entrada del sistema óptico en su caso). El radio angular de la mancha de Airy sería $\frac{\rho'}{f'}$, o sea, $1,22\frac{\lambda}{D}$.
+	
 	
 	
 	\printbibliography[title={Bibliografía}]
