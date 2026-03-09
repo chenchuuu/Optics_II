@@ -610,7 +610,25 @@
 	
 	\esp
 	
-	Igual que hemos visto para el ojo, en el caso de un instrumento con varias lentes, el límite de resolución lo marca la lente con peor resolución, puesto que las otras nunca van a ser capaces de bajar el límite de resolución de dicha lente. Así, lo que no resuelva un objetivo de telescopio no va a ser capaz de resolverlo el ocular, en todo caso puede incluso empeorar el límite de resolución del sistema.
+	Igual que hemos visto para el ojo, en el caso de un instrumento con varias lentes, el límite de resolución lo marca la lente con peor resolución, puesto que las otras nunca van a ser capaces de bajar el límite de resolución de dicha lente. Así, lo que no resuelva un objetivo de telescopio no va a ser capaz de resolverlo el ocular, en todo caso puede incluso empeorar el límite de resolución del sistema. El ojo se estima que tiene una resolución de un minuto $60"$, para tener en cuenta esto, usamos $\theta_o = 60"/ \Gamma '$. Normalmente nos puede dar en los problemas $A\times B$ donde A indica $\Gamma '$ y B indica el diámetro en \textbf{milímetro}. (No se si se usa solo en telescopio o no).
+	
+	\esp
+	
+	\noindent \textbf{Ejemplo}. Calcula el poder separador de un anteojo $3\times 30$.
+	
+	\esp
+	
+	\begin{equation*}
+		\theta_D = 120"/30= 4"
+	\end{equation*}
+	
+	\esp
+	
+	\begin{equation*}
+		\theta_o = 60"/3 = 20"
+	\end{equation*}
+	
+	La poder resolutivo del sistema es el que posea el peor poder resolutivo en el sistema, que en este caso sería el ojo, y tendríamos $\theta = 20"$.
 	
 	\esp
 	
@@ -618,11 +636,73 @@
 	
 	\esp
 	
-	En el caso de un telescopio, dado que opera con objeto e imagen en el infinito, el límite de resolución es angular y viene dado según el criterio de Rayleigh por $1,22\lambda/D$, siendo $D$ el diámetro del objetivo (generalmente éste actúa como P.E.).
+	En el caso de un telescopio, dado que opera con objeto e imagen en el infinito, el límite de resolución es angular y viene dado según el criterio de Rayleigh por $1,22\lambda/D$, siendo $D$ el diámetro del objetivo (generalmente éste actúa como P.E.). Si fijamos la longitud de onda en $477$ nm, podemos aproximar la resolución $\theta \approx 120"/D(mm)$. En RAW se muestra cómo sería si se hubiese usado el criterio de Barlow.
 	
 	\esp
 	
 	En general, para utilizar de forma práctica el dato de límite de resolución, debemos tener en cuenta que dos objetos separados una distancia (angular o lineal) menor que el límite de resolución del sistema no se verán resueltos, mientras que si su separación supera el límite de resolución, el sistema óptico sí que podrá resolverlos.
+	
+	\esp
+	
+	\subsection{Difraccion por doble rendija y redes de difracción}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/drendija.png}
+	\end{figure}
+	
+	\esp
+	
+	Seguimos ahora con la caracterización de patrones de difracción de Fraunhofer para aberturas típicas. Antes hemos visto la forma del patrón para una rendija (función $\text{sinc}$ cuadrado, intensidad distribuida en el eje perpendicular a la rendija). Vamos a tratar ahora el caso de la doble rendija, que ya nos suena del tema de interferencias. Supongamos entonces una abertura formada por dos rendijas iguales de anchura $2a$ y separadas una distancia $2d$, iluminadas por un haz de luz que entra paralelo al eje y colimado. El patrón lo recogemos como siempre en el plano focal imagen de una lente convergente.
+	
+	\esp
+	
+	Para calcular la amplitud difractada en el plano de observación, deberemos considerar la contribución de las dos rendijas, que en nuestro caso se diferencian sólo en su posición. Si tomamos el origen de nuestro sistema de referencia en el plano de la abertura en el centro de una de las rendijas, tendremos la contribución de dicha rendija (límites de integración en $x$ entre $-a$ y $a$) más la de la otra rendija desplazada $2d$ con respecto a la primera, con lo cual bastará sumar $2d$ para expresar la coordenada $x$ de la segunda rendija en nuestro sistema de referencia. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/drendija2.png}
+	\end{figure}
+	
+	\esp
+	
+	Sacamos factor común la integral entre $-a$ y $a$, dejando las constantes fuera, y calculamos la intensidad como el módulo cuadrado de la amplitud. Para esto, operamos sobre la parte que depende de $2d$ (utilizando la relación trigonométrica $\cos 2A = 2 \cos^2(A) - 1$) y obtenemos finalmente la expresión para la intensidad en $P$, como producto de un factor $\cos^2$ que depende de $d$ y otro tipo $\text{sinc}$ que depende de $a$, y que reconocemos claramente como la distribución de intensidad difractada correspondiente a una sola rendija.
+	
+	\esp
+	
+	Dado que $a < d$, este segundo factor tendrá menor frecuencia que el primero, por lo que actuará como una envolvente del mismo. En cuanto al primer factor, si recordamos la expresión compacta para la intensidad resultante de interferencia por Franjas de Young, es justo el resultado obtenido, con lo cual tenemos un patrón interferencial convencional de franjas de Young modulado por una envolvente difraccional, que hace esencialmente que se vaya atenuando la intensidad en los bordes y en determinadas zonas del patrón.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/drendija3.png}
+	\end{figure}
+	
+	\esp
+	
+	En la figura, vemos la comparación entre el patrón difraccional de una sola rendija (parte superior) y el de dos rendijas (parte inferior). Los máximos y mínimos del primer factor se corresponden con la ecuación de interferencias en términos de diferencias de camino óptico (basta acudir al tema 7 de Óptica I para comprobarlo), y del segundo factor también conocemos sus máximos y mínimos, que se recuerdan en la ecuación.
+	
+	\esp
+	
+	El número de franjas incluidas dentro del máximo central del segundo factor (\textit{envolvente difraccional}) depende claramente de la relación entre $a$ y $d$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/drendija4.png}
+	\end{figure}
+	
+	\esp
+	
+	No está de más mencionar aquí brevemente que para luz no monocromática, obtendríamos la superposición de los diferentes patrones, y por tanto, bordes coloreados para la envolvente y los máximos dentro de la misma, como se observa en cualquier experiencia de Young con luz blanca. Así enlazamos con el siguiente apartado, en el que nos ocupamos de un dispositivo en el que la dispersión de patrones con luz no monocromática es esencial.
+	
+	
+	
+	
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
