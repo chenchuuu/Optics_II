@@ -683,6 +683,12 @@
 	
 	\esp
 	
+	\begin{nota}
+		Las interferencias tiena la misma dirección que las rendijas. El efecto de la difracción es perpendicular a las rendijas.
+	\end{nota}
+	
+	\esp
+	
 	En la figura, vemos la comparación entre el patrón difraccional de una sola rendija (parte superior) y el de dos rendijas (parte inferior). Los máximos y mínimos del primer factor se corresponden con la ecuación de interferencias en términos de diferencias de camino óptico (basta acudir al tema 7 de Óptica I para comprobarlo), y del segundo factor también conocemos sus máximos y mínimos, que se recuerdan en la ecuación.
 	
 	\esp
@@ -700,9 +706,97 @@
 	
 	No está de más mencionar aquí brevemente que para luz no monocromática, obtendríamos la superposición de los diferentes patrones, y por tanto, bordes coloreados para la envolvente y los máximos dentro de la misma, como se observa en cualquier experiencia de Young con luz blanca. Así enlazamos con el siguiente apartado, en el que nos ocupamos de un dispositivo en el que la dispersión de patrones con luz no monocromática es esencial.
 	
+	\subsubsection{Redes de difracción}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes.png}
+	\end{figure}
 	
+	\esp
 	
+	Después de haber analizado la difracción de Fraunhofer por una doble rendija, damos un paso más y veremos a continuación el patrón generado por un conjunto de $N$ rendijas iguales y paralelas, de anchura $2a$ y equiespaciadas una distancia $2d$, iluminadas normalmente por un haz colimado.
+	
+	\esp
+	
+	Como siempre, recogemos la configuración en el plano focal imagen de una lente convergente. Para calcular la amplitud resultante, debemos sumar las contribuciones de cada una de las rendijas, tomando como origen de nuestro sistema de coordenadas una de ellas y realizando las sucesivas traslaciones en el plano para obtener las posiciones de cada rendija según nuestro sistema de referencia. Así, para la segunda rendija tendremos que sumar $2d$, para la tercera $4d$, y así sucesivamente hasta la última, $2(N - 1)d$.
+	
+	\esp
+	
+	Escribimos la suma de integrales, y además, como $2a \ll 2b$ para cada rendija, consideramos $\beta' = 0$ y calculamos el patrón en el eje $x_0$. Sacando factor común la integral entre $-a$ y $a$ con la coordenada $x_1$ (que corresponde, como ya sabemos, al patrón de una sola rendija, y que actuará como envolvente), tenemos la suma de los $N$ primeros términos de una serie geométrica de razón $e^{-ik2d \sin \theta}$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes2.png}
+	\end{figure}
+	
+	\esp
+	
+	Para calcular la intensidad, necesitamos el módulo cuadrado del primer factor, que resulta ser (utilizando la relación trigonométrica $\cos 2A = 2 \cos^2(A) - 1$) un cociente de senos, el numerador incluyendo un factor $Nkd \sin \theta$ y el denominador $kd \sin \theta$. Tenemos entonces de nuevo la intensidad del patrón de difracción de una sola rendija multiplicada por una función dependiente ahora del número de rendijas. Dado que $Nd \gg a$, el segundo factor modula de nuevo al primero, que tiene mucha mayor frecuencia. Tenemos entonces el segundo factor como envolvente del primero (que por su elevada frecuencia presentará una serie de rizos, como puede observarse en la figura 8). Este primer factor presenta indeterminación cuando se anulan a la vez el numerador y el denominador. Si $\sin \theta = 0$, también ocurre esta indeterminación, que en el límite converge hacia el valor $N^2$ (máximo central). En cada indeterminación, la función presenta un nuevo máximo, conformando la serie de los llamados \textbf{máximos principales} del patrón de la red, que se obtienen cuando $\sin \theta = m \frac{\lambda}{2d}$. Esta expresión se denomina usualmente \textbf{Ecuación de la red}.
+	
+	\esp
+	
+	Además, como vemos en la figura 8, hay una serie de mínimos correspondiente a nulos del numerador 
+	
+	\esp
+	
+	\begin{equation}
+		\sin \theta_m = m \frac{\lambda}{2Nd}.
+	\end{equation}
+	
+	\esp
+	
+	Entre cada dos máximos principales, hay $N - 1$ mínimos, y además entre cada dos de estos mínimos intermedios hay un máximo, que podemos suponer que ocupa la posición angular intermedia entre dos mínimos (máximos secundarios). La intensidad de los máximos principales queda como una constante multiplicada por $N^2$ y por el factor $\text{sinc}^2$ de la envolvente, lo que se puede deducir aplicando dos veces la regla de L'Hôpital para determinar el límite correspondiente cuando el denominador de la función tiende a cero.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes3.png}
+	\end{figure}
+	
+	\esp
+	
+	El ancho angular del máximo principal central es la distancia entre los dos primeros mínimos, o sea, $\frac{\lambda}{Nd}$. Vemos entonces que a medida que aumenta el número de rendijas, los máximos principales se hacen más intensos, y también son más estrechos. Podemos comprobarlo con la serie de patrones correspondientes a 1, 2 y 5 rendijas de las figuras. Como en la práctica el número de rendijas que se talla es normalmente muy elevado, el patrón que nos da este dispositivo presenta como visibles los máximos principales, y los secundarios tienen tan poca intensidad que no se aprecian. En la figura 9, podemos ver la distribución de máximos principales generada al iluminar una red de difracción con un láser de diodo.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes4.png}
+	\end{figure}
+	
+	\esp
+	
+	En las redes de difracción, la posición angular de los máximos principales en la distribución de intensidad correspondiente viene dada por la ecuación que hemos visto, (\textit{ecuación de la red}). Si $2d$ es la distancia entre cada dos líneas (las rendijas son tan finas que deben tallarse con un diamante acoplado a un dispositivo de alta precisión, y por su escaso grosor las llamamos líneas), entonces el factor $\frac{1}{2d}$ nos da el número de líneas por unidad de longitud de la red (normalmente $mm$), y se denomina \textit{constante de red}.
+	
+	\esp
+	
+	Las redes que tenemos en el laboratorio suelen ser de 600 líneas/mm, aunque tenemos varias con otros valores de constante de red.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes5.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Dispersión angular y lineal de la red}. Hasta ahora hemos visto las redes de difracción como un conjunto de rendijas, pero no nos hemos planteado para qué se utilizan estos dispositivos. Para ello, necesitamos considerar su comportamiento en el caso de recibir luz no monocromática. Viendo la ecuación de la red, resulta claro que va a existir dispersión cromática, puesto que la posición de los máximos principales depende de la longitud de onda. Precisamente para esto sirven las redes de difracción: para producir dispersión cromática de los haces incidentes y estudiar el espectro resultante. La dispersión producida por la red es inversa a la producida por el prisma, en el sentido de que si recordamos la óptica
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes6.png}
+	\end{figure}
+	
+	\esp
+	
+	Esto nos ayuda también a reconocer los fenómenos con origen refractivo en la naturaleza y a distinguirlos de los que tienen origen difraccional. Por ejemplo, los halos que podemos observar con una lente empañada mirando a una fuente lejana son difraccionales, mientras que las coronas que a veces parecen rodear al sol en días con nubes delgadas son refractivas. A partir de la ecuación de la red, si suponemos que tenemos dos longitudes de onda incidentes muy próximas, $\lambda$ y $\lambda + d\lambda$, podemos calcular la dispersión angular de la red, que como vemos depende del orden difraccional $m$ y de la constante de red.
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
