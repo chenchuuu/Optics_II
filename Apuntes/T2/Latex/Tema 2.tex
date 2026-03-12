@@ -798,5 +798,155 @@
 	
 	Esto nos ayuda también a reconocer los fenómenos con origen refractivo en la naturaleza y a distinguirlos de los que tienen origen difraccional. Por ejemplo, los halos que podemos observar con una lente empañada mirando a una fuente lejana son difraccionales, mientras que las coronas que a veces parecen rodear al sol en días con nubes delgadas son refractivas. A partir de la ecuación de la red, si suponemos que tenemos dos longitudes de onda incidentes muy próximas, $\lambda$ y $\lambda + d\lambda$, podemos calcular la dispersión angular de la red, que como vemos depende del orden difraccional $m$ y de la constante de red.
 	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/redes7.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{nota}
+		Las redes y la prisma separan los las ondas, pero no lo hacen de la misma forma.
+	\end{nota}
+	
+	\section{Difracción de campo cercano. Ejemplos de patrones con diferentes aberturas}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/fresnel.png}
+	\end{figure}
+	
+	\esp
+	
+	Como hemos descrito en secciones anteriores, el número de Fresnel es un criterio para determinar si en general estamos en condiciones de campo cercano o campo lejano. En la experiencia de clase, buscamos las condiciones necesarias para que se produzca difracción de campo cercano con diferentes aberturas: actuamos sobre el haz mediante un objetivo de microscopio, creando una fuente aproximadamente puntual; colocamos la abertura bastante cerca de dicha fuente, y recogemos el patrón no demasiado lejos de la abertura. Aún así, podríamos estar en campo lejano si la abertura fuese muy pequeña, por lo que es interesante estimar al menos el número de Fresnel que obtenemos, si conocemos las dimensiones de la abertura. Es importante señalar que, en el caso de fuente no colimada y situada a una distancia $z_s$ de la abertura, la expresión utilizada para calcular el número de Fresnel se debe modificar (como lo haría también el factor equivalente en el integrando de la integral de difracción), y quedaría de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		F = \frac{a^2(z + z_s)}{\lambda z z_s}
+	\end{equation}
+	
+	\esp
+	
+	\noindent donde $z$ sería la distancia entre los planos de la abertura y la pantalla de observación del patrón.
+	
+	\esp
+	
+	Los patrones de campo cercano se caracterizan por la aparición de franjas claras y oscuras alternas siguiendo la forma de la abertura u obstáculo (en cierto sentido, se formarían \textit{sombras difractivas}). Son por tanto muy diferentes de los patrones de campo lejano que conocemos para las aberturas típicas o para el borde de una pantalla opaca. En general, lo que se pretende con esta experiencia de clase es que se sepa diferenciar bien entre ambos tipos de patrones.
+
+	\esp
+	
+	Pero también es importante saber cómo determinar la expresión para la amplitud e intensidad del patrón de difracción en campo cercano para algunas aberturas significativas. Recordamos entonces la integral de campo (amplitud) vista en la primera parte del tema.
+	
+	\esp
+	
+	Vamos a ver cómo resolver el caso de la abertura cuadrada, y comentaremos otros patrones que utilizan un sistema cartesiano de coordenadas en la resolución de la integral de campo. Nos conviene más utilizar para la integral de campo la expresión en la que aún no se han desarrollado los cuadrados de las diferencias $(\xi - x')$ y $(\eta - y')$. La integral es perfectamente separable en las coordenadas $x'$ y $y'$. Para poder resolver ambas integrales, necesitamos introducir un cambio de variable: pasamos entonces a las coordenadas $u = \sqrt{\frac{k}{\pi z'}}(\xi - x')$, y $v = \sqrt{\frac{k}{\pi z'}}(\eta - y')$. Con estos cambios de variable, la integral de campo (amplitud) queda entonces en función del producto de dos integrales de solución conocida y que se denominan \textit{integrales de Fresnel}. La parte real de la integral de Fresnel se denomina usualmente función $C$, y la parte imaginaria, función $S$. La solución para el campo queda entonces en función de $C$ y $S$ evaluadas en los límites de la abertura vista desde el punto correspondiente del plano de observación (como queda reflejado en la expresión de los cambios de variable vista antes).
+	
+	\esp
+	
+	La integral de campo queda entonces en función de los factores $A$ y $B$, que a su vez dependen de las funciones $C$ y $S$ en los límites de la abertura. Conociendo la solución para la integral de campo, es fácil determinar la distribución de intensidad en el plano de observación.
+	
+	\begin{nota}
+		El procedimiento está en RAW
+	\end{nota}
+	
+	\esp
+	
+	\subsection{Curva espiral de Cornu}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cornu.png}
+	\end{figure}
+	
+	\esp
+	
+	Para visualizar la distribución de intensidad, suele utilizarse un método gráfico que se basa en la curva \textit{espiral de Cornu}, que representa las funciones $C$ y $S$. En esta curva, la longitud de la cuerda $s$ es el valor de la coordenada $u$ o $v$ respectivos. Así, tomando las longitudes de cuerda apropiadas, pueden determinarse los extremos del vector $A$ o $B$ correspondientes, cuyos módulos cuadrados nos permiten calcular la intensidad relativa a propagación libre en cada punto del plano de observación. 
+	
+	\esp
+	
+	Si utilizamos como referencia la figura de la espiral de Cornu, en la que se representan los valores de las partes real e imaginaria de las integrales de Fresnel, y el valor de $u$ o $v$ se lee como la longitud a lo largo de la curva, podremos entonces representar en la figura los extremos de los vectores $A$ o $B$ y razonar cómo se comportarían si vamos desplazándonos en el plano de observación (o sea, cambiando el valor de $z'$), o bien si cambiamos las dimensiones de la abertura. Esto hace que la espiral de Cornu sea una herramienta bastante intuitiva como forma de visualización de patrones de difracción en campo cercano.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cornu2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{importante}
+		Los valores de $u$ y $u$ se calculan fijando un punto de observación, si queremos conocer la difracción en otro punto debemos calcular nuevamente todo.
+	\end{importante}
+	
+	\esp
+	
+	En el caso de propagación sin objeto difractante (campo libre), los extremos correspondientes serían los límites de $C$ y $S$ en el infinito, que son los puntos $(0,5; 0,5)$ y $(-0,5; -0,5)$. Dado que la intensidad sería en este caso un cuarto del producto de los módulos de $A$ y $B$ al cuadrado, y dichos módulos valen 2, obtenemos que la intensidad relativa en campo libre sería la unidad, lo que implica que la intensidad absoluta sería entonces la intensidad total de la onda $I_0$.
+	
+	\subsubsection{Borde (pantalla opaca semi-infinita)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cornu3.png}
+	\end{figure}
+	
+	\esp
+	
+	Vemos también como ejemplos adicionales los patrones de difracción de campo cercano correspondientes a una pantalla opaca semi-infinita, a una rendija y a un hilo opaco. En el caso de campo cercano, resulta que la \textbf{distribución de intensidad} correspondiente a un objeto \textbf{difractante} y a su complementario \textbf{no es similar}, como sucede para campo lejano y como explica el principio de Babinet. Con la ayuda de la espiral de Cornu, vemos que es fácil predecir el comportamiento de los patrones de intensidad de algunas aberturas típicas (o sus obstáculos complementarios) y las oscilaciones que aparecen.
+	
+	\esp
+	
+	Para caracterizar cualitativamente el patrón, tendremos que movernos a diferentes puntos del plano de observación. En el caso de la pantalla opaca semi-infinita, al colocar la pantalla semiopaca, lo que hacemos en nuestro caso es que deje de contribuir una de las mitades del frente (no pasa porque está la pantalla opaca). Entonces, es como si estuviéramos trabajando con una abertura de dimensión infinita que ocupa un semiplano. Si situamos el punto de observación justo a la altura del filo (límite de la zona de sombra geométrica), sobre la espiral de Cornu nos situamos en el centro de la figura. Como sólo contribuye la mitad superior del frente, la amplitud resultante será la longitud del vector desde el punto de inicio hasta el límite superior $(0,5; 0,5)$. Es fácil ver que esto implica que llega a nuestro punto de observación la mitad de la amplitud que para propagación libre, y por tanto la intensidad resultante es un cuarto de la obtenida en propagación libre. Si nos movemos ahora desplazando $P$ hacia el interior de la zona de sombra geométrica, la variable $u_1$ no se modifica, pero la $v$ va desplazando el punto de origen hacia valores positivos, con lo cual el punto origen en la espiral de Cornu también se desplaza por la zona superior de la curva. Como nuestro punto final sigue siendo siempre $(0,5; 0,5)$, observamos que la amplitud resultante va a ser menor que en el caso anterior, y que conforme nos vayamos adentrando en la zona de sombra, va disminuyendo progresivamente. Así que ya sabemos que en el borde de la sombra geométrica obtenemos un cuarto de la intensidad de propagación libre, y que la intensidad disminuye progresivamente conforme nos adentramos en la zona de sombra. Ya tenemos una mitad del patrón, pero queda la otra. ¿Qué pasa si nos desplazamos hacia la zona de luz? Si nos imaginamos la abertura como el filo de un balcón y que vamos desplazando nuestro ojo situado enfrente del mismo, vemos inmediatamente que conforme subimos en la zona de luz (por encima de la barandilla del balcón), vamos viendo más luz procedente de la parte inferior del frente de ondas, y por tanto nuestro punto de inicio en la espiral de Cornu pasa a la zona correspondiente a la mitad inferior del frente. Entonces crece bastante la amplitud resultante, y luego conforme nos vamos moviendo en las circunvoluciones de la espiral, la amplitud va pasando por máximos y mínimos alternos. Así, la otra mitad del patrón estará formada por bandas alternas claras y oscuras, oscilando en torno al valor de intensidad en campo libre.
+	
+	\subsubsection{Hilo (objeto opaco de extensión infinita)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cornu4.png}
+	\end{figure}
+	
+	\esp
+	
+	En el caso de difracción por un hilo opaco, tendríamos que construir un vector $A$ o $B$ formado por dos partes, que resultan de excluir una zona de contribución del frente que se corresponde con las coordenadas del hilo en las variables $u$ y $v$. En términos de cálculo del patrón, esto es equivalente a descomponer la integral de campo cercano en dos partes, con límites desde $-\infty$ hasta $-a$ y también desde $a$ hasta $+\infty$ (en términos de cambios de variable, serían desde $-0,5$ hasta $u_1$ y desde $u_1$ hasta $+0,5$). Luego, el módulo cuadrado del vector $A$ o $B$ sería la suma de los módulos cuadrados de cada una de las dos partes. Vemos entonces que hay también fluctuaciones de intensidad según nos movemos en el plano de observación para los obstáculos.
+	
+	\subsubsection{ Rendija (complementaria del hilo)}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cornu5.png}
+	\end{figure}
+	
+	\esp
+	
+	Es quizá más fácil visualizar qué sucede con la distribución de intensidad en el caso de la rendija (complementaria del hilo). En este caso, el vector $A$ o $B$ correspondiente sería sólo el delimitado por los valores de $u$ y $v$, y resulta fácil ver cómo van apareciendo más o menos oscilaciones según las dimensiones iniciales de la abertura, al moverse el punto de observación sobre el plano correspondiente. En concreto, puede observarse que el número de lóbulos que aparece en el perfil de intensidad se corresponde aproximadamente con el valor de $N$ (número de Fresnel), para $N > 1$ (condiciones de campo cercano).
+	
+	\esp
+	
+	En el caso de abertura muy pequeña ($N < 1$), vemos cómo el efecto es el de intensidad máxima en el centro y luego, conforme nos vamos moviendo en la espiral de Cornu, se acercan los puntos inicial y final del vector $A$ o $B$ correspondiente, y por tanto disminuye progresivamente la intensidad, con algunas oscilaciones. Esto se parecería al patrón de campo lejano o de Fraunhöfer discutido en secciones anteriores.
+	
+	\esp
+	
+	\subsubsection{Abertura circular}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/cornu6.png}
+	\end{figure}
+	
+	\esp
+	
+	Para el caso de abertura circular, no vamos a describir en detalle cómo se determinaría el patrón por falta de tiempo, pero sí comentamos que habría que utilizar coordenadas polares en vez de cartesianas, y que el comportamiento de los patrones de difracción en campo cercano es similar (pero con simetría circular) al observado en los ejemplos anteriores, con un número de oscilaciones o anillos de intensidad que depende del valor del número de Fresnel y de la distancia de la fuente al plano del objeto también. 
+	
+	\esp
+	
+	Observamos que cuando el número de Fresnel es cercano a par, el centro de la figura de difracción es oscuro, y cuando es cercano a impar, el centro es brillante. Este extremo lo explicó Fresnel mediante una construcción denominada \textit{zonas semiperiódicas}, que fue una de las primeras explicaciones teóricas bastante completas para los patrones de difracción. 
+	
+	\esp
+	
+	Para el obstáculo circular, sin embargo, el centro estaría siempre iluminado, ya que en la figura tendríamos que unir el punto $O'_s$ con el punto que marca el final del obstáculo circular, y siempre habría algo de intensidad resultante (salvo que el obstáculo fuese muy grande, en cuyo caso no sería observable). Este punto luminoso justo en el centro de la zona de sombra geométrica del obstáculo circular se conoce como \textbf{Punto de Poisson}. 
+	
 	\printbibliography[title={Bibliografía}]
 \end{document}
