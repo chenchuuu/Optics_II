@@ -1,0 +1,42 @@
+# --- Archivos de JetBrains (CLion y PyCharm) ---
+.idea/
+cmake-build-*/
+*.iws
+*.iml
+out/
+
+# --- Archivos específicos de TeXstudio ---
+*.bak
+*.undo
+*.txsscfg
+texstudio_*.txss
+
+# --- Archivos auxiliares de LaTeX (Fundamentales) ---
+*.aux
+*.log
+*.toc
+*.out
+*.gz
+*.pdfsync
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.pdf
+
+# --- Bibliografía y Citaciones ---
+*.bbl
+*.blg
+*-blx.bib
+*.run.xml
+*.bcf
+
+# --- Otros paquetes (TikZ, Listings, etc.) ---
+*.makefile
+*.figlist
+*.pdfview
+
+# --- Python (Pycharm y Entornos) ---
+__pycache__/
+*.py[cod]
+venv/
+.env
