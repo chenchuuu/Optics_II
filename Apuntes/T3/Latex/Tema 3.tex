@@ -378,6 +378,171 @@
 	\esp
 	
 	donde $V_g(x_i, y_i) = \frac{1}{\beta} V_o \left( \frac{-x_i}{\beta}, \frac{-y_i}{\beta} \right)$. Por tanto, cuando se introduzcan los efectos de la difracción, la imagen dejará de ser una réplica exacta del objeto como consecuencia del ancho de banda no nulo de la respuesta impulso del sistema. Esto provocará que se atenúen los detalles del objeto con la correspondiente pérdida de fidelidad entre éste y su imagen.
-
+	
+	\subsection{La lente como transformada de Fourier}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/transformada.png}
+	\end{figure}
+	
+	\esp
+	
+	Vamos a ver en este apartado cómo la lente puede hacer Transformadas de Fourier literalmente a la velocidad de la luz. Cuando el objeto está colocado en el plano focal objeto de la lente, veremos cómo se forma en el plano focal imagen la distribución de intensidad correspondiente al módulo cuadrado de la Transformada de Fourier de la distribución objeto.
+	
+	\esp
+	
+	Vemos primero como caso ilustrativo lo que sucede cuando tenemos una transparencia objeto colocada pegada a la lente, y queremos propagar en el espacio imagen hasta el plano focal imagen o $F'$. Por simplificar, consideramos que el efecto de la lente sería simplemente introducir el factor cuadrático $e^{i \frac{k}{2f'} (x^2 + y^2)}$ dentro de la integral de cálculo de la distribución de amplitud en el plano de observación. Entonces, propagamos difraccionalmente en campo cercano un haz colimado que encuentra a la transparencia objeto $V_o$ en su camino al llegar al plano $V_L$, y luego va al plano imagen. Parte de este factor cuadrático de propagación hasta el plano $F'$ se cancela con el de la función transmitancia de la lente, y se obtiene al final que en dicho plano tendríamos una distribución de amplitud que es la correspondiente a la Transformada de Fourier de la distribución objeto, multiplicada por un factor de fase cuadrático en las coordenadas del plano focal imagen.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/transformada2.png}
+	\end{figure}
+	
+	\esp
+	
+	Si ahora contemplamos el caso más general de un objeto a distancia $d_o$ de la lente, al propagar desde el plano objeto al plano focal imagen, nos quedaría la transformada de Fourier de una función exponencial cuadrática en las coordenadas del plano $(x, y)$ multiplicada por la transparencia objeto. Utilizamos entonces las propiedades de la Transformada de Fourier (Transformada de una distribución gaussiana por una función), y obtenemos que el efecto de considerar la lente modifica la Transformada de Fourier del plano objeto multiplicándola por un factor de fase cuadrático en frecuencias espaciales, que contiene a la distancia objeto $d_o$ multiplicada por $\pi \lambda$.
+	
+	\esp
+	
+	Hemos obtenido entonces la Transformada de Fourier de la distribución objeto evaluada en las frecuencias $\left( \frac{x_i}{\lambda f'}, \frac{y_i}{\lambda f'} \right)$, multiplicada por un factor de fase cuadrático que contiene el término $(1 - d_o/f')$. Por lo tanto, este factor de fase se anula cuando el objeto está en el plano focal objeto de la lente, y en esa situación, observaremos en el plano focal imagen $F'$ directamente la Transformada de Fourier de la transparencia objeto escalada por un factor $\lambda f$. Observaremos lógicamente en realidad una distribución de intensidad, por tanto veremos el módulo cuadrado de la Transformada de Fourier del plano objeto, como se ilustra en la figura 1.
+	
+	\esp
+	
+	Esto es importante porque, como veremos en el apartado de aplicaciones, podemos operar sobre esta Transformada de Fourier del objeto actuando en el plano focal imagen o plano de Fourier de la lente, y eso tendrá consecuencias directas también sobre la imagen.
+	
+	\esp
+	
+	\section{Función de Transferencia Óptica de un sistema}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/otf.png}
+	\end{figure}
+	
+	\esp
+	
+	Si la amplitud y fase de la luz procedente de cada punto del objeto varían de forma aleatoria con el tiempo, consecuencia directa de la naturaleza estadística de la luz, la amplitud y fase de la respuesta impulso en la imagen variarán también de igual modo. Esta aleatoriedad en los planos objeto e imagen afectará en gran medida al resultado de determinar la distribución de intensidad en la imagen, pues al fin y al cabo dicha operación supone evaluar el promedio temporal del vector de Poynting sobre la imagen.
+	
+	\esp
+	
+	La irradiancia $I_i(x_i, y_i)$ en un punto $P_i$ de la imagen puede calcularse teniendo en cuenta lo descrito en la sección de formación de imagen en un sistema óptico, como:
+	
+	\esp
+	
+	\begin{align*}
+		I_i(x_i, y_i) &= \langle V_i^*(x_i, y_i, t) V_i(x_i, y_i, t) \rangle = \\
+		\esp
+		&= \int \int \int \int_{-\infty}^{+\infty} \tilde{h}^*(x_i - \tilde{x}_o, y_i - \tilde{y}_o) \tilde{h}(x_i - \tilde{x}_1, y_i - \tilde{y}_1) \dots \\
+		&\quad \dots \langle V_g^*(\tilde{x}_o, \tilde{y}_o, t) V_g(\tilde{x}_1, \tilde{y}_1, t) \rangle d\tilde{x}_o d\tilde{y}_o d\tilde{x}_1 d\tilde{y}_1
+	\end{align*}
+	
+	\subsection{Iluminación coherente}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/otf2.png}
+	\end{figure}
+	
+	\esp
+	
+	El caso más sencillo se da cuando toda la luz que entra a nuestro S.O. es coherente. Entonces, el grado complejo de coherencia mutuo sería la identidad, y se obtiene fácilmente que la irradiancia en la imagen sería el módulo cuadrado de la amplitud imagen, calculada en la sección anterior.
+	
+	\esp
+	
+	\begin{equation*}
+		I_i (x_i, y_i) = |h \otimes V_g|^2 = |V_i (x_i, y_i)|^2
+	\end{equation*}
+	
+	\esp
+	
+	Si pasamos al dominio de Fourier, para calcular la irradiancia en la imagen tendríamos que determinar la transformada de Fourier de la PSF del sistema, multiplicarla por la transformada de Fourier de la imagen geométrica del objeto, calcular la transformada de Fourier inversa y luego hacer el módulo cuadrado, como hemos descrito al principio del tema. A la función transformada de Fourier de la PSF se llama \textit{Función de Transferencia Coherente} del sistema (CTF).
+	
+	\subsection{Iluminación incoherente}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/otf3.png}
+	\end{figure}
+	
+	\esp
+	
+	En el caso de iluminación totalmente incoherente, la luz procedente de los diversos puntos del objeto es incoherente, bien porque cada punto emisor del mismo emite en el tiempo de modo estadísticamente independiente respecto de los demás o porque se trata de un objeto iluminado por una fuente extensa. Se engloban en este apartado un gran número de instrumentos ópticos, tales como objetivos fotográficos, instrumentos astronómicos, etc. Como se describió en el Tema 1, la intensidad mutua en el objeto adopta entonces la forma:
+	
+	\esp
+	
+	\begin{equation*}
+		\Gamma(\tilde{x}_o, \tilde{y}_o, \tilde{x}_1, \tilde{y}_1) = I_g(\tilde{x}_o, \tilde{y}_o) \delta(\tilde{x}_o - \tilde{x}_1, \tilde{y}_o - \tilde{y}_1)
+	\end{equation*}
+	
+	\esp
+	
+	para todo punto objeto, con $I_g$ denotando la distribución de intensidad en el objeto. Por tanto, en iluminación incoherente la distribución de intensidad en el plano imagen viene a ser:
+	
+	\esp
+	
+	\begin{equation*}
+		I_i(x_i, y_i) = \langle V_i^*(x_i, y_i, t) V_i(x_i, y_i, t) \rangle = \iint_{-\infty}^{+\infty} \|\tilde{h}(x_i - \tilde{x}_o, y_i - \tilde{y}_o)\|^2 I_g(\tilde{x}_o, \tilde{y}_o) d\tilde{x}_o d\tilde{y}_o
+	\end{equation*}
+	
+	\esp
+	
+	donde $\|\tilde{h}\|^2$ representa la respuesta impulso en intensidad del sistema. Esta expresión nos indica que la distribución de intensidad imagen es lineal con la correspondiente asociada al objeto, y queda determinada por la integral de convolución de la distribución de intensidad $I_g$ en el objeto por la función que da la figura de difracción de un solo punto. El significado de esta expresión es que la función respuesta impulso en intensidad se va desplazando modulándose por $I_g(\tilde{x}_o, \tilde{y}_o)$ y en cualquier punto del plano imagen se suman las contribuciones de todas las intensidades correspondientes a las imágenes de los puntos objeto. Estrictamente, todos los puntos del objeto contribuirían al punto $(x_i, y_i)$ del plano imagen, pero solamente aquellos cuyas imágenes paraxiales estén próximas a dicho punto (región de isoplanatismo) tienen figuras de difracción con valores de $\|\tilde{h}\|^2$ apreciablemente diferentes de cero.
+	
+	\subsection{OTF y MTF de un sistema bajo luz incoherente}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/otf4.png}
+	\end{figure}
+	
+	\esp
+	
+	Utilizando el formalismo de la transformada de Fourier, esta linealidad permite introducir la \textit{función de transferencia óptica} (OTF) para estos sistemas como la transformada de Fourier del módulo cuadrado de la PSF. Para ello, si definimos en el domino de las frecuencias espaciales los espectros de frecuencia normalizados asociados a las distribuciones de intensidad objeto e imagen, $G_i(f_x, f_y)$ y $G_g(f_x, f_y)$, e introduciendo además la función OTF como $H(f_x, f_y)$:
+	
+	\esp
+	
+	\begin{equation}
+		H(f_x, f_y) = \frac{\int \int_{-\infty}^{+\infty} \|\tilde{h}(x_i, y_i)\|^2 e^{-2\pi i (f_x x_i + f_y y_i)} dx_i dy_i}{\int \int_{-\infty}^{+\infty} \|\tilde{h}(x_i, y_i)\|^2 dx_i dy_i} \tag{5.52}
+	\end{equation}
+	
+	\esp
+	
+	podemos entonces aplicar el teorema de convolución, obteniéndose que:
+	
+	\esp
+	
+	\begin{equation}
+		G_i(f_x, f_y) = H(f_x, f_y) G_g(f_x, f_y)
+	\end{equation}
+	
+	\esp
+	
+	La función OTF del sistema ($H(f_x, f_y)$) representa el \textit{peso complejo} aplicado por el sistema a la componente de frecuencia en ($f_x, f_y$) en relación al peso que el sistema aplica a la componente de frecuencia cero. En definitiva, nos indica cómo transmite el sistema óptico cada una de las componentes periódicas del objeto a la imagen, dando una información mucho mayor acerca del sistema que la obtenida por criterios clásicos de poder resolutivo como los vistos en el tema de difracción. Al módulo de $H(f_x, f_y)$ se le llama usualmente función de transferencia de modulación (MTF), y su nombre se refiere a la modulación espacial de la luz; si tal modulación espacial no existe, la irradiancia será uniforme y no existirá imagen alguna. Por tanto, la modulación espacial se relaciona de manera directa con la calidad de la imagen y la MTF viene a ser una medida de la capacidad de todo sistema óptico para transferir dicha modulación espacial desde el objeto hasta la imagen. Así, para un punto objeto el sistema dará un punto ideal como imagen sólo si $H$ es igual a la unidad para todo el espectro de frecuencias espaciales, es decir, que la respuesta impulso sea una delta de Dirac a la salida del sistema. Físicamente, esto significa que debido a los efectos de la difracción, como ya hemos visto, la apertura de los elementos ópticos deba ser infinita para que se elimine la difracción en los bordes, algo que lógicamente nunca ocurre. Por otro lado, a la fase de la función de transferencia óptica se la conoce como función de transferencia de fase (PTF) y nos informa acerca de la posición y orientación en la imagen, más que del tamaño de los detalles de la misma.
+	
+	\esp
+	
+	Utilizando la relación entre $h$ y la función de pupila, vemos que se puede calcular $H(f_x, f_y)$ como una doble transformada de Fourier, ya que la función de transferencia no es sino la transformada de Fourier de la función de respuesta impulso en intensidad, y esta función a su vez es el módulo cuadrado de la transformada de Fourier de la función que da la distribución de campo en la esfera de referencia (función pupila). Pero resulta más sencillo, aplicando las propiedades de las transformadas de Fourier, calcular directamente $H(f_x, f_y)$ a partir de la función pupila $\wp(x, y)$:
+	
+	\esp
+	
+	\begin{equation}
+		H(f_x, f_y) = \frac{\int \int_{-\infty}^{+\infty} \wp^*(x + \frac{\lambda d_i f_x}{2}, y + \frac{\lambda d_i f_y}{2}) \wp(x - \frac{\lambda d_i f_x}{2}, y - \frac{\lambda d_i f_y}{2}) dx dy}{\int \int_{-\infty}^{+\infty} \wp(x, y) dx dy}
+	\end{equation}
+	
+	\esp
+	
+	Obteniéndose la función de transferencia mediante una integral de autocorrelación de la función pupila. Por tanto, hemos visto que la introducción de la transformada de Fourier en la Óptica ha permitido el estudio de la influencia conjunta de las aberraciones y la difracción en la formación de imágenes, llegándose a una expresión sencilla de la relación existente entre el objeto y su imagen cuando se da el caso de iluminación incoherente. Para el caso de iluminación completamente coherente, se utilizaría el concepto de CTF definido antes.
+	
+	\esp
+	
+	Vemos algunos ejemplos de MTF en sistemas ópticos reales. Un parámetro característico que suele examinarse es la frecuencia de corte o frecuencia más alta que el sistema óptico es capaz de resolver.
+	
+	\esp
+	
+	En general, los sistemas ópticos que tengan un mayor área debajo de la curva MTF ofrecerán también mayor calidad de imagen.
+	
 	\printbibliography[title={Bibliografía}]
 \end{document}
