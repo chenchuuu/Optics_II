@@ -524,7 +524,18 @@
 	
 	\esp
 	
-	Utilizando la relación entre $h$ y la función de pupila, vemos que se puede calcular $H(f_x, f_y)$ como una doble transformada de Fourier, ya que la función de transferencia no es sino la transformada de Fourier de la función de respuesta impulso en intensidad, y esta función a su vez es el módulo cuadrado de la transformada de Fourier de la función que da la distribución de campo en la esfera de referencia (función pupila). Pero resulta más sencillo, aplicando las propiedades de las transformadas de Fourier, calcular directamente $H(f_x, f_y)$ a partir de la función pupila $\wp(x, y)$:
+	Utilizando la relación entre $h$ y la función de pupila, vemos que se puede calcular $H(f_x, f_y)$ como una doble transformada de Fourier, ya que la función de transferencia no es sino la transformada de Fourier de la función de respuesta impulso en intensidad, y esta función a su vez es el módulo cuadrado de la transformada de Fourier de la función que da la distribución de campo en la esfera de referencia (función pupila). 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/autocorrelacion.png}
+	\end{figure}
+	
+	\esp
+	
+	Pero resulta más sencillo, aplicando las propiedades de las transformadas de Fourier, calcular directamente $H(f_x, f_y)$ a partir de la función pupila $\wp(x, y)$:
 	
 	\esp
 	
@@ -543,6 +554,160 @@
 	\esp
 	
 	En general, los sistemas ópticos que tengan un mayor área debajo de la curva MTF ofrecerán también mayor calidad de imagen.
+	
+	\section{Aplicaciones}
+	
+	\subsection{ Filtrado en frecuencias}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/filtrado.png}
+	\end{figure}
+	
+	\esp
+	
+	La idea básica de este campo de aplicación es que podemos actuar sobre el plano de Fourier de una lente para eliminar o modificar ciertos elementos en la Transformada de Fourier del objeto que se crea en dicho plano, y luego, mediante otra lente auxiliar, recuperar la imagen, que tras las manipulaciones introducidas será diferente de la imagen original que daría la lente inicial.
+	
+	\esp
+	
+	El proceso de formación del plano de Fourier y recuperación de la imagen lo podemos ver ilustrado en la figura 3.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/filtrado2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/filtrado3.png}
+	\end{figure}
+	
+	\esp
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/filtrado4.png}
+	\end{figure}
+	
+	\esp
+	
+	En los ejemplos que vemos en las diapositivas de clase, observamos cómo en el plano de Fourier, las frecuencias más bajas están localizadas cerca del centro (lógico, si pensamos en cómo está definida la frecuencia en este plano, como $\frac{x}{\lambda f'}$ para la componente horizontal, por ejemplo). Para aquellos objetos con pocas componentes de frecuencia, como las barras periódicas mostradas en la figura, vemos cómo hay zonas muy concretas con picos fuertes de intensidad en el plano de Fourier. Esto quiere decir que se puede utilizar el plano de Fourier para seleccionar determinadas frecuencias y eliminarlas, por ejemplo añadiendo una transparencia en este plano con determinadas zonas ocluidas. Si utilizamos un filtro circular, vemos cómo podemos seleccionar determinadas frecuencias en el objeto, eliminando los detalles de la imagen final si nos quedamos con la zona más central del plano de Fourier. Mediante el filtro complementario, podríamos observar los detalles de la imagen que son excluidos.
+	
+	\esp
+	
+	Algunas utilidades que pueden explotar esta idea son la eliminación de ruidos de alta frecuencia o bien de ruido periódico. Sin embargo, eliminar ciertas frecuencias en la imagen puede tener un cierto coste sobre su apariencia final, como observamos en los ejemplos mostrados en clase. Con diseños más sofisticados de filtros en el plano de Fourier, pueden obtenerse mejores resultados.
+	
+	\subsection{Análisis de calidad de imagen en instrumentos ópticos o en el ojo}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/anal.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/anal2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/anal3.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/anal4.png}
+	\end{figure}
+	
+	\esp
+	
+	Ya hemos visto en secciones anteriores cómo la PSF nos da indicios sobre la calidad de la imagen en un sistema óptico, ya que en general la imagen será el resultado de convolucionar la PSF (respuesta impulso del sistema) con la distribución de intensidad de la imagen geométrica del objeto. Por tanto, cuanto más parecida a un punto sea la PSF, mejor será la calidad de imagen.
+	
+	\esp
+	
+	Existen dispositivos que aprovechan este principio para medir la PSF de un sistema óptico, formando imágenes de objetos casi-puntuales, por ejemplo en diferentes zonas de un sensor de captura de imagen. Podemos observar el efecto de las aberraciones que van modificando la calidad de imagen en la zona periférica del sensor. Por otra parte, se pueden modelizar los efectos de diferentes tipos de aberraciones sobre la PSF, tanto de bajo orden como de alto orden. Suele ilustrarse el efecto de las aberraciones también mediante diagramas en falso color de la aberración de onda $W(x,y)$, que recordemos que formaba parte de la función de pupila $\wp(x,y)$ introducida en secciones anteriores.
+	
+	\esp
+	
+	Existen instrumentos diseñados específicamente para la medida de la aberración de onda (aberrómetros de frente de onda), que se utilizan sobre todo para examinar la calidad de la imagen ocular, que tiene interés para el seguimiento de la evolución de sujetos con problemas oculares o simplemente sometidos a operaciones de cirugía refractiva. Vemos algunos ejemplos en los que se muestra también una simulación de cómo vería el sujeto un test visual, para los casos de cirugía de cataratas y queratocono tratado con lentes de contacto.
+	
+	\subsection{Correlación óptica}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre.png}
+	\end{figure}
+	
+	\esp
+	
+	Como ejemplo final de aplicación, ilustramos cómo puede utilizarse la óptica de Fourier para encontrar determinados objetos presentes en una imagen o para alinear dos imágenes con algún objeto en común. Esta aplicación tiene que ver con el hecho de que la operación de correlación, que consiste en trasladar una función sobre otra con distintos intervalos de separación en coordenadas, está bastante relacionada con la operación de convolución que ya hemos visto en el tema que es muy fácil de implementar en el dominio de Fourier.
+	
+	Para imaginar el efecto de la correlación, pensemos en multiplicar dos imágenes de forma que se vaya trasladando una sobre otra hasta cubrir todas las posiciones espaciales. A través de la convolución, podemos llegar hasta el resultado de la correlación como vemos ilustrado en la figura. Entonces, podemos llevar a cabo esta operación utilizando el dominio de Fourier, como se ilustra en el esquema. Mediante un filtro adecuado en el plano de Fourier, obtendríamos en el plano imagen una zona de mayor intensidad localizada en la posición del objeto que queremos encontrar, el círculo en el caso del ejemplo.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre3.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre4.png}
+	\end{figure}
+	
+	\esp
+	
+	Vemos cómo puede localizarse una mariposa en una imagen que contiene dos mariposas, mirando en el plano de Fourier dónde está el pico de correlación más intenso. Sin embargo, esta operación no es invariante a cambios de orientación o escala en el objeto que queremos buscar dentro de la imagen, como vemos en el segundo ejemplo sobre búsqueda de la letra P. Pero nos puede valer para encontrar a Wally....
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre5.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre6.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/corre7.png}
+	\end{figure}
+	
+	\esp
+
+	
+	Finalmente, ilustramos cómo pueden utilizarse las propiedades de la Transformada de Fourier para resolver problemas de registro o alineación de imágenes en el caso de que la transformación sea una traslación simple (imagen desplazada en el espacio). Lo vemos aplicado al caso de montar una imagen panorámica de un paisaje. El algoritmo utilizado para registrar ambas imágenes se llama \textit{Phase Correlation} o correlación de fase. Se basa en la idea de que una traslación en el espacio físico se traduce en un factor de fase en el dominio de Fourier. Entonces, si tenemos dos imágenes y una de ellas es una traslación de la otra, su transformada de Fourier es el producto de la transformada de Fourier de la imagen de referencia por un factor de fase que contiene las coordenadas espaciales de la traslación, $d_x$ y $d_y$. Podemos aislar fácilmente este factor de fase multiplicando el complejo conjugado de la Transformada de Fourier de la imagen trasladada por la Transformada de Fourier de la imagen de referencia, y dividiendo por el módulo cuadrado de la Transformada de Fourier de la imagen de referencia (o el módulo del producto de ambas transformadas, ya que es el mismo). Una vez aislado el término de fase, basta determinar la Transformada de Fourier inversa del mismo, y obtendremos una delta de Dirac centrada en las coordenadas de la traslación. Vemos ilustrado el efecto de localizar el pico en la transformada inversa, y, tras aplicar la operación de traslación correspondiente a la imagen test, se puede coser finalmente ambas imágenes para obtener la imagen panorama completa.
+	
+	
+	
 	
 	\printbibliography[title={Bibliografía}]
 \end{document}
