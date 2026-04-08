@@ -281,5 +281,258 @@
 	
 	Vamos ahora a aplicar este modelo (con alguna complicación adicional) a la descripción de fenómenos que implican intercambio energético de la onda incidente con el medio.
 
+	\section{Scattering}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat2.png}
+	\end{figure}
+	
+	\esp
+	
+	Pasamos ahora a los fenómenos de esparcimiento o \textit{scattering}. Hay varias posibilidades para traducir el término \textit{scattering}, como dispersión, difusión, o incluso dejando la palabra original en inglés. Quizá la más apropiada sea esparcimiento, puesto que da una idea del fenómeno y no puede confundirse con otros términos como reflexión difusa o dispersión cromática. En general el esparcimiento se produce cuando una onda e.m. de frecuencia bien diferente de las propias del medio en el que propaga incide sobre partículas de tamaño pequeño en relación a su longitud de onda (como máximo un décimo de la misma). Entonces, la onda incidente se esparce en múltiples direcciones, y tenemos el fenómeno conocido como \textit{scattering}. Otras restricciones importantes son las siguientes:
+	
+	\esp
+	
+	\begin{itemize}
+		\item Esparcimiento o \textit{scattering} elástico, es decir, sin pérdida de energía por parte de los fotones de la onda incidente: la frecuencia de la radiación incidente se mantiene.
+		\item Esparcimiento simple e incoherente: producido sólo por la onda incidente y no como resultado de ondas esparcidas previamente por otras partículas del medio.
+	\end{itemize}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat3.png}
+	\end{figure}
+	
+	\esp
+	
+	Con estas restricciones, recordemos que según el modelo de dipolo oscilante desarrollado en la segunda sección del tema, la irradiancia emitida será entonces proporcional a la cuarta potencia de la frecuencia de la onda incidente:
+	
+	\esp
+	
+	\begin{equation}
+		I(\theta,r) = \frac{c\epsilon_0}{2}E^2 = \frac{p_0^2 \omega^4 \sin^2 \theta}{32\pi^2 c^3 \epsilon_0 r^2}
+	\end{equation}
+	
+	\esp
+	
+	Entonces, la potencia radiada en todo el espacio será la resultante de calcular la integral de la irradiancia cuando el ángulo $\theta$ varía entre $0$ y $\pi$. el diferencial de superficie se calcula sobre la superficie del toroide formado por la distribución de irradiancia, como $2\pi R^2 \sin \theta d\theta$. Sustituyendo la expresión hallada para la irradiancia y resolviendo la integral, obtenemos que la potencia global radiada presenta también dependencia con la frecuencia incidente.
+	
+	\esp
+	
+	\begin{equation}
+		P_n = \int_{0}^{\pi} I(\theta) 2\pi r^2 \operatorname{sen} \theta d\theta = \frac{\omega^4 p_0^2}{12c^3 \pi \epsilon_0} = \frac{\omega^4 q_e^4 E_0^2}{12c^3 \pi m_e^2 \epsilon_0} \frac{1}{(\omega_0^2 - \omega^2)^2}
+	\end{equation}
+	
+	\esp
+	
+	Para caracterizar este fenómeno, introducimos la magnitud sección eficaz de difusión $\sigma$, que es el cociente entre la potencia global radiada y la intensidad de la onda incidente o $I$:
+	
+	\esp
+	
+	\begin{equation}
+		\sigma = \frac{P_n}{I}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat4.png}
+	\end{figure}
+	
+	\esp
+	
+	Tiene unidades de superficie, de ahí el nombre de sección eficaz. Este parámetro refleja cómo de eficiente es el medio para redistribuir la energía de la onda incidente, ya sea por esparcimiento o por absorción. Es fácil determinar $\sigma$ si tenemos en cuenta la relación entre la irradiancia y el módulo cuadrado del campo de la onda incidente, $E_0^2$. Un medio en el que resulta especialmente interesante explicar el esparcimiento es la atmósfera, que podemos caracterizar como un medio transparente (sin fuerzas de rozamiento a este nivel atómico, lo que correspondería al modelo de oscilador que hemos aplicado directamente para obtener la potencia disipada por esparcimiento) y con electrones ligados. Las frecuencias propias de vibración de los gases que forman la atmósfera suelen ser bastante mayores que las del visible (situadas en el UV o regiones de mayor frecuencia incluso), con lo cual podemos aproximar y obtenemos que la potencia radiada depende de la cuarta potencia de la frecuencia incidente, y por tanto la sección eficaz también.
+	
+	\esp
+	
+	\begin{equation}
+		P_n \approx \frac{\omega^4 q_e^4 E_0^2}{\omega_0^4 12c^3 \pi m_e^2 \epsilon_o}, \quad \sigma \propto \frac{\omega^4}{\omega_0^4}
+	\end{equation}
+	
+	\esp
+	
+	Esto se conoce como Ley de Rayleigh, ya que fue introducida por Lord Rayleigh al estudiar este fenómeno, y el esparcimiento al que nos estamos refiriendo se denomina usualmente \textit{scattering} de Rayleigh. Para que se dé, como ya comentamos al inicio, necesitamos partículas en suspensión de un tamaño bastante menor que la longitud de onda media de la fuente que las ilumina. Por ejemplo, partículas de humo de tabaco (el color suele ser azulado) frente a partículas de polvo de tiza (color blanco de la luz esparcida). En la alta atmósfera, la sección eficaz aumenta con la frecuencia, con lo cual las longitudes de onda cortas se difunden mucho mejor. De ahí (teniendo en cuenta también que el ojo no es igualmente sensible a todas las longitudes de onda, sino que pierde bastante sensibilidad en la zona de los violetas y los rojos) el color azul del cielo.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat5.png}
+	\end{figure}
+	
+	\esp
+	
+	Recordamos también que debido al carácter transversal de la luz, la onda esparcida puede polarizarse parcialmente cuando la nueva dirección de propagación es perpendicular a la de la onda incidente, lo que explica por qué la luz del cielo en un día despejado está parcialmente polarizada. Este extremo también se ha descrito con más detalle en Óptica I, y puede entenderse considerando la figura 4.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat6.png}
+	\end{figure}
+	
+	\esp
+	
+	Hay algunas teorías que relacionan este fenómeno con sistemas de orientación para determinadas especies de aves e insectos. De noche, cuanto hay luna, podemos ver también que aunque la intensidad de la luz esparcida no es suficiente para que nuestro ojo perciba un color azul claro, como de día, si fotografiamos el cielo con una cámara digital con tiempo de exposición largo, podemos ver que es también azul claro como cuando es de día. Cuando el sol está cercano al horizonte (amanecer o anochecer), la longitud de atmósfera recorrida es mayor, con lo cual se pierden selectivamente las frecuencias altas, y nos queda un color rojizo-anaranjado para el sol, como se puso de manifiesto con la experiencia de la cubeta de agua con gotas de leche disueltas para simular el crepúsculo o amanecer. 
+
+	\esp
+	
+	Cuando el tamaño de partículas o inhomogeneidades del medio es mayor, el modelo que debe aplicarse es mucho más complejo y el fenómeno se llama entonces \textit{scattering} de Mie. Es el que ocurre por ejemplo en días nublados y cuando hay niebla o neblina densa, por ejemplo. Un ejemplo de desarrollo de este tipo de esparcimiento desde un punto de vista teórico y para sustancias metálicas puede encontrarse en [4]. Este tipo de esparcimiento no depende de la longitud de onda, y está mucho más restringido en cuanto al conjunto de direcciones de propagación.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/scat7.png}
+	\end{figure}
+	
+	\esp
+	
+	El \textit{scattering} también puede ser inelástico, lo que produce un desplazamiento en la longitud de onda esparcida con respecto a la incidente, conocido como \textit{scattering} de Raman y también muy útil para identificar sustancias (técnicas de espectroscopía Raman).
+	
+	\section{Dispersión cromática}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp.png}
+	\end{figure}
+	
+	\esp
+	
+	Vamos a tratar de forma conjunta estos dos fenómenos en este apartado, y los caracterizaremos en función de la dependencia del índice de refracción con la frecuencia. Hasta ahora, hemos mencionado la absorción sólo en relación a metales. Distinguimos primero entre absorción global o general (igual para todas las longitudes de onda dentro de un cierto rango) y absorción selectiva. Como necesitamos justificar una disipación de energía, para explicar la absorción introducimos una fuerza de rozamiento proporcional a la velocidad de oscilación y a una cierta constante de amortiguación, con lo cual reformulamos la ecuación del oscilador para transformarlo en un oscilador amortiguado. Este modelo de oscilador nos permitirá también tratar el fenómeno de la dispersión cromática, como veremos en esta sección. La ecuación del oscilador amortiguado queda entonces de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		m_e \frac{d^2x}{dt^2} = q_e E_o \cos \omega t - m_e \omega_o^2 x - \gamma m_e \frac{dx}{dt}
+	\end{equation}
+	
+	\esp
+	
+	El término $\gamma$ sería la inversa de la vida media de la oscilación, y como vemos la fuerza de rozamiento es proporcional a la constante $\gamma$ por la velocidad de oscilación. Para encontrar la solución, vamos a considerar que la onda incidente pueda expresarse de forma simplificada como: $\vec{E} = \vec{E}_o e^{i \omega t}$. Tiene entonces sentido considerar que el comportamiento del dipolo será similar (seguirá al campo aplicado), y por tanto, $x = x_0 e^{i \omega t}$. Entonces, es bastante fácil derivar la solución compleja para $x$:
+	
+	\esp
+	
+	\begin{equation}
+		x(t) = \frac{q_e}{m_e [(\omega_o^2 - \omega^2) - i\gamma\omega]} E
+	\end{equation}
+	
+	\esp
+	
+	Si la constante de amortiguación es pequeña, entonces la respuesta máxima para la elongación se dará cuando la frecuencia de la onda e.m. incidente iguale la frecuencia propia de vibración del medio (decimos entonces que estamos operando en resonancia). En la foto de la figura, vemos una fibra óptica iluminando un medio absorbente, y cómo la energía emitida por la fibra desaparece rápidamente.
+	
+	\esp
+	
+	Vamos a introducir ahora la relación de la elongación calculada $x(t)$ con el momento dipolar y la polarización, y a través de ellos con la constante dieléctrica y el índice de refracción que se calcula a partir de ella. El índice de refracción nos queda como un número complejo, cuya parte real relacionaremos con el fenómeno de la dispersión cromática, y la parte imaginaria con el de absorción que estamos tratando, ya que esta parte imaginaria produce una disminución de la irradiancia con la distancia recorrida en el interior del medio, de forma similar a como se describió el tratamiento en Óptica I para los metales.
+	
+	\esp
+	
+	Para caracterizar los fenómenos de dispersión cromática y absorción, consideramos la densidad de momentos dipolares $N$ (número de dipolos por unidad de volumen en el medio), y recordando la dependencia de la polarización con la constante dieléctrica del medio, despejamos dicha constante y obtenemos así su dependencia con $\omega_o$ y $\omega$. Definimos la polarización como el momento dipolar eléctrico por unidad de volumen:
+	
+	\esp
+	
+	\begin{equation}
+		\vec{P} = N\vec{p} = Nq_e\vec{x}
+	\end{equation}
+	
+	\esp
+	
+	La polarización se relaciona con el campo eléctrico a través de las constantes dieléctricas del medio y del vacío:
+	
+	\esp
+	
+	\begin{equation}
+		\vec{P} = (\varepsilon - \varepsilon_o) \vec{E} = \varepsilon_o (\varepsilon_r - 1) \vec{E}
+	\end{equation}
+	
+	\esp
+	
+	Considerando el caso más general de átomos ligados (oscilador armónico amortiguado), sustituimos la solución encontrada para el desplazamiento máximo del oscilador, $\vec{x}_o$, en la ecuación de la polarización, manteniendo la notación exponencial compleja por conveniencia:
+	
+	\esp
+	
+	\begin{equation}
+		\vec{P} = \frac{q_e^2}{m} \frac{N \vec{E} \exp(i\omega t)}{(\omega_0^2 - \omega^2 + i\omega\gamma)}
+	\end{equation}
+	
+	\esp
+	
+	Dado que el índice de refracción se obtiene como la raíz cuadrada de la constante dieléctrica relativa para los medios no magnéticos, despejamos entonces la constante dieléctrica relativa en función del cociente entre la polarización y el campo eléctrico en módulo, y sustituimos la expresión correspondiente en función de la frecuencia:
+	
+	\esp
+	
+	\begin{equation}
+		\epsilon_r = \tilde{n}^2 = 1 + \frac{P}{\epsilon_0 E} = 1 + \frac{q_e^2}{\epsilon_0 m_e} \frac{N}{(\omega_0^2 - \omega^2 + i\omega\gamma)}
+	\end{equation}
+	
+	\esp
+	
+	Hemos denotado el índice de refracción en el medio como $\tilde{n} = n - i\chi$, tal y como hicimos en Óptica I en el tema de óptica metálica. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp2.png}
+	\end{figure}
+	
+	\esp
+	
+	
+	Para obtener una expresión manejable para las constantes ópticas del medio (parte real e imaginaria del índice de refracción), consideramos ahora la aproximación de medios poco absorbentes en los que el módulo de $\tilde{n}$ no es muy elevado, con lo cual podemos obtener la siguiente expresión para el índice de refracción:
+	
+	\esp
+	
+	\begin{equation}
+		\tilde{n} = 1 + \frac{q_e^2}{2\epsilon_0 m_e} \frac{N}{(\omega_0^2 - \omega^2 + i\omega\gamma)} = 1 + \frac{q_e^2}{2\epsilon_0 m_e} \frac{N (\omega_0^2 - \omega^2)}{(\omega_0^2 - \omega^2)^2 + \omega^2\gamma^2} - \frac{q_e^2}{2\epsilon_0 m_e} \frac{N i \omega \gamma}{(\omega_0^2 - \omega^2)^2 + \omega^2\gamma^2}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp3.png}
+	\end{figure}
+	
+	\esp
+	
+	Con lo cual, es inmediato obtener las partes real e imaginaria de dicho índice para estos medios poco absorbentes (como los gases diluidos, por ejemplo):
+	
+	\esp
+	
+	\begin{equation}
+		n = 1 + \frac{1}{2} \frac{\omega_p^2 (\omega_0^2 - \omega^2)}{(\omega_0^2 - \omega^2)^2 + \omega^2\gamma^2}
+	\end{equation}
+	
+	\begin{equation}
+		\chi = \frac{1}{2} \frac{\gamma \omega_p^2 \omega}{(\omega_0^2 - \omega^2)^2 + \omega^2\gamma^2}
+	\end{equation}
+	
+	\esp
+	
+	donde hemos utilizado la relación $\omega_p^2 = \frac{q_e^2 N}{\epsilon_0 m_e}$. Vemos entonces cómo efectivamente la parte imaginaria del índice de refracción depende directamente de $\gamma$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp4.png}
+	\end{figure}
+	
+	\esp
+	
+	Estudiando entonces el comportamiento de $n$ y $\chi$ con respecto a la frecuencia (o con respecto a la longitud de onda) que vemos representado en las dos partes de la figura, encontramos una diferencia marcada en la zona cercana a las frecuencias de resonancia del medio, $\omega_0$. Para frecuencias menores que la frecuencia de resonancia, tenemos que $\frac{dn}{d\omega} > 0$, y por tanto, como vimos en el tema 3 de Óptica I, esto suele corresponder a dispersión normal, aunque realmente para asegurarnos hay que mirar si la velocidad de grupo crece cuando aumenta la frecuencia. Algo antes de la frecuencia de resonancia se produce una caída brusca de $n$, con pendiente negativa, y por tanto en las cercanías de la frecuencia de resonancia, tenemos la zona de dispersión anómala del material. Y finalmente, para frecuencias bastante mayores que la frecuencia de resonancia, vuelve a producirse dispersión normal. La parte imaginaria del índice de refracción se comporta también del modo esperado, aumentando en la zona próxima a la frecuencia de resonancia y presentando el pico de absorción justo en dicha frecuencia, para después caer de nuevo a niveles relativamente bajos, dadas las características que hemos supuesto para el medio. En Óptica I, demostramos la relación entre la velocidad de fase y la velocidad de grupo, y establecemos que la velocidad de grupo suele ser menor que la de fase para el caso de dispersión normal. Ocurre exactamente lo contrario para el caso de dispersión anómala. En este tema, vamos a poder obtener exactamente una dependencia general del índice de refracción con la frecuencia (o la longitud de onda, que suele ser más habitual) para determinados medios, expandiendo así los contenidos vistos en el semestre anterior. Calculando la velocidad de grupo como la primera derivada de la frecuencia con respecto al número de ondas, se puede corroborar si el medio presenta dispersión normal o anómala, una vez conocida la relación de dispersión (es decir, la función específica que relaciona $\omega$ con $k$).
+
 	\printbibliography[title={Bibliografía}]
 \end{document}
