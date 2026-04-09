@@ -533,6 +533,211 @@
 	\esp
 	
 	Estudiando entonces el comportamiento de $n$ y $\chi$ con respecto a la frecuencia (o con respecto a la longitud de onda) que vemos representado en las dos partes de la figura, encontramos una diferencia marcada en la zona cercana a las frecuencias de resonancia del medio, $\omega_0$. Para frecuencias menores que la frecuencia de resonancia, tenemos que $\frac{dn}{d\omega} > 0$, y por tanto, como vimos en el tema 3 de Óptica I, esto suele corresponder a dispersión normal, aunque realmente para asegurarnos hay que mirar si la velocidad de grupo crece cuando aumenta la frecuencia. Algo antes de la frecuencia de resonancia se produce una caída brusca de $n$, con pendiente negativa, y por tanto en las cercanías de la frecuencia de resonancia, tenemos la zona de dispersión anómala del material. Y finalmente, para frecuencias bastante mayores que la frecuencia de resonancia, vuelve a producirse dispersión normal. La parte imaginaria del índice de refracción se comporta también del modo esperado, aumentando en la zona próxima a la frecuencia de resonancia y presentando el pico de absorción justo en dicha frecuencia, para después caer de nuevo a niveles relativamente bajos, dadas las características que hemos supuesto para el medio. En Óptica I, demostramos la relación entre la velocidad de fase y la velocidad de grupo, y establecemos que la velocidad de grupo suele ser menor que la de fase para el caso de dispersión normal. Ocurre exactamente lo contrario para el caso de dispersión anómala. En este tema, vamos a poder obtener exactamente una dependencia general del índice de refracción con la frecuencia (o la longitud de onda, que suele ser más habitual) para determinados medios, expandiendo así los contenidos vistos en el semestre anterior. Calculando la velocidad de grupo como la primera derivada de la frecuencia con respecto al número de ondas, se puede corroborar si el medio presenta dispersión normal o anómala, una vez conocida la relación de dispersión (es decir, la función específica que relaciona $\omega$ con $k$).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp5.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp6.png}
+	\end{figure}
+	
+	\esp
+	
+	Retomamos ahora el tema de la dispersión cromática para profundizar en la relación entre el índice de refracción y la frecuencia, que hemos visto para el caso de una sola frecuencia de resonancia presente en el medio.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp7.png}
+	\end{figure}
+	
+	\esp
+	
+	Si existen varias frecuencias de resonancia en un medio determinado dentro del rango de radiación considerado, pueden sumarse todas las contribuciones de las distintas frecuencias de resonancia para obtener el correspondiente valor de $\tilde{n}^2$. A partir de esta expresión general, considerando la aproximación de medios materiales muy poco absorbentes, y utilizando la relación entre frecuencia y longitud de onda, se puede encontrar la relación que Sellmeier obtuvo empíricamente para el índice de refracción al cuadrado:
+	
+	\esp
+	
+	\begin{equation}
+		n^2 = 1 + \sum_{j} \frac{A_j \lambda^2}{\lambda^2 - \lambda_{0j}^2}
+	\end{equation}
+	
+	\esp
+	
+	Como se verá en los problemas del tema, a partir de esta relación de Sellmeier puede también obtenerse una expresión aproximada entre una función de la parte real del índice de refracción y la inversa de la longitud de onda al cuadrado, como vemos en la figura 7 (relación de Cauchy). Hay varias formas alternativas de obtener esta relación además de la que hemos descrito.
+	
+	\esp
+	
+	Si hay varias frecuencias propias (lo más habitual), obtenemos un comportamiento alterno de zonas de dispersión normal y anómala, como vemos en la figura 8 para varias frecuencias propias en distintas zonas del espectro. Si hay alguna frecuencia propia dentro del visible, como para el vapor de yodo o la fucsina (tinte), podemos ver zonas de dispersión anómala dentro del visible, pero no es lo habitual.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/disp8.png}
+	\end{figure}
+	
+	\esp
+	
+	Para terminar la sección, vamos a considerar también brevemente el caso de los medios densos. Para éstos, el tratamiento visto hasta ahora no es estrictamente válido, aunque sí que se puede mantener la relación de Cauchy como una buena aproximación en el visible, porque los vidrios son muy poco absorbentes en este rango de frecuencias. En los medios densos (entendiendo como tales aquellos que presentan $N$ superior a $1000$ átomos por cada volumen cúbico de arista igual a la longitud de onda), los osciladores atómicos están muy próximos unos a otros, lo que hace que aparezcan acoplamientos entre ellos, y como consecuencia el campo aplicado a cada oscilador se modifica localmente y pasa a ser:
+
+	\begin{equation}
+		E_{loc} = E + \frac{P}{3\epsilon_0}
+	\end{equation}
+	
+	\esp
+	
+	Entonces, la polarización se calcula también en función de $E_{loc}$, quedando como:
+	
+	\esp
+	
+	\begin{equation}
+		P = \epsilon_0 (\epsilon_r - 1) E = \frac{N q_e^2}{m_e (\omega_0^2 - \omega^2 + i\omega\gamma)} \left( E + \frac{P}{3\epsilon_0} \right) = N \alpha \left( E + \frac{P}{3\epsilon_0} \right)
+	\end{equation}
+	
+	\esp
+	
+	Despejando entonces la constante dieléctrica relativa, queda:
+	
+	\esp
+	
+	\begin{equation}
+		\epsilon_r = \tilde{n}^2 = 1 + \frac{P}{\epsilon_0 E} = 1 + \frac{N\alpha}{\epsilon_0 - \frac{N\alpha}{3}}
+	\end{equation}
+	
+	\esp
+	
+	Y despejando de la ecuación anterior $\frac{N\alpha}{3\epsilon_0}$, se obtiene la llamada ecuación de \textit{Lorentz-Lorentz} o también de \textit{Clausius-Mossotti}:
+	
+	\esp
+	
+	\begin{equation}
+		\frac{(\tilde{n}^2 - 1)}{(\tilde{n}^2 + 2)} = \frac{N\alpha}{3\epsilon_0}
+	\end{equation}
+	
+	\esp
+	
+	Esto complica algo las cosas para obtener las expresiones para la parte real e imaginaria del índice de refracción en medios densos, pero esencialmente el comportamiento en cuanto a las zonas de dispersión normal y anómala se mantiene en estos medios.
+	
+	\section{Absorción}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs.png}
+	\end{figure}
+	
+	\esp
+	
+	Recordemos que la parte imaginaria del índice de refracción se relaciona directamente con la absorción en el medio, como vimos en Óptica I. Obtuvimos entonces esta expresión para la intensidad absorbida tras recorrer una distancia de penetración $z$ en el interior del medio: $I = I_o e^{-2 \frac{\omega}{c} \chi z}$. Lo que haremos ahora será obtener otra expresión equivalente, que nos permitirá razonar cuál es la potencia disipada por absorción en el medio.
+	
+	\esp
+	
+	Consideramos una sección de área $S$ del material, y un $dV$ formado por el área $S$ y un elemento de grosor $dz$. Tendríamos entonces que $dN = NSdz$ sería el número de dipolos en el elemento de volumen, y la variación de potencia disipada por absorción en dicho elemento quedaría como:
+	
+	\esp
+	
+	\begin{equation}
+		dP = -P_d dN = -P_d NS dz
+	\end{equation}
+	
+	\esp
+	
+	En términos de la irradiancia disipada, y expresando la potencia disipada en función de la correspondiente sección eficaz $\sigma_a$ (de absorción), de forma análoga a lo visto en la sección de esparcimiento:
+	
+	\esp
+	
+	\begin{equation}
+		dI = -P_d Ndz = -\sigma_a IN dz
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{equation}
+		I = I_o e^{-\delta z}
+	\end{equation}
+	
+	\esp
+	
+	donde $\delta = \sigma_a N$. Se deduce entonces que la intensidad decrece exponencialmente con la longitud de material atravesado, y cómo de rápida sea la pérdida de intensidad depende de la sección eficaz del medio, y por tanto de la frecuencia de la onda incidente. Esta expresión se conoce como la ley de Beer-Lambert-Bouguer o a veces como Ley de Beer-Lambert.
+	
+	\esp
+	
+	El coeficiente de absorción $\delta$ es una característica importante del medio, y depende también de las condiciones físicas en que se encuentre. Por ejemplo, es del orden de $10^{-4} - 10^{-6} \text{ cm}^{-1}$ en las fibras de sílice, pero llega a alcanzar valores de $10^{3} - 10^{6} \text{ cm}^{-1}$ en metales.
+	
+	\esp
+	
+	Comparando la expresión de la ley de Beer-Lambert con la obtenida para la intensidad tras recorrer una distancia $z$ en el medio, en función de la parte imaginaria del índice de refracción: $I = I_o e^{-2 \frac{\omega}{c} \chi z}$, es fácil entonces igualar ambas y determinar la sección eficaz de absorción, y también por tanto la potencia disipada correspondiente, sin más que multiplicar por la irradiancia de la onda incidente. Entonces, finalmente:
+	
+	\esp
+	
+	\begin{equation}
+		P_d = \sqrt{\frac{\mu_o}{\epsilon_o}} \frac{\omega^2 \gamma e^2}{m_e ((\omega_o^2 - \omega^2)^2 + \omega^2 \gamma^2)} I = \sigma_a I
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs3.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs4.png}
+	\end{figure}
+	
+	\esp
+	
+	En realidad, debemos tener presente que los fenómenos de absorción selectiva (junto con la estructura receptora del ojo y la iluminación recibida por los objetos) son los responsables de la apariencia de los objetos materiales que conocemos, como su color. Vemos varios ejemplos de piedras, vidrio de una botella, y la cerveza que contiene (aunque este último con precaución, puesto que no es un material homogéneo). Si una manzana es roja cuando se ilumina con luz blanca, es porque absorbe selectivamente las longitudes de onda medias y bajas en el visible (frecuencias medias y altas).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs5.png}
+	\end{figure}
+	
+	\esp
+	
+	Si realizamos una medida de la fracción de energía absorbida en función de la longitud de onda (espectro de absorción), encontramos que para sólidos y líquidos contiene zonas continuas, pero también picos significativos y propios de cada sustancia, que pueden ayudar a identificar su composición, como se puede ver en determinadas series de ficción (espectroscopía). También nos llama la atención la casi coincidencia del mínimo de absorción para el $H_2O$ y el máximo de emisión para el Sol (considerado como cuerpo negro de temperatura en torno a $6000$ K), y también con el pico de la curva de sensibilidad espectral de nuestro ojo o curva de eficiencia luminosa: parece que nuestro sistema visual ha sido diseñado evidentemente para trabajar con luz diurna, y que la penetración en el agua de la luz solar fue muy importante para el inicio del desarrollo de la vida en la Tierra ([6], pág. 21).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs6.png}
+	\end{figure}
+	
+	\esp
+	
+	En el caso de los gases a presión normal pero en determinadas condiciones de concentración y temperatura, suelen tener un espectro de absorción discreto. Por ejemplo, para una estrella, si hacemos pasar su luz directa por un medio dispersivo, como un prisma, ya sabemos que podemos obtener así el espectro de emisión, pero si la luz atraviesa una región con un determinado gas, este medio absorbe selectivamente determinadas longitudes de onda, y si luego vemos el resultado de dispersar la luz de la estrella obtendríamos bandas oscuras de absorción formando un espectro característico del gas atravesado. En los espectros por absorción, resultan observables las longitudes de onda propias de la emisión del gas (lógico, puesto que va a absorber preferentemente aquellas frecuencias que permiten sus transiciones atómicas), pero por emisión podemos observar generalmente más líneas, debido al propio proceso de medida de los espectros de absorción. Naturalmente, esto puede utilizarse para caracterizar la composición espectral de determinados cuerpos estelares, como las galaxias.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/abs7.png}
+	\end{figure}
+	
+	\esp
+	
+	En ocasiones, no toda la energía absorbida por una determinada sustancia se pierde en forma de calor, como hemos visto para los gases: es relativamente usual que se emita parte de la energía recibida, bien en las mismas frecuencias absorbidas, bien en frecuencias menores (mayores longitudes de onda), dando lugar a los fenómenos de fluorescencia que vemos ilustrados en las fotos. Los poster hechos con pintura fluorescente emiten luz en el visible cuando se iluminan con la llamada \textit{luz negra} o radiación UV, mientras que el resto de los objetos no. También se comportan así muchos compuestos de origen orgánico, como hongos o fluidos corporales (de nuevo, bien ilustrado en series de ficción). Si la sustancia es capaz de almacenar la energía absorbida para re-emitirla en un período de tiempo posterior a la fase en la que se ilumina, decimos que se trata de un fenómeno de fosforescencia, como pasa con las estrellitas que se pegan en el techo de las habitaciones de los niños. Pero ni la fluorescencia ni la fosforescencia son propiamente fenómenos de absorción, al menos según nuestro modelo clásico, que considera que la energía absorbida se pierde por calor en el medio. También pueden ilustrarse los fenómenos de absorción con una experiencia sencilla de mezcla sustractiva de colores con filtros coloreados de materiales plásticos, o bien con cubetas con agua teñida de varios colores y LEDs de varios colores primarios.
 
 	\printbibliography[title={Bibliografía}]
 \end{document}
