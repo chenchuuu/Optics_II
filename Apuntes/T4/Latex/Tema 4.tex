@@ -738,6 +738,151 @@
 	\esp
 	
 	En ocasiones, no toda la energía absorbida por una determinada sustancia se pierde en forma de calor, como hemos visto para los gases: es relativamente usual que se emita parte de la energía recibida, bien en las mismas frecuencias absorbidas, bien en frecuencias menores (mayores longitudes de onda), dando lugar a los fenómenos de fluorescencia que vemos ilustrados en las fotos. Los poster hechos con pintura fluorescente emiten luz en el visible cuando se iluminan con la llamada \textit{luz negra} o radiación UV, mientras que el resto de los objetos no. También se comportan así muchos compuestos de origen orgánico, como hongos o fluidos corporales (de nuevo, bien ilustrado en series de ficción). Si la sustancia es capaz de almacenar la energía absorbida para re-emitirla en un período de tiempo posterior a la fase en la que se ilumina, decimos que se trata de un fenómeno de fosforescencia, como pasa con las estrellitas que se pegan en el techo de las habitaciones de los niños. Pero ni la fluorescencia ni la fosforescencia son propiamente fenómenos de absorción, al menos según nuestro modelo clásico, que considera que la energía absorbida se pierde por calor en el medio. También pueden ilustrarse los fenómenos de absorción con una experiencia sencilla de mezcla sustractiva de colores con filtros coloreados de materiales plásticos, o bien con cubetas con agua teñida de varios colores y LEDs de varios colores primarios.
+	
+	\section{Propagación de un paquete de ondas en un medio dispersivo}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop.png}
+	\end{figure}
+	
+	\esp
+	
+	En esta sección, vamos a estudiar cómo cambia la forma de la envolvente (pulso) de un paquete de ondas cuando éste se propaga por un medio dispersivo, en un caso concreto de forma funcional para el pulso. En el tema de polarización en Óptica I discutimos la forma de calcular la función de onda total para un paquete de ondas, que repasamos ahora con una notación similar:
+	
+	\esp
+	
+	\begin{equation}
+		E(x, t) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} F(k) \exp[-i(\omega t - kx)] dk
+	\end{equation}
+	
+	\esp
+	
+	Considerando que el número de ondas es la magnitud correspondiente a $x$ en el dominio de las frecuencias espaciales, entonces esta expresión, evaluada en $t = 0$, puede verse como la transformada de Fourier inversa de la función $F(k)$. Por tanto, $F(k)$ a su vez sería la transformada de Fourier de $E(x, 0)$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop2.png}
+	\end{figure}
+	
+	\esp
+	
+	En general no es posible conocer la forma funcional de $F(k)$ ni resolver la integral para determinar la función de onda del paquete, salvo en casos muy específicos. Uno de ellos es el que vimos en Óptica I de la señal óptica (función amplitud constante en un cierto intervalo pequeño alrededor de $k_0$). Vamos a ver ahora otro caso que también es resoluble y es algo más interesante: si suponemos una envolvente de tipo gaussiano para el paquete de ondas, tendríamos entonces que:
+	
+	\esp
+	
+	\begin{equation}
+		E(x, 0) = \text{Re} \left[ A \exp \left( \frac{-x^2}{2\sigma_x^2} \right) \exp (i k_0 x) \right]
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop3.png}
+	\end{figure}
+	
+	\esp
+	
+	Así que podemos conocer la forma funcional de $F(k)$ utilizando las propiedades de la Transformada de Fourier: la Transformada de Fourier de una función gaussiana es otra gaussiana en el dominio de las frecuencias, con una anchura inversa de la anchura de la función gaussiana en el espacio. Tendríamos entonces que:
+	
+	\esp
+	
+	\begin{equation}
+		F(k) = \sigma_x A \exp \left[ -\frac{\sigma_x^2}{2} (k - k_0)^2 \right]
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop4.png}
+	\end{figure}
+	
+	\esp
+	
+	Para poder ver cómo cambia la amplitud y la anchura del pulso al propagarse por el medio, tenemos que obtener la expresión para $E(x, t)$ resolviendo la integral del inicio de la sección. Sin embargo, para ello necesitamos expresar $\omega$ en función de $k - k_0$, como hicimos en Óptica I, utilizando un desarrollo en serie de Taylor alrededor de $k_0$, cosa que puede hacerse perfectamente en el caso del paquete de ondas gaussiano. La diferencia en este caso va a estar en que en ese desarrollo vamos a considerar un medio dispersivo, y por tanto nos quedaremos con un término más:
+	
+	\esp
+	
+	\begin{equation}
+		\omega(k) = \omega(k_0) + \left. \frac{d\omega}{dk} \right|_{k=k_0} (k - k_0) + \left. \frac{1}{2} \frac{d^2\omega}{dk^2} \right|_{k=k_0} (k - k_0)^2 + O[3]
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop5.png}
+	\end{figure}
+	
+	\esp
+	
+	Nos quedamos entonces en segundo orden, y podemos escribir de forma más breve la expresión anterior en función de la velocidad de grupo del paquete y un coeficiente $\Gamma$ que nos da la idea de la capacidad de dispersión del medio:
+	
+	\esp
+	
+	\begin{equation}
+		\omega(k) = \omega(k_0) + v_g (k - k_0) + \Gamma (k - k_0)^2
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop6.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop7.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop8.png}
+	\end{figure}
+	
+	\esp
+	
+	Sustituyendo esta expresión y también $F(k)$ en la integral para determinar $E(x, t)$, nos damos cuenta de que queda en definitiva una integral que puede simplificarse de forma que sea equivalente a la Transformada de Fourier inversa de una función gaussiana en el dominio de las frecuencias espaciales (número de ondas). Resolviendo esta integral, nos queda entonces la siguiente expresión para la función del paquete de ondas gaussiano:
+	
+	\esp
+	
+	\begin{equation}
+		E(x, t) = \frac{A \sigma_x}{\sqrt{\sigma_x^2 + 2i\Gamma t}} \exp \left[ \frac{-(x - v_g t)^2 \sigma_x^2}{(2\sigma_x^2)^2 + (4\Gamma t)^2} \right] \exp [i \phi(x, t)]
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop9.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop10.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/prop11.png}
+	\end{figure}
+	
+	\esp
+	
+	Por tanto, la propagación modifica la amplitud, la anchura y la fase de la onda portadora. Los cambios en la fase no van a ser muy relevantes en conjunto, así que nos centramos en vez qué sucede con la anchura y la amplitud. Viendo la forma de $E(x, t)$ es fácil deducir que la anchura del paquete aumenta con el tiempo de propagación en el medio dispersivo, y la amplitud máxima de la envolvente disminuye. Esto tiene cierto sentido: conforme el paquete se va propagando, no todas las frecuencias que lo integran viajan a la misma velocidad por el medio, con lo cual se va acumulando un cierto retardo de unas con respecto a otras en la propagación, y la envolvente es cada vez más ancha. Como la energía del paquete se conserva porque no estamos considerando medios absorbentes, entonces la misma energía se reparte en una mayor extensión espacial, con lo cual necesariamente la amplitud máxima disminuye. En la figura 10, podemos observar la evolución temporal del paquete de ondas gaussiano y de su módulo cuadrado, que nos da la idea del flujo de energía que transporta el paquete. Si representamos la propagación del paquete en el eje temporal, se podrá apreciar también cómo adquiere lo que suele llamarse un \textit{chirp} o gorjeo, es decir, cómo la frecuencia de la onda interior va cambiando con el tiempo, debido al término cuadrático en $t$ que queda introducido en la fase. El tipo de chirp adquirido depende de si la frecuencia instantánea (derivada de la fase con respecto al tiempo) crece o decrece con el tiempo. Si decrece con el tiempo, en la gráfica de evolución temporal se vería cómo la frecuencia en el extremo derecho del paquete es menor que la frecuencia en el extremo izquierdo. Esto es lo que suele suceder
 
 	\printbibliography[title={Bibliografía}]
 \end{document}
