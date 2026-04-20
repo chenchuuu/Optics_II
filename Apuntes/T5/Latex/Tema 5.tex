@@ -1,0 +1,459 @@
+\documentclass[12pt,a4paper]{report}
+
+% --- Paquetes de Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+
+% --- Diseño de Página ---
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% --- Matemáticas y Símbolos ---
+\usepackage{amsmath, amssymb, amsthm}
+
+% --- Colores y Cajas ---
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+
+% Caption
+
+\usepackage{caption}
+
+% Gráficos
+
+\usepackage{graphicx}
+
+% Espaciadora
+
+\newcommand{\esp}{\vspace{0.5cm}}
+
+% promedio
+
+\newcommand{\prom}[1]{\left\langle #1 \right\rangle}
+
+% ket
+
+\newcommand{\ket}[1]{| #1 \rangle}
+
+% bra
+
+\newcommand{\bra}[1]{\langle #1 |}
+
+% braket
+
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+
+% Bibliografía
+
+\usepackage[style=apa, backend=biber]{biblatex} % Estilo APA
+\addbibresource{biblio.bib} % Nombre de tu archivo .bib
+
+% Configuración de cajas personalizadas
+\newtcolorbox{importante}{
+	colback=red!5!white,
+	colframe=red!75!black,
+	title=Importante,
+	fonttitle=\bfseries
+}
+
+\newtcolorbox{nota}{
+	colback=blue!5!white,
+	colframe=blue!75!black,
+	title=Nota,
+	fonttitle=\bfseries
+}
+
+% Definición de la caja de bibliografía
+\newtcolorbox{bibliografia}{
+	colback=gray!5!white,
+	colframe=gray!75!black,
+	title=Bibliografías útiles,
+	fonttitle=\bfseries,
+	breakable
+}
+
+% Socrative para óptica 2
+
+\newtcolorbox{Socrative}{
+	colback=orange!5!white,
+	colframe=orange!75!black,
+	title=Socrative,
+	fonttitle=\bfseries,
+	breakable
+}
+
+% Float
+
+\usepackage{float}
+
+% --- Hipervínculos ---
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
+% --- Datos del Documento ---
+\title{Óptica II}
+\author{Chengyu Jin}
+\date{\today}
+
+\begin{document}
+	
+	\maketitle
+	
+	\tableofcontents
+	\newpage
+	
+	\chapter{Óptica No Lineal}
+	
+	\section{Introducción}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intro.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intro2.png}
+	\end{figure}
+	
+	\esp
+	
+	Hasta ahora, en todos los temas anteriores hemos considerado una respuesta lineal del medio por el que se propaga una onda e.m. al campo eléctrico aplicado. Como vimos en Óptica I, esto se traduce en una ecuación de ondas lineal para la amplitud de campo eléctrico (es decir, que no incluye términos de orden superior a la unidad en $\vec{E}$). Con la suposición de linealidad para el medio por el que se propaga la onda, podemos describir de forma bastante satisfactoria fenómenos de propagación como reflexión, refracción, birrefringencia natural y (considerando el principio de superposición), también los fenómenos de interferencia y difracción que hemos visto en Óptica I y en los primeros temas de Óptica II. El índice de refracción y el coeficiente de absorción no dependen de la intensidad de la onda, y la distribución en frecuencias de la onda no se modifica al propagarse por el medio.
+	
+	\esp
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intro3.png}
+	\end{figure}
+	
+	\esp
+	
+	Sin embargo, con esta asunción de medios lineales hemos dejado fuera un conjunto muy amplio de fenómenos que se producen en medios donde hay una respuesta no lineal al campo eléctrico aplicado, que se manifiesta fundamentalmente cuando la intensidad de la onda que se propaga es elevada, con valores de amplitud de campo eléctrico del orden de $10^5$ a $10^8$ V/m, e irradiancias del orden de $10^8$ a $10^{12}$ W/m$^2$. La respuesta no lineal se articula principalmente a través de la dependencia del vector polarización $\vec{P}$ con el campo eléctrico, que podrá empezar a incluir términos de mayor orden en $\vec{E}$. Utilizando de forma preliminar el modelo de oscilador armónico acoplado, podemos entender cómo surge este comportamiento no lineal si consideramos que la fuerza externa va a tener una magnitud algo más próxima a las fuerzas atómicas (que suelen ser del orden de $10^{11}$ V/cm), y la fuerza compensatoria ya no sigue la ley de Hooke y es proporcional a $x$, sino que incluye términos de orden superior. El oscilador pasa a ser entonces no armónico, y esto induce una dependencia de la solución del oscilador que no es lineal con $\vec{E}$, y también a su vez induce una dependencia no lineal de la polarización con el campo eléctrico de la onda que se propaga por el medio. Si recordamos que la polarización es, según este modelo simplificado, el producto de la densidad de dipolos por unidad de volumen por la polarización de cada dipolo individual ($\vec{P} = N\vec{p}$), entonces podemos ver que la no linealidad que aparezca en el medio puede tener su origen tanto en $N$ (si la densidad de dipolos depende del campo aplicado, lo que puede suceder por ejemplo en algunos láseres) como en $\vec{p}$. Veamos entonces cómo quedaría la relación entre la polarización y la intensidad de campo eléctrico para medios no lineales, si consideramos además que en general las interacciones no lineales suelen ser bastante débiles, por lo que puede desarrollarse en serie $P$ en función de $E$:
+	
+	\esp
+	
+	\begin{equation}
+		\vec{P} = \epsilon_0 \chi^{(1)} \cdot \vec{E} + \epsilon_0 \chi^{(2)} \cdot \vec{E}\vec{E} + \epsilon_0 \chi^{(3)} \cdot E^2 \vec{E} + \dots
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intro4.png}
+	\end{figure}
+	
+	\esp
+	
+	El primer término será el que predomine cuando la intensidad de la onda sea pequeña, y el medio se comportará de forma lineal, como podemos ver en la figura 1. El segundo término (potencia par de $E$) dará lugar a las interacciones no lineales de segundo orden, y su coeficiente será proporcional a la primera derivada parcial de $P$ con respecto a $E$ evaluada en $E = 0$; el siguiente término dará lugar a las interacciones de tercer orden, y será proporcional a la segunda derivada parcial de $P$ con respecto a $E$ evaluada en $E = 0$. Los valores típicos del coeficiente del término de segundo orden oscilan entre $10^{-12}$ y $10^{-15}$ m/V; los valores típicos para el coeficiente del término de tercer orden están entre $10^{-24}$ y $10^{-27}$ m$^2$/V$^2$, con lo cual se entiende claramente que sean necesarias intensidades altas para poder observar los fenómenos no lineales.
+
+	\esp
+	
+	Otra clasificación posible es en interacciones o efectos \textit{paramétricos} (sin intercambio de energía con el medio, y sin alterar el estado cuántico de los átomos o moléculas del medio, como por ejemplo la generación del segundo armónico y todos los procesos que veremos a lo largo del tema) y \textit{no paramétricos} (que suceden mediante el intercambio energético con el medio y alteran los estados atómicos o moleculares, de forma que los fotones involucrados no conservan la energía porque parte de su energía puede ser traspasada al medio, o bien puede haber traspaso de energía del medio a los fotones).
+	
+	\esp
+	
+	Puede expresarse entonces $\vec{P}$ como suma de dos componentes, una lineal ($\vec{P}_L$) y otra no lineal que contiene los términos de orden superior a la unidad ($\vec{P}_{NL}$).
+	
+	\esp
+	
+	\begin{equation}
+		\vec{P} = \vec{P}_L + \vec{P}_{NL}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intro5.png}
+	\end{figure}
+	
+	\esp
+	
+	La variación de $\vec{P}$ con el tiempo hace que aparezcan nuevos términos también en la ecuación de ondas e.m., que queda de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		\nabla^2 E - \frac{1}{c^2} \frac{\partial^2 E}{\partial t^2} = \mu_0 \frac{\partial^2 P^{NL}}{\partial t^2}
+	\end{equation}
+	
+	\esp
+	
+	La deducción de esta ecuación es similar a la vista en Óptica I, pero teniendo en cuenta la relación constituyente entre $\vec{D}$ y $\vec{E}$ en términos de $\vec{P}$: $\vec{D} = \epsilon \vec{E} + \vec{P}$. Debido a la dependencia de $\vec{P}^{NL}$ con $E$, la ecuación de ondas pasa a ser una ecuación diferencial no lineal en derivadas parciales.
+	
+	\esp
+	
+	Una consideración importante a tener en cuenta en este punto es si el campo eléctrico que provoca la respuesta no lineal es estático o bien se trata de una onda electromagnética. Para campos estáticos, la polarización sería constante, y el término adicional de la ecuación de ondas se anula. Sin embargo, en este caso el desarrollo de $\chi$ (relacionado con el cuadrado del índice de refracción) en función de potencias del campo eléctrico lleva a una dependencia del propio índice de refracción con potencias del campo eléctrico, con lo cual la no linealidad del medio se traduce en cambios del índice de refracción (y por tanto del camino óptico al recorrer el medio una onda de luz) que dependen del campo estático aplicado. Describiremos un pequeño ejemplo de este caso con campo magnético (efecto Faraday) en la primera parte del tema.
+	
+	\esp
+	
+	Sin embargo, si el campo aplicado varía con el tiempo (caso de ondas de luz de intensidad elevada), entonces sí que hay un segundo término diferente de cero en la ecuación de ondas, que se puede interpretar como una fuente de radiación secundaria generada por el propio medio al propagarse por él la onda electromagnética. Este caso lo trataremos en la segunda parte del tema.
+	
+	\esp
+	
+	Hay dos planteamientos básicos para resolver la ecuación de ondas no lineal: el primero se basa en el método iterativo de Born, y es el que describiremos con mayor profundidad en el tema. El segundo es más complejo y se conoce como teoría de ondas acopladas. Resulta útil para describir fenómenos de óptica no lineal en los cuales no puede despreciarse la interacción entre las diferentes ondas que se propagan por el medio.
+	
+	\esp
+	
+	Vamos a estudiar someramente algunas de las características más relevantes de las aplicaciones derivadas de la óptica no lineal. Como hemos visto en la primera parte de la sección, nos vamos a centrar en un tratamiento clásico derivado de la teoría electromagnética, que resulta válido para caracterizar interacciones no resonantes y no lineales con el medio (es decir, que consideraremos medios que no sean muy absorbentes). Nos referiremos exclusivamente a la respuesta no lineal de estos medios a fuentes de origen externo, como campos eléctricos o magnéticos (estos últimos sólo si son estáticos), aunque también se pueden generar efectos no lineales debido a variaciones de densidad locales por esfuerzos o tensiones aplicados.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/intro6.png}
+	\end{figure}
+	
+	\esp
+	
+	En definitiva, veremos una serie de fenómenos y aplicaciones de los mismos que surgen como consecuencia de la relación no lineal entre $\vec{P}$ y $\vec{E}$. Esto va a determinar un cambio en las características del medio por el que se propaga la onda e.m., y a su vez puede afectar a la propia onda en cuanto a su distribución en frecuencias o la cantidad de energía intercambiada o traspasada al medio. Algunos ejemplos de muestra de aplicaciones de Óptica No Lineal son los láseres de fibra óptica, que generan pulsos gracias a la amplificación en una fibra, y pueden ser sintonizables en frecuencia; las fibras no lineales que alteran selectivamente la forma de los pulsos que transmiten; las lentes autoenfocables en circuitos de fibra óptica; los interruptores \textit{all-Optical} que ahorran el paso de conversión de la señal óptica a eléctrica para el manejo de pulsos y re-distribución de señales en circuitos de telecomunicaciones, y los metamateriales, con muchas aplicaciones no sólo ópticas sino también derivadas de sus interesantes propiedades mecánicas (por ejemplo, se puede esconder un objeto también para el tacto, recubriéndolo de un metamaterial mecánico). El hecho de que la luz pueda modificarse de forma \textit{programable} a su paso por un determinado material, dependiendo de las características de la propia onda (la luz modifica a su vez a la propia luz utilizando las características del medio) abre muchísimas posibilidades de uso, y hace que este campo sea muy activo en cuanto a la investigación desarrollada desde hace ya décadas. Hay que aclarar aquí que también pueden tener lugar efectos no lineales cuando se apliquen campos eléctricos o magnéticos estáticos o casi-estáticos de elevada intensidad, y que se traducen en una variación del índice de refracción o en una birrefringencia inducida en el medio, aunque este caso no lo cubramos para campos eléctricos en el tema.
+	
+	\esp
+	
+	En las próximas secciones, veremos un ejemplo de interacción no lineal con campo estático de primer orden, y posteriormente algunos casos típicos de interacciones luz-materia no lineales (es decir, campos no estáticos), correspondientes a efectos de segundo y de tercer orden.
+	
+	\section{Efectos no lineales con campos estáticos}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/efectos.png}
+	\end{figure}
+	
+	\esp
+	
+	Cuando aplicamos un campo estático (o modulado con una frecuencia temporal muy baja) en determinados medios que presentan respuesta no lineal, la susceptibilidad eléctrica varía en función del campo aplicado, y por tanto se inducen también variaciones en el índice de refracción del medio:
+	
+	\esp
+	
+	\begin{equation}
+		n = n_o + aE + bE^2
+	\end{equation}
+	
+	\esp
+	
+	El primer término corresponde a una dependencia lineal del índice de refracción con el campo externo aplicado, y da lugar al llamado \textit{efecto Pockels}. El segundo término (dependencia cuadrática de $n$ con $E$) da lugar al \textit{efecto Kerr}. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/efectos2.png}
+	\end{figure}
+	
+	\esp
+	
+	Ambos efectos no pueden darse simultáneamente en un mismo material, porque los efectos de primer orden en $n$ (segundo orden en $P$) necesitan que el material no sea centrosimétrico. Si el material es centrosimétrico, entonces para cada punto en una posición $\vec{r}$, existe otro punto localizado del material en una posición $-\vec{r}$, es decir, hay un centro de simetría. Esto implica que el valor de sus propiedades (entre ellas, el índice de refracción) debe ser idéntico para los puntos en las posiciones $\vec{r}$ y $-\vec{r}$. Dado que $\vec{E}$ es un vector polar, es decir, que cambia de signo ante una inversión del vector $\vec{r}$, necesitamos entonces compensar este cambio de signo del vector $\vec{E}(-\vec{r})$ con potencias pares de $\vec{E}$ en el desarrollo de $n$, para que $n$ pueda mantenerse con el mismo valor en las posiciones $\vec{r}$ y $-\vec{r}$ (o sea, si $E$ cambia de signo, $E^2$ no cambia de signo, y por tanto $n$ sería idéntico en las posiciones $(\vec{r})$ y $-\vec{r}$). Por tanto, para los materiales centrosimétricos, no puede haber efectos de cambio de índice de refracción con potencias impares de $E$ (es decir, efectos de segundo orden en $P$, o primer orden en $n$).
+	
+	\esp
+	
+	Los efectos de segundo orden en $n$ (tercer orden en $P$) se dan en materiales tanto centrosimétricos como no centrosimétricos, aunque en los no centrosimétricos los efectos de primer orden predominan sobre los de segundo orden.
+	
+	\esp
+	
+	Veremos a continuación una breve descripción de un efecto de segundo orden en $\vec{P}$ relacionado con aplicación de campo magnético, con algunas de sus aplicaciones.
+	
+	\subsection{Efecto Faraday}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/fara.png}
+	\end{figure}
+	
+	\esp
+	
+	El efecto Faraday es un efecto de primer orden en $n$, pero de tipo magnético. Además, la variación de índices de refracción introducida para medios inicialmente isótropos sucede en forma de birrefringencia inducida para luces circularmente polarizadas (actividad óptica). La birrefringencia inducida sería entonces proporcional al campo magnético aplicado:
+	
+	\esp
+	
+	\begin{equation}
+		\Delta n = n_L - n_D = aB
+	\end{equation}
+	
+	\esp
+	
+	Como se trata de un medio isótropo, ya no afectan las consideraciones de simetría explicadas para el efecto electro-óptico.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/fara2.png}
+	\end{figure}
+	
+	\esp
+	
+	De otra forma, podemos decir que en determinados medios, el campo magnético aplicado induce actividad óptica. Experimentalmente, se encuentra que cuando incide luz linealmente polarizada propagándose en la misma dirección que el campo aplicado (configuración longitudinal), el ángulo que rota a la salida del material ($\beta$) es proporcional a la longitud de material recorrido y al campo $B$ (inducción magnética) aplicado. La constante de proporcionalidad $V$ se denomina constante de Verdet. Ya sabemos por Óptica I que el ángulo $\beta$ es justo la mitad del desfase introducido debido al efecto de birrefringencia inducido en el material, y por tanto no sorprende que
+	
+	\esp
+	
+	\begin{equation}
+		\beta = \pm VBL = \frac{\delta_{LD}}{2}
+	\end{equation}
+	
+	\esp
+	
+	siendo $L$ la distancia recorrida en el interior del medio. El signo más o menos que hemos introducido indica (para constante de Verdet positiva) que si la luz se propaga en el mismo sentido que el campo aplicado, el giro será dextrógiro, u horario, mientras que si se propaga en sentido opuesto a B, el giro será levógiro o antihorario. Para determinar el sentido de giro, miramos siempre la luz viniendo hacia nosotros en el sentido de propagación. Esto supone que si la luz atraviesa una vez una determinada longitud de material con efecto Faraday, se refleja y vuelve a atravesar el material, el giro con respecto a la dirección de vibración inicial es acumulativo (al cambiar el sentido de propagación, un giro levógiro equivale a uno dextrógiro en el sentido inicial).
+	
+	\esp
+	
+	En realidad, los valores de $V$ suelen ser bastante pequeños, con lo cual el valor del ángulo girado por cada $mm$ recorrido en el medio también es pequeño. Y también dependen de la longitud de onda, como se comprueba en la práctica de laboratorio sobre Efecto Faraday.
+	
+	\esp
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/fara3.png}
+	\end{figure}
+		
+	\esp
+	
+	Una posible aplicación del efecto Faraday es en la construcción de rotores o bien los llamados \textit{aislantes ópticos} para eliminar ondas reflejadas. Estos dispositivos aprovechan el efecto acumulativo de los pasos en sentido opuesto en una célula Faraday, como se muestra en la figura. Se utiliza un polarizador y se induce un giro de 45$^\circ$, con lo que al reflejarse la luz gira 90$^\circ$ con respecto a la dirección de vibración inicial, y es absorbida por el polarizador situado al principio del dispositivo.
+	
+	\esp
+	
+	También hay efectos magneto-ópticos de segundo orden, denominados Cotton-Mouton en líquidos y Voigt para gases; suelen observarse en configuración transversal, pero son de bastante menos entidad que el Faraday, y no los vamos a describir porque entendemos que se salen del nivel exigible a un curso introductorio de óptica. Otro efecto que tiene interesantes aplicaciones en polarimetría solar es el efecto Zeeman, que se produce al introducir una fuente de luz (lámpara espectral generalmente) en un campo magnético externo, que afecta al movimiento de los electrones en los átomos de la fuente que genera la emisión de luz. El efecto producido es el de un desdoblamiento (o triplicación según la dirección de observación) de las líneas espectrales.
+	
+	\section{Efectos no lineales con campos modulados (ondas de luz)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo.png}
+	\end{figure}
+	
+	\esp
+	
+	En esta sección, vamos a describir brevemente algunos efectos no lineales que pueden tener lugar cuando una onda e.m. con frecuencia dentro del visible se propaga por un medio con respuesta no lineal. La diferencia fundamental con los efectos descritos en la sección anterior es entonces la frecuencia de modulación del campo, que es mucho más elevada en el caso de ondas luminosas. Igual que en la sección anterior, distinguimos entre efectos de segundo orden y de tercer orden en $P$.
+	
+	\esp
+	
+	Dentro de los efectos de segundo orden, describiremos en primer lugar el proceso de generación del segundo armónico y el término de rectificación óptica (que fue el primero en descubrirse). Nos centraremos luego en los procesos de mezcla de tres ondas y sus diferentes aplicaciones.
+	
+	\esp
+	
+	Dentro de los efectos de tercer orden, veremos muy brevemente la generación del tercer armónico y algunos efectos y aplicaciones de la mezcla de cuatro ondas.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo3.png}
+	\end{figure}
+	
+	\esp
+	
+	Es importante tener en cuenta las restricciones que vamos a considerar, para empezar por una situación en la que el tratamiento del fenómeno sea relativamente asequible: consideraremos que los medios no lineales son homogéneos, isótropos y no dispersivos. Esto hace que los vectores $\vec{E}$ y $\vec{P}$ sean paralelos, y por tanto la susceptibilidad eléctrica sea un escalar y no un tensor; además, la relación entre ambos vectores puede ser considerada componente a componente. Una descripción breve de lo que sucede para medios dispersivos o anisótropos puede encontrarse en [1], entre otros textos. También hemos visto en la sección anterior ejemplos de interacciones no lineales con campos estáticos en medios anisótropos. Además, consideraremos también interacciones \textit{paramétricas}, es decir, en las que el intercambio de energía puede producirse entre las diferentes ondas que se propagan en el medio utilizando la no linealidad del propio medio, pero no directamente entre las ondas y el medio. Entonces, la energía total de las ondas se va a conservar (intercambio de tipo elástico). Conforme vayamos avanzando en la descripción de los diferentes tipos de efectos, se irán relajando algunas de estas restricciones (sobre todo la de medios no dispersivos e isótropos).
+	
+	\esp
+	
+	Volvemos ahora a la ecuación de ondas descrita en la primera sección, y vamos a ver el tratamiento más simple para obtener una solución de la misma, basado en la aproximación de Born. La idea principal de este método es que la radiación generada por la fuente $S = -\frac{1}{\epsilon_0 c^2} \frac{\partial^2 P^{NL}}{\partial t^2}$ produce a su vez un campo eléctrico, que a su vez produce polarización y por tanto genera a su vez otra fuente $S$, y así sucesivamente. Este proceso sugiere utilizar un sistema iterativo para resolver la ecuación, obteniendo términos sucesivos en varios pasos. El primer paso se conoce como \textit{primera aproximación de Born}. La solución encontrada será una buena aproximación a la solución de la ecuación de ondas cuando la intensidad de la onda incidente no sea muy elevada (siempre hablando en términos de óptica no lineal, es decir, que sea lo bastante elevada para producir efectos no lineales, pero no demasiado perceptibles). Los pasos del método serían, esquemáticamente:
+	
+	\esp
+	
+	\begin{itemize}
+		\item A partir del campo incidente $E_0$ (recordemos que es una onda y no un campo estático), determinar $P_{NL}$ utilizando los correspondientes coeficientes del medio.
+		\item Utilizar $P_{NL}$ para obtener la fuente correspondiente $S(E_0)$, calculando la segunda derivada parcial con respecto al tiempo de $P_{NL}$ que aparece en el término $S$.
+		\item Determinar la onda radiada por $S(E_0)$, que puede llamarse $E_1$, como una integral de superposición de las diferentes ondas esféricas generadas en cada punto del medio. Este método constituye una alternativa a la deducción sobre la radiación dipolar en el fenómeno del esparcimiento, que se ha descrito en el tema anterior.
+	\end{itemize}
+	
+	\esp
+	
+	Un punto importante a tener en cuenta es que el campo inicial, $E_0$, puede estar constituido por una o varias ondas (de diferente frecuencia), con lo cual el campo radiado $E_1$ podrá contener componentes de frecuencia no presentes inicialmente en $E_0$. Como se describió en la introducción, la no linealidad del medio dará lugar a la aparición de nuevas ondas a partir de la incidente, lo que podrá a su vez utilizarse en varias aplicaciones interesantes.
+	
+	\subsection{Efectos de segundo orden}
+	
+	Consideramos aquí medios con todas las restricciones señaladas anteriormente (homogéneos, isótropos, no dispersivos ni absorbentes) para los cuales el desarrollo de $P$ en función de $E$ puede truncarse en el segundo término, y por tanto, $P_{NL} = \epsilon_0 \chi^{(2)} E^2$ (medios de segundo orden). Veremos la situación que se produce utilizando la primera aproximación de Born, cuando en el medio inciden una o varias ondas. Dado que estamos en primera aproximación, el campo radiado por esparcimiento elástico $E_1$ tendrá las mismas componentes en frecuencia que $S_\omega$, lo que es equivalente a decir que tendrá las mismas componentes en frecuencia que $P_{NL}$, ya que la operación en derivadas parciales para determinar $S_\omega$ a partir de $P_{NL}$ no afecta al contenido en frecuencias de la señal.
+	
+	\subsubsection{Generación del segundo armónico y rectificación óptica}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo4.png}
+	\end{figure}
+	
+	\esp
+	
+	Suponemos una única onda incidente en un medio no lineal de segundo orden, con frecuencia $\omega$. Podemos expresar entonces el campo incidente como:
+	
+	\esp
+	
+	\begin{equation}
+		E(t) = \text{Re} \{ E(\omega) \exp(i\omega t) \} = \frac{1}{2} [ E(\omega) \exp(i\omega t) + E^*(\omega) \exp(-i\omega t) ]
+	\end{equation}
+	
+	\esp
+	
+	El primer término $E(\omega)$ contiene la parte espacial de la fase en la onda inicial. Entonces, utilizamos que $P_{NL} = \epsilon_0 \chi^{(2)} E^2$, y tras operar obtenemos la siguiente expresión para $P_{NL}$:
+	
+	\esp
+	
+	\begin{equation}
+		P_{NL}(t) = \frac{\epsilon_0 \chi^{(2)}}{2} E(\omega) E^*(\omega) + \text{Re} \left[ \frac{\epsilon_0 \chi^{(2)}}{2} E^2(\omega) e^{i(2\omega t)} \right] = P_{NL}(0) + \text{Re} \left[ P_{NL}(2\omega) e^{i(2\omega t)} \right]
+	\end{equation}
+	
+	\esp
+	
+	El término $P_{NL}(0)$ se llama \textit{rectificación óptica}, y el segundo término (que indica que $P_{NL}$ contiene una frecuencia que es el doble de la de la onda inicial) dará lugar a la generación del \textit{segundo armónico}, que es en realidad la radiación generada por este término, que tiene la misma distribución en frecuencia que $P_{NL}$. Vamos a describir y discutir algunos detalles de este proceso en primer lugar.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo5.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Generación del segundo armónico (Second Harmonic Generation o SHG)}
+	El campo $P_{NL}$ generará radiación según su fuente asociada: $S = -\frac{1}{\epsilon_0 c^2} \frac{\partial^2 P_{NL}}{\partial t^2}$, y es inmediato determinar, calculando la segunda derivada parcial, que la amplitud de $S$ será $S(2\omega) = -\frac{1}{2c^2} 2\omega^2 \chi^{(2)} E(\omega)^2$, y la frecuencia de radiación será $2\omega$, como ya se ha mencionado. Entonces, la radiación generada por $S$ contiene términos de frecuencia doble a la de la onda inicial, de ahí su nombre de \textit{segundo armónico}. Vamos a concentrarnos ahora en determinar la intensidad de emisión de este segundo armónico.
+	
+	\esp
+	
+	La intensidad del segundo armónico es entonces proporcional a $|S(2\omega)|^2 = 4\omega^4 \frac{1}{c_0^4} \chi^{(2)^2} |E(\omega)|^4$, por tanto, podemos decir que es proporcional a $I(\omega)^2$, siendo $I(\omega)$ la intensidad de la onda inicial. Además, contiene el cuadrado de un término proporcional a $\chi^{(2)}$. Además, dado que la suma de las diferentes componentes esféricas de la onda se produce de forma coherente, la amplitud resultante es proporcional a la longitud $L$ recorrida del medio. La intensidad queda por tanto proporcional a la cuarta potencia de la frecuencia.
+	
+	\esp
+	
+	Un parámetro importante para caracterizar este proceso es la eficiencia $\eta$, definida como la razón entre la intensidad emitida por el segundo armónico y la intensidad de la onda inicial. Si tenemos en cuenta que $I(\omega) = P/S_e$, siendo $S_e$ el área transversal, nos queda:
+	
+	\esp
+	
+	\begin{equation}
+		\eta_{SHG} = C^2 \frac{L^2 P}{S_e}
+	\end{equation}
+	
+	\esp
+	
+	En la constante $C$, hemos agrupado los términos dependientes de la frecuencia de la onda y otras constantes. Es interesante también utilizar guías de onda, ya que para estos medios, $S_e$ puede ser relativamente pequeña y $L$ grande. En gran medida, el valor de $\chi^{(2)}$ y la intensidad incidente condicionan la eficiencia. Por ejemplo, para materiales como el KDP se pueden alcanzar eficiencias de centésimas incluso con intensidades de onda inicial del orden de $GW/m^2$. Sin embargo, usando materiales como el betaborato de bario (BBO), se pueden alcanzar hasta el 50\%.
+	
+	\esp
+	
+	La generación del segundo armónico tiene como principal aplicación la reducción en la longitud de onda de una fuente: por ejemplo, en un cristal KDP puede tener lugar la conversión de la longitud de onda del láser de Rubí (694 nm) en radiación ultravioleta de 347 nm.
+	
+	\esp
+	
+	Vamos a comentar brevemente ahora el primer término (\textit{rectificación óptica} o $P_{NL}(0)$) de la ecuación de la polarización. Esta componente de polarización genera entonces una diferencia de potencial en el medio como consecuencia de la propagación de la onda inicial, de forma análoga a lo que sucede en los dispositivos de conversión de corriente alterna a continua que se llaman \textit{rectificadores}.
+	
+	\esp
+	
+	Un aspecto interesante es que, si extendemos el tratamiento para determinar $P_{NL}$ al caso de una combinación de campo estático y onda e.m. de frecuencia $\omega$, puede obtenerse de forma alternativa el tratamiento teórico para el \textit{efecto Pockels} visto en la sección anterior.
+	
+	
+
+	\printbibliography[title={Bibliografía}]
+\end{document}
