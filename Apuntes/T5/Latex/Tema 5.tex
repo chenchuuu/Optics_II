@@ -425,7 +425,28 @@
 	
 	\esp
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo6.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo7.png}
+	\end{figure}
+	
+	\esp
+	
 	La intensidad del segundo armónico es entonces proporcional a $|S(2\omega)|^2 = 4\omega^4 \frac{1}{c_0^4} \chi^{(2)^2} |E(\omega)|^4$, por tanto, podemos decir que es proporcional a $I(\omega)^2$, siendo $I(\omega)$ la intensidad de la onda inicial. Además, contiene el cuadrado de un término proporcional a $\chi^{(2)}$. Además, dado que la suma de las diferentes componentes esféricas de la onda se produce de forma coherente, la amplitud resultante es proporcional a la longitud $L$ recorrida del medio. La intensidad queda por tanto proporcional a la cuarta potencia de la frecuencia.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo8.png}
+	\end{figure}
 	
 	\esp
 	
@@ -447,13 +468,273 @@
 	
 	\esp
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/segundo9.png}
+	\end{figure}
+	
+	\esp
+	
 	Vamos a comentar brevemente ahora el primer término (\textit{rectificación óptica} o $P_{NL}(0)$) de la ecuación de la polarización. Esta componente de polarización genera entonces una diferencia de potencial en el medio como consecuencia de la propagación de la onda inicial, de forma análoga a lo que sucede en los dispositivos de conversión de corriente alterna a continua que se llaman \textit{rectificadores}.
 	
 	\esp
 	
 	Un aspecto interesante es que, si extendemos el tratamiento para determinar $P_{NL}$ al caso de una combinación de campo estático y onda e.m. de frecuencia $\omega$, puede obtenerse de forma alternativa el tratamiento teórico para el \textit{efecto Pockels} visto en la sección anterior.
 	
+	\subsection{Mezcla de tres ondas y aplicaciones}
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero.png}
+	\end{figure}
+	
+	\esp
+	
+	Consideramos ahora qué sucede en un medio no lineal tipo \textit{chi dos}, es decir, no centrosimétrico, cuando en él se propagan dos ondas de frecuencias $\omega_1$ y $\omega_2$. La onda inicial tendría entonces la expresión:
+	
+	\esp
+	
+	\begin{equation}
+		E(t) = \text{Re} [E (\omega_1) \exp (i\omega_1 t) + E (\omega_2) \exp (i\omega_2 t)]
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero2.png}
+	\end{figure}
+	
+	\esp
+	
+	Siguiendo un desarrollo análogo al caso del segundo armónico, debemos entonces determinar $P_{NL} = \epsilon_0 \chi^{(2)} E^2$. Operando de forma similar y simplificando, nos aparecen entonces cinco términos dentro de $P_{NL}$:
+	
+	\esp
+	
+	\begin{align*}
+		P_{NL}(0) &= \frac{\epsilon_0 \chi^{(2)}}{2} [|E(\omega_1)|^2 + |E(\omega_2)|^2] \\
+		P_{NL}(2\omega_1) &= \frac{\epsilon_0 \chi^{(2)}}{2} E(\omega_1) E(\omega_1) \\
+		P_{NL}(2\omega_2) &= \frac{\epsilon_0 \chi^{(2)}}{2} E(\omega_2) E(\omega_2) \\
+		P_{NL}(\omega_+) &= 2 \frac{\epsilon_0 \chi^{(2)}}{2} E(\omega_1) E(\omega_2) \\
+		P_{NL}(\omega_-) &= 2 \frac{\epsilon_0 \chi^{(2)}}{2} E(\omega_1) E^*(\omega_2)
+	\end{align*}
+	
+	\esp
+	
+	El primer término sería el de rectificación óptica que ya hemos comentado. Los dos siguientes corresponden a los segundos armónicos de las frecuencias de las ondas iniciales que se propagan por el medio. Al proceso de generación del cuarto término, que tiene una frecuencia suma de las de las ondas iniciales, se le suele llamar \textit{suma de frecuencias}, o más técnicamente \textit{frequency up-conversion}. Al quinto término se le llama entonces \textit{diferencia de frecuencias} o bien \textit{frequency down-conversion} si nos referimos al efecto que da lugar a su origen.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero3.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero4.png}
+	\end{figure}
+	
+	\esp
+	
+	Entonces, el efecto del medio no lineal es mezclar las frecuencias iniciales y producir una tercera onda de diferente frecuencia (suma o diferencia de las dos que se mezclan). Veremos a continuación cómo puede regularse la amplificación de los diferentes términos para que obtengamos al final sólo una tercera onda de forma efectiva a la salida del medio, como se muestra en la figura para un caso concreto. Notad que, si consideramos un medio no dispersivo, se cumple la relación de las inversas de las longitudes de onda, de modo que $\frac{1}{\lambda_3} = \frac{1}{\lambda_1} + \frac{1}{\lambda_2}$.
+	
+	\esp
+	
+	\textbf{Condiciones de igualación de fase (\textit{Phase matching}) y frecuencia}
+	Según hemos visto, la amplitud compleja del término de polarización correspondiente a la suma de ondas sería la siguiente:
+	
+	\esp
+	
+	\begin{equation}
+		P_{NL} (\omega_3) = \epsilon_0 \chi^{(2)} E (\omega_1) E (\omega_2) = \epsilon_0 \chi^{(2)} A_1 A_2 \exp (-j \mathbf{k}_3 \cdot \mathbf{r})
+	\end{equation}
+	
+	\esp
+	
+	Por tanto, se deduce que se cumple la siguiente condición para los números de onda de las tres ondas:
+	
+	\esp
+	
+	\begin{equation}
+		\mathbf{k}_1 + \mathbf{k}_2 = \mathbf{k}_3
+	\end{equation}
+	
+	\esp
+	
+	Y, por supuesto, también se cumple la condición de que $\omega_3 = \omega_1 + \omega_2$. La onda generada por la interacción de las dos ondas iniciales con el medio no lineal debe cumplir entonces la condición sobre los números de onda (condición de \textit{Phase matching} o igualación de fase) además de la condición sobre las frecuencias. Esta condición es necesaria para que las tres ondas puedan interactuar mutuamente durante un cierto período de tiempo, de forma estable.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero5.png}
+	\end{figure}
+	
+	\esp
+	
+	De forma alternativa y más simple, se puede ver el proceso no lineal como un proceso a nivel de fotones, en el que dos fotones de frecuencias $\omega_1$ y $\omega_2$ son destruidos y se genera un nuevo fotón de frecuencia $\omega_3$. Dado que debe conservarse la energía en el proceso con las restricciones que nos hemos marcado, se cumple la condición de suma de frecuencias. Y la condición de igualación de fase se derivaría de la conservación del momento para los tres fotones involucrados.
+	
+	\esp
+	
+	Como hemos dicho, si nos aseguramos de que se cumplen ambas condiciones, se da lugar a un proceso generalizado de \textit{mezcla de tres ondas} que puede presentar muchas variantes, como veremos a continuación. Si las otras ondas generadas en el medio no se sostienen porque no cumplen las condiciones de igualación de fase, entonces tenemos posibles interacciones entre la onda de frecuencia $\omega_3$ y la onda de frecuencia $\omega_2$, generándose por ejemplo una onda en un proceso de resta de frecuencias, que tendría una frecuencia $\omega_1$. Igualmente, la onda de frecuencia $\omega_3$ puede interactuar con la onda de frecuencia $\omega_1$ generando una onda de frecuencia $\omega_2$ por diferencia de frecuencias. Así, las tres ondas pueden ir interactuando y sosteniéndose mutuamente en el medio no lineal. Este proceso se llama entonces \textit{mezcla de tres ondas}.
+	
+	\esp
+	
+	Las variantes de este proceso paramétrico de mezcla de tres ondas dependen de qué ondas funcionen como entrada y cuáles se seleccionen a la salida del medio no lineal. Algunos de estos procesos los vamos a describir específicamente a continuación, y se muestran esquemáticamente en la figura 5.
+	
+	\esp
+	
+	\begin{itemize}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/tercero6.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Conversión óptica de frecuencia.} Incluye dos procesos: la generación de la frecuencia suma (SFG), que ya hemos descrito antes, en el que las ondas de frecuencia $\omega_1$ y $\omega_2$ entran al material, y se genera una tercera onda de frecuencia $\omega_3 = \omega_1 + \omega_2$. El proceso complementario a éste se llama generación de la frecuencia resta o \textit{DFG}. En el DFG las ondas de frecuencia $\omega_3$ y $\omega_1$ interactúan para generar una onda de frecuencia $\omega_2$. Si la onda 1 y la onda 2 tienen la misma frecuencia, puede verse el proceso SHG como una versión particular de un proceso SFG, que se llama \textit{degenerada}.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/tercero7.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Amplificación óptica paramétrica (OPA).} Es un proceso tipo DFG en el que la onda de frecuencia $\omega_3$ (bombeo) interactúa con la onda de frecuencia $\omega_1$ (señal), de forma que ésta se amplifica, creándose también en el proceso otra onda de frecuencia $\omega_2$ (\textit{idler} o inerte). Los OPA se suelen usar para permitir la detección de ondas de señal débil para las cuales no es posible utilizar detectores de alta sensibilidad.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/tercero8.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Optical Parametric Oscillation (OPO).} Es una variante del proceso anterior en la cual al medio se suministra sólo la onda \textit{de bombeo}, y se genera las ondas \textit{señal} e \textit{idler} en el propio medio. Se pueden utilizar entonces como fuentes de luz sintonizables, puesto que la frecuencia generada puede variar en función de algunos parámetros del medio, como la temperatura.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/tercero9.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Conversión paramétrica espontánea (SPD).} En este proceso (de nuevo, una variante de DFG), se suministra al medio la onda 3 (bombeo), y se generan varios posibles pares de frecuencias $\omega_1$ y $\omega_2$, que cumplen la condición de igualación de fase y frecuencia. La característica más destacable del proceso es que las dos ondas generadas se propagan en direcciones distintas, y están entrelazadas cuánticamente. El resultado es un cono de ondas multiespectral.
+	\end{itemize}
+	
+	\esp
+	
+	\textbf{Igualación de fase y curvas de sintonizado} Vamos a ver por último en este apartado algunos casos particulares de condiciones de igualación de fase, y cómo pueden aprovecharse las características del medio para asegurar que se cumplan las condiciones de igualación de fase, o bien cómo estas pueden relajarse hasta cierto punto.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero10.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Ondas alineadas en dirección de propagación} En el caso de mezcla de tres ondas alineadas, es decir, que se propagan en la misma dirección, entonces las condiciones de igualación de frecuencia y fase quedarían de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		\omega_1 + \omega_2 = \omega_3, \quad \omega_1 n_1 + \omega_2 n_2 = \omega_3 n_3
+	\end{equation}
+	
+	\esp
+	
+	Esto se deduce utilizando el hecho de que los vectores $\mathbf{k}_1$, $\mathbf{k}_2$ y $\mathbf{k}_3$ serían paralelos, y la relación entre $k$ y $n$ a través de la frecuencia y la velocidad de la luz en el vacío.
+	
+	\esp
+	
+	Debido a que los medios son normalmente dispersivos, las ondas viajan con diferente índice de refracción, y por tanto no suelen poder cumplirse las dos condiciones de igualación de frecuencia y fase a la vez. Sin embargo, si el medio es anisótropo, puede utilizarse esto para compensar la dispersión cromática, y así hacer posible que se cumplan las dos condiciones a la vez, y por tanto que se den los procesos no lineales. Empezamos ya a relajar las restricciones impuestas al principio de la sección.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero11.png}
+	\end{figure}
+	
+	\esp
+	
+	Veamos un ejemplo referido a la generación del segundo armónico (SHG) en un cristal uniáxico de índices propios $n_o$ y $n_e$. Vamos a suponer que las dos ondas incidentes en el medio tienen la misma frecuencia ($\omega_1 = \omega_2$, como corresponde al proceso de SHG) y la misma dirección de vibración, con lo cual tienen también el mismo índice de refracción ($n_1 = n_2$). La frecuencia de la onda 3 es entonces la del segundo armónico ($\omega_3 = 2\omega_1$). Por tanto, la condición de igualación de fase impone que también se cumpla que $n_3 = n_1$. O sea, que el segundo armónico viaje a la misma velocidad en el medio que las ondas 1 y 2 (o que la onda inicial a secas). Debido a la dispersión del medio, esto no va a producirse, salvo que podamos jugar con la birrefringencia del mismo y la polarización de la onda 3 para que dicha onda se propague a la misma velocidad que las ondas 1 y 2, como se ilustra en la figura 6. Puede encontrarse la solución adecuada para el ángulo de incidencia utilizando la ecuación de cálculo de las velocidades que se vio en Óptica I para la propagación de las ondas, e imponiendo que $n(\theta, \omega) = n_o(2\omega)$.
+	
+	\esp
+	
+	El proceso ilustrado en la figura decimos que es de \textit{Tipo I} porque las dos ondas que se suman tienen la misma dirección de vibración (estado de polarización). En concreto, se trata de un proceso \textit{e-e-o}, ordenando las etiquetas de estado de polarización ($e$ indica extraordinario, $o$ ordinario) de menor a mayor frecuencia. En algunos medios, la solución encontrada para los procesos de \textit{upconversion} o \textit{downconversion} requiere que las ondas de menor frecuencia tengan diferentes direcciones de vibración. En ese caso, hablamos de procesos \textit{Tipo II}. Un ejemplo de procesos de este tipo sería \textit{o-e-o}.
+	
+	\esp
+	
+	Como vemos, dado que las velocidades serán iguales sólo para ciertas direcciones de propagación dentro del medio (las que permitan que la onda ordinaria del segundo armónico viaje a igual velocidad que la onda extraordinaria de la señal inicial), si representamos la intensidad a la salida del medio del segundo armónico en función del ángulo de incidencia, se irán obteniendo picos y valles dependiendo de si se cumple la condición de igualación de fase o no para esa dirección de incidencia. Por ejemplo, para un cristal de KDP y una onda incidente de 694 nm, $n_e = 1,534$ y $n_o = 1,490$, así que se puede encontrar un ángulo $\theta = 52^\circ$ que cumpla la condición de igualación de fase con un proceso tipo I \textit{o-o-e}. Lo que suele hacerse es cortar el cristal y orientarlo de forma que se produzca la dirección de propagación en el interior del mismo que buscamos.
+	
+	\esp
+	
+	Para muchas aplicaciones prácticas, por ejemplo un OPO, puede representarse la longitud de onda (determinada a partir del índice de refracción, obtenido con la ecuación de Sellmeier que se mencionó en el tema anterior y la superficie de las velocidades) para las ondas 1 y 2, en función del ángulo de refracción en el cristal, y determinar así si existe algún ángulo en el que las dos curvas se corten y que permita por tanto que el proceso sea sostenible. A estas curvas se llama \textit{Curvas de sintonizado} o \textit{Phase tuning curves}.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero12.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Ondas no alineadas (con diferente dirección de propagación)} En este caso, tenemos una condición de igualación de fase en la que intervienen los vectores según las tres direcciones de propagación:
+	
+	\esp
+	
+	\begin{equation}
+		\omega_1 n_1 \hat{u}_1 + \omega_2 n_2 \hat{u}_2 = \omega_3 n_3 \hat{u}_3
+	\end{equation}
+	
+	\esp
+	
+	Si multiplicamos esta ecuación escalarmente por el vector unitario perpendicular a $\hat{u}_3$, y luego por el propio vector $\hat{u}_3$, obtenemos dos ecuaciones en función de los ángulos que formen las direcciones $\hat{u}_1$ y $\hat{u}_2$ con $\hat{u}_3$:
+	
+	\esp
+	
+	\begin{equation}
+		\omega_1 n_1 \operatorname{sen} \theta_1 = \omega_2 n_2 \operatorname{sen} \theta_2, \quad \omega_1 n_1 \cos \theta_1 + \omega_2 n_2 \cos \theta_2 = \omega_3 n_3
+	\end{equation}
+	
+	\esp
+	
+	Recordemos que los índices de refracción van a depender de las direcciones de propagación y de las direcciones de vibración de las tres ondas, en el caso de medios anisótropos. Por tanto, si queremos que funcione el proceso no lineal en esta situación, deberemos seleccionar tanto las direcciones de propagación como las direcciones de vibración de las ondas, para que se pueda cumplir la condición de igualación de fase además de la de igualación de frecuencia.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero13.png}
+	\end{figure}
+	
+	\esp
+	
+	Veamos un ejemplo del proceso de \textit{SPDC: conversión paramétrica espontánea hacia abajo} en un cristal BBO (borato de bario beta). La onda de bombeo es de 351,5 nm, y el proceso es tipo \textit{o-o-e}, es decir, que las polarizaciones de las ondas 1 y 2 (señal e \textit{idler}) son normales a la sección principal del cristal (que coincide en este ejemplo con el plano de incidencia), y la polarización de la onda de bombeo está contenida en la sección principal, como se muestra en la figura. En este ejemplo, el ángulo $\theta$ que forma el eje óptico con la dirección de propagación en el interior del cristal es $33,53^\circ$, y en el medio se van a generar las ondas 1 y 2 con frecuencias y direcciones de propagación que puedan satisfacer las condiciones de igualación de fase y frecuencia. Considerando las ecuaciones de dependencia del índice de refracción con la frecuencia, la ecuación de cálculo de las velocidades en el medio y las condiciones de igualación de fase, una fracción de las posibles soluciones está representada en la parte central de la figura 7. En el eje horizontal de esta figura central se representa $\frac{2\omega}{\omega_3}$, o sea, la frecuencia normalizada con respecto al caso \textit{degenerado} en el que $\omega_1 = \omega_2 = \frac{\omega_3}{2}$.
+	
+	\esp
+	
+	Lo que hacemos para encontrar un par de frecuencias que puedan dar lugar al proceso es entonces lo siguiente: supongamos que fijamos la frecuencia $\omega_1 = 1,1 \frac{\omega_3}{2}$. Entonces, el brazo superior de la curva de sintonizado nos daría un ángulo $\theta_1$ de $3^\circ$ aproximadamente. Dado que tiene que cumplirse la condición de igualación de frecuencias, entonces ya sabemos que nuestra frecuencia $\omega_1$ generará una onda idler de frecuencia $\omega_2 = 0,9 \frac{\omega_3}{2}$. Buscamos dicha frecuencia en la curva siguiendo el brazo correspondiente en la parte inferior de la figura, y llegamos al ángulo $\theta_2$, que sería de $-5^\circ$ aproximadamente. Esta es sólo una de las múltiples posibles soluciones, pero podríamos escoger la solución que queramos insertando los filtros necesarios a la salida del cristal, o alimentando el medio con la frecuencia de la señal que queramos obtener a la salida. Como vemos ilustrado en la parte derecha de la figura, habría simetría circular y tendríamos un cono con sección circular a la salida del medio, pero cada punto de este anillo de emisión de la señal estaría emparejado sólo con un punto diametralmente opuesto del anillo correspondiente a la frecuencia de la onda \textit{idler}.
+	
+	\esp
+	
+	Hay una cierta tolerancia para las condiciones de igualación de fase y frecuencia, a expensas de reducir la eficiencia de los procesos no lineales. Por ejemplo, en la figura 7 vemos que hay una cierta anchura en las curvas de sintonizado, lo cual muestra que para este proceso, en especial si la frecuencia está próxima al caso degenerado, se podrían producir ondas viables en el medio que no cumpliesen exactamente la condición de igualación de frecuencia. Como puede verse desarrollado en [1], cap. 22, la tolerancia va a depender de parámetros del medio como son la longitud de medio activo $L$, de forma que la eficiencia del proceso es casi nula cuando hay una diferencia entre las fases $k_3 - (k_1 + k_2) = \frac{2\pi}{L}$. Considerando esto de otra forma, podríamos fijar un determinado intervalo $\Delta \vec{k}$, y calcular la longitud de medio activo para la cual el proceso no lineal ya dejaría de ser viable, también conocida como \textit{distancia de coherencia}. Es importante no confundir este parámetro con la longitud de coherencia relacionada con la coherencia temporal de las fuentes de luz, que vimos en Óptica I.
+	
+	En la siguiente sección, vamos a describir algunos aspectos relevantes de los procesos no lineales de tercer orden.
 
 	\printbibliography[title={Bibliografía}]
 \end{document}
