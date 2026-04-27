@@ -734,7 +734,455 @@
 	
 	Hay una cierta tolerancia para las condiciones de igualación de fase y frecuencia, a expensas de reducir la eficiencia de los procesos no lineales. Por ejemplo, en la figura 7 vemos que hay una cierta anchura en las curvas de sintonizado, lo cual muestra que para este proceso, en especial si la frecuencia está próxima al caso degenerado, se podrían producir ondas viables en el medio que no cumpliesen exactamente la condición de igualación de frecuencia. Como puede verse desarrollado en [1], cap. 22, la tolerancia va a depender de parámetros del medio como son la longitud de medio activo $L$, de forma que la eficiencia del proceso es casi nula cuando hay una diferencia entre las fases $k_3 - (k_1 + k_2) = \frac{2\pi}{L}$. Considerando esto de otra forma, podríamos fijar un determinado intervalo $\Delta \vec{k}$, y calcular la longitud de medio activo para la cual el proceso no lineal ya dejaría de ser viable, también conocida como \textit{distancia de coherencia}. Es importante no confundir este parámetro con la longitud de coherencia relacionada con la coherencia temporal de las fuentes de luz, que vimos en Óptica I.
 	
+	\esp
+	
 	En la siguiente sección, vamos a describir algunos aspectos relevantes de los procesos no lineales de tercer orden.
+	
+	\subsection{Efectos de tercer orden}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero14.png}
+	\end{figure}
+	
+	\esp
+	
+	Como ya hemos discutido al tratar el efecto Kerr, en medios centrosimétricos, los términos no lineales de segundo orden en la expresión para $\vec{P}$ en función de $\vec{E}$ no pueden darse. Entonces, el primer término no lineal que aparece es un término de tercer orden. Consideramos, por comodidad, la permeabilidad $\epsilon_0$ incluida dentro del coeficiente $\chi^{(3)}$.
+	
+	\esp
+	
+	\begin{equation}
+		\vec{P}_{NL} = 4\chi^{(3)} \vec{E}^3
+	\end{equation}
+	
+	\esp
+	
+	Estos medios se llaman entonces \textit{medios de tercer orden} o \textit{medios Kerr}. Estos medios presentan el efecto Kerr descrito en secciones anteriores, cuando están sometidos a campos estáticos.
+	
+	\esp
+	
+	En el caso de propagarse ondas de luz muy intensas por ellos, se generarán terceros armónicos y términos de suma y diferencia de tres frecuencias.
+	
+	\esp
+	
+	\subsubsection{Generación del tercer armónico}
+	
+	Haciendo un desarrollo análogo al visto para la generación del segundo armónico (SHG), considerando un campo incidente de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		E(t) = \text{Re}\{E(\omega) \exp(i\omega t)\} = \frac{1}{2} [E(\omega) \exp(i\omega t) + E^*(\omega) \exp(-i\omega t)]
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero15.png}
+	\end{figure}
+	
+	\esp
+	
+	\noindent Al elevar al cubo obtenemos dos componentes de frecuencia principales:
+	
+	\esp
+	
+	\begin{align*}
+		P_{NL}(\omega) &= 3\chi^{(3)} |E(\omega)|^2 E(\omega) \\
+		P_{NL}(3\omega) &= \chi^{(3)} E^3(\omega)
+	\end{align*}
+	
+	\esp
+	
+	La segunda componente corresponde al \textit{tercer armónico}. Sin embargo, debido al valor de $\chi^{(3)}$, la intensidad generada suele ser muy reducida, con lo que la eficiencia del proceso es baja. De hecho, suele abordarse la generación del tercer armónico como un proceso de suma de frecuencias a partir de otro proceso de SHG.
+	
+	\subsubsection{Efecto Kerr óptico}
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero16.png}
+	\end{figure}
+	
+	\esp
+	
+	La no linealidad de tercer orden en $\vec{P}$ se traduce también en un cambio de susceptibilidad eléctrica para el medio, expresado a través del primer término en $P_{NL}$, de forma que:
+	
+	\esp
+	
+	\begin{equation}
+		\epsilon_0 \Delta\chi = \frac{P_{NL}(\omega)}{E(\omega)} = 3\chi^{(3)} |E(\omega)|^2
+	\end{equation}
+	
+	\esp
+	
+	Así, la variación en susceptibilidad eléctrica resulta proporcional a la intensidad de la onda incidente, y (dado que los incrementos son pequeños), puede aproximarse el cambio en el índice de refracción de forma que también resulta proporcional a dicha intensidad. Así, el índice de refracción quedaría como:
+	
+	\esp
+	
+	\begin{equation}
+		n = n_0 + n_2 I
+	\end{equation}
+	
+	\esp
+	
+	\noindent siendo $n_2$ proporcional a $\chi^{(3)}$.
+	
+	\esp
+	
+	Es una expresión similar a la vista en las secciones anteriores para el efecto Kerr eléctrico (con campos estáticos), y refleja un fenómeno de refracción \textit{no lineal} para el cual la velocidad de fase depende directamente de la intensidad de la onda incidente. El orden de magnitud de $n_2$ va desde $10^{-16}$ para algunos cristales, hasta $0,01$ en algunos semiconductores.
+	
+	\esp
+	
+	Después de esta descripción de dos fenómenos básicos derivados de los dos términos principales de $P_{NL}$, vamos a tratar algunas aplicaciones derivadas de procesos algo más elaborados en las siguientes subsecciones.
+	
+	\subsubsection{Automodulación de fase (SPM)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero17.png}
+	\end{figure}
+
+	\esp
+	
+	Como consecuencia del efecto Kerr óptico, los materiales de tercer orden registran variaciones en la fase de las ondas que se propagan por ellos, y estas variaciones dependen de la intensidad de la propia onda, o bien de la intensidad de una segunda onda que se utilice para cambiar el índice de refracción. Así, este es un caso típico en que puede decirse que la luz controla a la propia luz.
+	
+	\esp
+	
+	El cambio de fase introducido para una onda que transporte una potencia $P$ a través de un área $A$ normal a la dirección de propagación es el siguiente:
+	
+	\esp
+	
+	\begin{equation}
+		\Delta\phi = \phi - \phi_o = -k_o \Delta n(I) L = -k_o n_2 I L = -k_o n_2 L \frac{P}{A}
+	\end{equation}
+	
+	\esp
+	
+	Por tanto, el proceso se ve favorecido si la longitud del medio es grande y el área transversal del haz pequeña, como puede suceder por ejemplo en una guía de ondas.
+	
+	\esp
+	
+	Los procesos de automodulación de fase pueden transformarse en modulación de intensidad utilizando, por ejemplo, un montaje tipo Mach-Zehnder, o bien un medio anisótropo entre dos polarizadores en el que la automodulación de fase varía el retardo entre componentes en el interior del cristal, de forma análoga a lo visto en la sección sobre el efecto Pockels.
+	
+	\subsubsection{Autoenfoque (SF)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero18.png}
+	\end{figure}
+	
+	\esp
+	
+	Si la intensidad de la onda se modula espacialmente, por ejemplo haciendo que sea mayor en el centro del haz, y la onda atraviesa un medio con efecto Kerr óptico, entonces el patrón de variación de índice que se induce en el medio va a parecerse mucho al del perfil de intensidad, ya que $\Delta n(I) = n_2 I$. Esto va a ocasionar un cambio en la curvatura del frente de onda, que puede pasar de plano a esférico.
+	
+	\esp
+	
+	Entonces, puede conseguirse de esta forma que el haz focalice en un punto situado detrás del medio, por ejemplo, como se ilustra en la figura. Y además, con la ventaja de que la focal de esta \textit{lente no lineal} puede modularse mediante la intensidad de la propia onda incidente.
+	
+	\subsubsection{Solitones espaciales}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero19.png}
+	\end{figure}
+	
+	\esp
+	
+	Siguiendo el principio básico de las aplicaciones descritas antes, pensemos que un pulso que viaja a través de un cierto volumen de medio no lineal presentará en general una distribución de intensidad modulada espacialmente en la sección transversal a la dirección de propagación del pulso (perfil de intensidad). Entonces, esta distribución causará alteraciones en el índice de refracción del medio no lineal por el que viaja, de forma que éste puede considerarse en cierto modo como una guía de onda de índice de refracción variable. Si el perfil de intensidad del pulso es capaz de crear una guía de ondas que permita la propagación del propio pulso de forma estable, entonces el pulso puede propagarse sin alterar espacialmente su forma. Podríamos decir que los efectos de deformación debidos a la difracción son compensados por las variaciones de índice en el propio medio que el haz causa al propagarse por el mismo. El pulso se guía entonces a sí mismo sin apenas distorsiones en su perfil espacial, y se denomina \textit{solitón espacial}.
+	
+	\esp
+	
+	También son de gran interés los solitones temporales, en los que la dispersión del medio que causa un incremento en la anchura del pulso es compensada por los efectos no lineales de auto-modulación de fase (SPM) en el mismo, que causan un estrechamiento del pulso, con lo cual el pulso puede viajar por el medio sin deformarse su perfil de modulación temporal.
+	
+	\esp
+	
+	Además, cuando se cruzan dos solitones, son capaces de mantener su forma tras la interacción, lo cual resultan muy convenientes en comunicaciones ópticas, para permitir la transmisión de señales a largas distancias sin que la distorsión (espacial o temporal) sea un problema.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero20.png}
+	\end{figure}
+	
+	\esp
+	
+	La forma funcional del pulso puede deducirse considerando una onda inicial $A(x, z) e^{-ikz}$. Utilizando aproximaciones, se puede escribir la ecuación de Helmholtz de esta forma:
+	
+	\esp
+	
+	\begin{equation}
+		\frac{\partial^2 A(x, z)}{\partial x^2} - i2k \frac{\partial A(x, z)}{\partial z} + k_0^2 \left[ n^2(I) - n^2 \right] A(x, z) = 0
+	\end{equation}
+	
+	\esp
+	
+	\noindent Considerando que $n_2 I \ll n$, se puede re-escribir la ecuación como:
+	
+	\esp
+	
+	\begin{equation}
+		\frac{\partial^2 A(x, z)}{\partial x^2} + \frac{n_2}{\mu_0 \epsilon_0} k^2 |A(x, z)|^2 A(x, z) = i2k \frac{\partial A(x, z)}{\partial z}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero21.png}
+	\end{figure}
+	
+	\esp
+	
+	\noindent Una solución posible para esta ecuación es la función de onda siguiente:
+	
+	\esp
+	
+	\begin{equation}
+		A(x, z) = A_0 \operatorname{sech} \left( \frac{x}{W_0} \right) \exp \left( -i \frac{z}{4z_0} \right)
+	\end{equation}
+	
+	\esp
+	
+	con $A_0$ que satisface $n_2 I_0 = \frac{1}{k^2 W_0^2}$, y por tanto el producto $A_0 W_0$ se mantiene constante. Esto se ilustra en la figura 9.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero22.png}
+	\end{figure}
+	
+	\esp
+	
+	Una descripción más fundamentada de los solitones temporales puede encontrarse en el capítulo 23 (sección 5) de [1]. De hecho, puede demostrarse que los solitones temporales cumplen una ecuación análoga a la que hemos visto para los solitones espaciales, y en general puede hablarse de una analogía entre ambos; el término solitón muchas veces se aplica a soluciones que cumplen las condiciones necesarias tanto en el dominio espacial (compensando el efecto de ensanchamiento espacial del pulso debido a la dispersión del medio) como en el temporal.
+	
+	\subsubsection{Modulación de fase cruzada (XPM)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero23.png}
+	\end{figure}
+	
+	\esp
+	
+	Este es un fenómeno que ocurre cuando dos ondas de diferente frecuencia se propagan por un medio Kerr. Vamos a partir de la onda incidente, que tendrá la forma:
+	
+	\esp
+	
+	\begin{equation}
+		E(t) = \text{Re} [E (\omega_1) \exp (i\omega_1 t)] + \text{Re} [E (\omega_2) \exp (i\omega_2 t)]
+	\end{equation}
+	
+	\esp
+	
+	Sustituyendo esta expresión para la onda incidente en la ecuación $\vec{P}_{NL} = 4\chi^{(3)} \vec{E}^3$, y aislando la componente de frecuencia $\omega_1$, queda:
+	
+	\esp
+	
+	\begin{equation}
+		P_{NL} (\omega_1) = \chi^{(3)} \left[ 3 |E (\omega_1)|^2 + 6 |E (\omega_2)|^2 \right] E (\omega_1)
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero24.png}
+	\end{figure}
+	
+	\esp
+	
+	Asumiendo un medio no dispersivo, de forma que las dos ondas viajen a la misma velocidad, se podría re-escribir la ecuación anterior de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		P_{NL} (\omega_1) = \epsilon_0 n \Delta n E (\omega_1)
+	\end{equation}
+	
+	\esp
+	
+	\noindent siendo $\Delta n = n_2 (I_1 + 2I_2)$.
+	
+	\esp
+	
+	Así que la onda de frecuencia $\omega_1$ viaja con un índice de refracción $n + \Delta n$, que depende de su propia intensidad, y también de la intensidad de la onda 2.
+	
+	\esp
+	
+	Exactamente el mismo desarrollo puede hacerse para la onda 2, con lo cual la modulación de fase se llama \textit{cruzada}, puesto que ambas ondas influyen la una en la otra de forma similar, y por tanto se pueden considerar como acopladas. Por eso este proceso se llama \textit{modulación de fase cruzada}.
+	
+	\subsubsection{Mezcla de cuatro ondas (FWM)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero25.png}
+	\end{figure}
+	
+	\esp
+	
+	Los procesos de mezcla de dos ondas no pueden tener lugar tampoco en medios de tercer orden, por las limitaciones señaladas antes para medios de segundo orden, salvo en el caso degenerado. Pero si hay tres ondas propagándose por un medio de tercer orden, pueden generarse nuevas ondas de una forma similar a lo visto para la mezcla de tres ondas, dando lugar a una serie de componentes en frecuencia englobadas dentro del término general de \textit{mezcla de cuatro ondas}, con aplicaciones específicas que vamos a describir en esta subsección, así como las respectivas condiciones de igualación de frecuencia y fase en este caso.
+	
+	\esp
+	
+	Consideramos entonces una onda de entrada con tres componentes en frecuencia:
+	
+	\esp
+	
+	\begin{equation}
+		E(t) = \text{Re} [E (\omega_1) \exp (i\omega_1 t)] + \text{Re} [E (\omega_2) \exp (i\omega_2 t)] + \text{Re} [E (\omega_3) \exp (i\omega_3 t)]
+	\end{equation}
+	
+	\esp
+	
+	Podemos imaginar la larga serie de términos a los que la sustitución de $E(t)$ en la ecuación de $P_{NL}$ va a dar lugar. Así que es quizá mejor re-escribir $E(t)$ de la siguiente forma:
+	
+	\esp
+	
+	\begin{equation}
+		E(t) = \sum_{q=\pm 1, \pm 2, \pm 3} \frac{1}{2} E (\omega_q) e^{(i\omega_q t)}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero26.png}
+	\end{figure}
+	
+	\esp
+	
+	Adoptamos la convención siguiente: para subíndices $q$ negativos, escribiríamos $E^*(\omega_q) e^{-i\omega_q t}$. Al elevar al cubo este término para calcular $P_{NL}$, obtendremos un total de $6^3 = 216$ términos. Sin embargo, ya que nos interesan las componentes de igual frecuencia y triple producto de amplitudes, podremos agrupar diferentes términos y así podemos deducir las diferentes componentes en frecuencia de $P_{NL}$.
+	
+	Por ejemplo, en el caso de la componente $P_{NL} (\omega_1 + \omega_2 - \omega_3)$ tendremos que hay seis permutaciones posibles de los términos cruzados que darían lugar a esta frecuencia, luego:
+	
+	\esp
+	
+	\begin{equation}
+		P_{NL} (\omega_1 + \omega_2 - \omega_3) = 6\chi^{(3)} E (\omega_1) E (\omega_2) E^* (\omega_3)
+	\end{equation}
+	
+	\esp
+	
+	Este proceso entonces es una mezcla de cuatro ondas, de frecuencias $\omega_1, \omega_2, \omega_3$ y $\omega_4 = \omega_1 + \omega_2 - \omega_3$. Esta última condición puede escribirse de forma alternativa como:
+	
+	\esp
+	
+	\begin{equation}
+		\omega_1 + \omega_2 = \omega_3 + \omega_4
+	\end{equation}
+	
+	\esp
+	
+	y constituye la condición de igualación de frecuencia para el proceso de mezcla a cuatro ondas que estamos considerando... la condición de igualación de fase en este caso sería:
+	
+	\esp
+	
+	\begin{equation}
+		\vec{k}_1 + \vec{k}_2 = \vec{k}_3 + \vec{k}_4
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero27.png}
+	\end{figure}
+	
+	\esp
+	
+	\noindent \textbf{Mezcla de tres ondas como un proceso FWM degenerado}
+	
+	\esp
+	
+	Si dos de las ondas que forman parte del proceso FWM tienen la misma frecuencia (por ejemplo, si las ondas 3 y 4 son de frecuencia $\omega_0$), el proceso de FWM se llama entonces \textit{parcialmente degenerado}. La condición de igualación de frecuencia implica entonces que $\omega_0$ sería la media de las frecuencias $\omega_1$ y $\omega_2$... en la figura 10 se ilustra un proceso de amplificación paramétrica óptica (OPA), pero en este caso sería el resultado de la interacción de cuatro fotones en vez de tres. De forma que dos fotones de la onda de bombeo, de frecuencia $\omega_0$, se aniquilan para dar lugar a un fotón de la frecuencia de la onda señal ($\omega_1$) y otro de la onda idler, cuya frecuencia sería $\omega_2 = 2\omega_0 - \omega_1$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero28.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero29.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Conjugación de fase óptica (Optical Phase Conjugation, OPC)} Este proceso es un caso de FWM totalmente degenerado, para el cual la frecuencia de las cuatro ondas es la misma. Para el proceso que estamos describiendo, necesitamos además que se cumpla que las ondas 3 y 4 tengan direcciones de propagación opuestas:
+	
+	\esp
+	
+	\begin{equation}
+		\vec{k}_3 = -\vec{k}_4
+	\end{equation}
+	
+	\esp
+	
+	Entonces, considerando el término descrito antes para el proceso de mezcla a cuatro ondas en el cual se genera la onda 2:
+	
+	\esp
+	
+	\begin{equation}
+		P_{NL} (\omega_2) = 6\chi^{(3)} E (\omega_3) E (\omega_4) E^* (\omega_1)
+	\end{equation}
+	
+	\esp
+	
+	y considerando las ondas 3 y 4 con amplitudes complejas:
+	
+	\esp
+	
+	\begin{equation}
+		E_3(\mathbf{r}) = A_3 \exp (-j \mathbf{k}_3 \cdot \mathbf{r}), \quad E_4(\mathbf{r}) = A_4 \exp (-j \mathbf{k}_4 \cdot \mathbf{r})
+	\end{equation}
+	
+	\esp
+	
+	Vemos entonces que se cancelan la parte espacial de la fase en las ondas 3 y 4, quedando finalmente:
+	
+	\esp
+	
+	\begin{equation}
+		E_2(\mathbf{r}) \propto A_3 A_4 E_1^*(\mathbf{r})
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero30.png}
+	\end{figure}
+	
+	\esp
+	
+	Que es entonces una onda cuya fase es conjugada de la onda 1. A las ondas 3 y 4 se les llama \textit{ondas de bombeo}, a la onda 1 \textit{sonda o probe} y a la onda 2 \textit{conjugada}. Pero ¿qué características tiene la onda conjugada? Por ejemplo, en el caso de una onda esférica, conjugar la fase equivale a cambiar el signo del exponente en la onda dejando inalterado el resto, de forma que la onda original $\frac{A}{r} e^{-ikr}$, que viaja hacia fuera desde el punto de origen, se convierte en la onda $\frac{A}{r} e^{+ikr}$, que viajaría convergiendo hacia el origen, con la misma amplitud en cada punto del viaje de retorno. En la figura 11, podemos ver el efecto de un espejo normal y uno construido con un medio no lineal que presenta conjugación de fase. Este proceso produce entonces un cambio de sentido sin alterar para nada el frente de onda de la onda incidente.
+
+	
+	\esp
+	
+	La onda conjugada (onda 2 en nuestra notación usual en el proceso de FWM) puede transportar más energía que la onda \textit{sonda o probe}, ya que su intensidad va a ser proporcional al producto de las intensidades de las ondas de bombeo (ondas 3 y 4). Esto hace que los espejos de conjugación de fase puedan convertirse también en amplificadores.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tercero31.png}
+	\end{figure}
+	
+	\esp
+	
+	Es interesante ver la conjugación de fase como un proceso análogo al de inversión temporal (cambio de $t$ por $-t$ en la fase de la onda)... Una aplicación muy destacable del proceso de OPC es la compensación de aberraciones (distorsiones del frente de onda) inducidas por el paso de la luz a través de un medio determinado. Si colocamos un espejo que realice OPC a la derecha del medio que produce las aberraciones, el frente de onda corregirá su distorsión al atravesar dos veces el medio, como podemos ver en la figura 12. El espejo OPC nos asegura que la trayectoria ha sido revertida exactamente.
+	
+	\esp
+	
+	En este capítulo, hemos realizado una descripción básica de algunos de los principales fenómenos de Óptica No Lineal... es interesante cuanto menos saber dónde encontrar ampliación de la información básica sobre Óptica No Lineal que hemos podido desarrollar en este tema.
 
 	\printbibliography[title={Bibliografía}]
 \end{document}
