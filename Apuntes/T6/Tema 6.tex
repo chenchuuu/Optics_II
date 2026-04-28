@@ -238,7 +238,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{IMG/led8.png}
+		\includegraphics[width=0.7\textwidth]{IMG/led9.png}
 	\end{figure}
 	
 	\esp
@@ -251,11 +251,277 @@
 	
 	\esp
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn.png}
+	\end{figure}
+	
+	\esp
+	
 	Las \textit{uniones p-n} son uno de los dispositivos más útiles y eficaces en optoelectrónica. Se forman por contacto de un semiconductor dopado \textit{tipo p} con otro dopado de \textit{tipo n}, bien del mismo material puro con distinto dopante (\textit{homounión}), o de distintos materiales semiconductores (\textit{heterounión}). En la figura 3, podemos ver esquemas de materiales de ambos tipos, y cómo la distribución de niveles (bandas) del \textit{tipo n} está a un nivel de energía diferente que en el \textit{tipo p}.
 	
 	\esp
 	
-	En la figura 3, vemos representados los niveles de Fermi correspondientes a ambos materiales, que muestran cómo los electrones del \textit{tipo n} se sitúan un poco por debajo de la B.C. y los del \textit{tipo p} un poco por encima de la B.V. El nivel de Fermi se define como el nivel energético para el cual, examinando la distribución de los electrones de un material en los diferentes niveles de energía, encontraríamos un 50 por ciento de la población en niveles superiores y el restante 50 por ciento en niveles inferiores. Dado que los electrones del semiconductor dopado \textit{tipo n} están más cerca de la banda de conducción, su nivel de Fermi es superior al del material dopado \textit{tipo p}, que tiene bastantes menos electrones en dicha banda. Al poner en contacto mediante una unión metalúrgica o cristalina el material \textit{tipo p} con el \textit{tipo n}, se produce un doblado de las bandas debido a la necesidad de continuidad en el material y a la diferencia de niveles energéticos que hemos esquematizado. También se crea una barrera de potencial, proceso que vamos a ver un poco más despacio. Como resultado de este proceso, el lado \textit{tipo p} próximo...
-
+	En la figura 3, vemos representados los niveles de Fermi correspondientes a ambos materiales, que muestran cómo los electrones del \textit{tipo n} se sitúan un poco por debajo de la B.C. y los del \textit{tipo p} un poco por encima de la B.V. El nivel de Fermi se define como el nivel energético para el cual, examinando la distribución de los electrones de un material en los diferentes niveles de energía, encontraríamos un 50 por ciento de la población en niveles superiores y el restante 50 por ciento en niveles inferiores. Dado que los electrones del semiconductor dopado \textit{tipo n} están más cerca de la banda de conducción, su nivel de Fermi es superior al del material dopado \textit{tipo p}, que tiene bastantes menos electrones en dicha banda. Al poner en contacto mediante una unión metalúrgica o cristalina el material \textit{tipo p} con el \textit{tipo n}, se produce un doblado de las bandas debido a la necesidad de continuidad en el material y a la diferencia de niveles energéticos que hemos esquematizado. También se crea una barrera de potencial, proceso que vamos a ver un poco más despacio. Como resultado de este proceso, el lado \textit{tipo p} próximo a la unión queda cargado negativamente, el lado \textit{tipo n} próximo a la unión positivamente y se genera un campo eléctrico en dirección de $n$ a $p$. En la \textit{unión p-n}, se crean tres zonas claramente diferenciadas: unión, lado $p$ y lado $n$. En la zona central de la unión, los electrones y huecos quedan muy próximos, y se producen las recombinaciones posibles entre ellos, o la creación de nuevos pares. Cuando todos los pares se recombinan, se crea una zona libre de portadores de carga que se comporta como una barrera aislante: la \textit{zona de deplexión}. Los electrones abandonan el lado $n$ hacia la zona de deplexión, dejándolo cargado positivamente. Los huecos abandonan el lado $p$ hacia la zona de deplexión, dejando al lado $p$ cargado negativamente.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn2.png}
+	\end{figure}
+	
+	\esp
+	
+	Se crea entonces el campo en dirección $n$ a $p$, que impide el paso de electrones desde $n$ y de huecos desde $p$. Aunque se recubra la unión con un conductor, no hay paso de carga porque la barrera lo impide, en ausencia de campo eléctrico externo y de interacciones con fotones, salvo procesos muy poco importantes de difusión de cargas.
+	
+	\esp
+	
+	Dado que la unión p-n es globalmente neutra (el campo interno se crea por una redistribución de carga), el campo global es también nulo en el dispositivo, lo cual se debe a que el campo interno se compensa con el creado en las zonas de contacto con los metales que van a formar parte del circuito externo que siempre llevan acoplados estos dispositivos. Una unión $p$-$n$ puede alimentarse con una diferencia de potencial adicional aplicada con dos tipos de polaridad: directa e inversa, lo que condiciona su comportamiento. En la figura vemos el símbolo estándar de las uniones $p$-$n$, y las dos polaridades de alimentación. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn3.png}
+	\end{figure}
+	
+	\esp
+	
+	Si se aplica la polaridad inversa, es decir, se coloca el polo positivo en el lado $n$ y el polo negativo en el lado $p$, lo que hacemos es reforzar el campo existente en la unión, que actúa de barrera de potencial, por lo que no habrá paso de corriente al circuito externo en nuestras condiciones de trabajo (oscuridad). 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn4.png}
+	\end{figure}
+	
+	\esp
+	
+	Si por el contrario se aplica la polaridad directa (polo positivo en el lado $p$ y polo negativo en el lado $n$), se crea un campo que contrarresta la barrera de potencial, y permite de nuevo el paso de electrones desde $n$ y de huecos desde $p$ a la zona de deplexión, con lo que hay cargas circulantes y el dispositivo genera corriente. El dispositivo se comporta entonces como un rectificador de corriente o diodo, y se denomina usualmente fotodiodo. 
+	
+	\esp
+	
+	Veamos ahora qué sucede si se ilumina el diodo, permitiendo que incidan fotones en la zona de deplexión y generen pares electrón-hueco. Entonces se puede producir de nuevo movimiento de cargas, como en la situación inicial del diodo antes de crearse la barrera de potencial, con lo que incluso sin alimentación externa hay una intensidad de corriente generada (movimiento de electrones desde la zona de deplexión hacia $n$, y de huecos hacia $p$). Si el diodo está iluminado, se produce un desplazamiento de la curva de intensidad frente a voltaje. A la transformación de fotones en corriente (diferencia de potencial) se denomina \textit{efecto fotovoltaico}, y se utiliza directamente en los detectores de luz. Si, por el contrario, queremos que la unión $p$-$n$ funcione como fuente de luz, debemos alimentarla con voltaje de forma directa, para contrarrestar el campo propio de la unión $p$-$n$, y obtener como resultado recombinaciones radiativas tras la inyección de portadores minoritarios que produce el voltaje aplicado.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn5.png}
+	\end{figure}
+	
+	\esp
+	
+	Las uniones descritas hasta ahora en esta subsección estarían formadas por compuestos $p$ y $n$ obtenidos a partir del mismo material semiconductor de partida. Sin embargo, la tecnología dominante en la producción de LEDs utiliza \textbf{heterouniones}, que son agrupaciones de compuestos dopados de diferentes materiales semiconductores. El hecho de utilizar heterouniones hace aumentar la eficiencia del LED, porque se consigue que las cargas estén confinadas en un espacio más pequeño, aumentando la probabilidad de que se produzcan recombinaciones radiativas. El mecanismo de confinamiento de las cargas se produce por la alteración en la distribución de los niveles de Fermi en las distintas zonas de frontera entre los materiales (por ejemplo, en una heterounión tipo $p$-$p$-$n$ se pueden crear barreras con saltos bruscos del nivel de Fermi en las fronteras $p$-$p$ y $p$-$n$ antes de alcanzar el equilibrio, que tras la alineación de los niveles de Fermi al alcanzar el equilibrio, confinen efectivamente los huecos en la banda de valencia y los electrones en la de conducción a la zona intermedia ocupada por el segundo material dopado $p$). Una notación usual para las heterouniones es utilizar combinaciones de letras $p, P$ y $n, N$, donde las mayúsculas denotan el compuesto con mayor energía de gap.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn6.png}
+	\end{figure}
+	
+	\subsection{Claves del mecanismo de emisión. Eficiencia.}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn7.png}
+	\end{figure}
+	
+	\esp
+	
+	El fenómeno en el cual se basa la emisión LED se llama \textit{electroluminiscencia}. En condiciones de equilibrio térmico, la intensidad de luz emitida en un diodo de semiconductor por recombinación radiativa no es detectable (es del orden de $10^{-20} W/cm^2$). Se necesita, como ya hemos señalado, crear una superabundancia de pares e-hueco en la zona de deplexión para que pueda producirse una emisión apreciable. Esto se realiza mediante el mecanismo denominado \textit{inyección de portadores}.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn8.png}
+	\end{figure}
+	
+	\esp
+	
+	Mediante la alimentación directa, se provoca un movimiento de electrones desde $n$ y de huecos desde $p$ hacia la zona de deplexión. Cuando se alcanza el equilibrio, se crean pares electrón-hueco a la misma velocidad que se recombinan, así que si denominamos $R$ a la tasa de creación de pares por unidad de volumen, y $\tau$ a la vida media de recombinación (por cada recombinación, desaparece un par), el número de pares creados por unidad de volumen $\Delta n$ es el producto $R\tau$. De todos estos pares, sólo los que experimenten recombinaciones radiativas van a producir fotones, y denominando eficiencia cuántica $\eta_i$ a la fracción de recombinaciones radiativas, podemos obtener el flujo de fotones como el producto de la eficiencia cuántica por la tasa de creación por el volumen de la zona de deplexión, con lo que queda proporcional al número de pares creados, lo que resulta lógico.
+	
+	\esp
+	
+	\begin{equation}
+		\Phi_i = \eta_i \frac{\Delta n}{\tau} V_{ol}
+	\end{equation}
+	
+	\esp
+	
+	Para los LEDs, se utilizan semiconductores directos, ya que en éstos la eficiencia cuántica es mucho mayor. Por ejemplo, para el $GaAs$ es de 0,5, y para el $Si$ de $10^{-5}$.
+	
+	\esp
+	
+	\noindent Vamos a ver ahora algunas de las características más destacadas de los LED.
+	
+	\esp
+	
+	\subsubsection{Flujo de fotones generado}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn9.png}
+	\end{figure}
+	
+	\esp
+	
+	En primer lugar, podemos expresar el flujo interno de fotones (el flujo que hemos calculado en el ejemplo anterior) en función de la intensidad de la alimentación aplicada, ya que la tasa de creación por unidad de volumen $R$ no es más que la intensidad entre la carga del electrón y el volumen. Entonces podemos expresar el número de pares creados por unidad de volumen y el flujo fotónico en función de la intensidad aplicada:
+	
+	\esp
+	
+	\begin{align}
+		\Delta n &= \frac{i\tau}{e V_{ol}} \\
+		\Phi_i &= \eta_i \frac{i}{e}
+	\end{align}
+	
+	\esp
+	
+	Así, se ve intuitivamente cómo la eficiencia cuántica es el cociente entre el flujo de fotones generado y el flujo de portadores suministrado.
+	
+	\esp
+	
+	\subsubsection{Flujo fotónico externo y eficiencia}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn10.png}
+	\end{figure}
+	
+	\esp
+	
+	No todos los fotones generados consiguen salir del dispositivo, por lo cual resulta conveniente definir los conceptos de flujo fotónico externo y eficiencia. Por ejemplo, para la dirección de emisión $A$ en la figura 4, tenemos procesos de absorción hasta que se alcanza la superficie del diodo, y el correspondiente factor de transmisión en la interfase con el medio externo (para incidencia normal y si el medio externo es aire, tenemos):
+	
+	\esp
+	
+	\begin{equation}
+		T_2 = \frac{4n}{(n + 1)^2}
+	\end{equation}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn11.png}
+	\end{figure}
+	
+	\esp
+	
+	como ya sabemos por Óptica I (relaciones de Fresnel). Estos factores y otros adicionales para otros recorridos (por ejemplo en la dirección $C$ habría reflexión total), se incluyen en el coeficiente de eficiencia cuántica externa $\eta_e = e^{-\alpha l_1} T_2$, que se utilizaría para calcular el flujo fotónico externo igual que hemos visto antes para el flujo interno, y a partir del flujo fotónico externo podemos obtener la expresión para la potencia emitida multiplicando la energía de los fotones por el flujo externo, en función de la intensidad de alimentación:
+	
+	\esp
+	
+	\begin{equation}
+		P_e = \eta_e h\nu \eta_i \frac{i}{e}
+	\end{equation}
+	
+	\esp
+	
+	Vemos que según esta expresión, la potencia emitida mantiene una relación lineal con la intensidad suministrada, lo que sólo es cierto en un determinado rango de intensidad de alimentación. Para corrientes mayores, se alcanza la saturación del dispositivo. 
+	Usualmente, se define el rendimiento de la fuente como la razón potencia emitida-potencia suministrada, que denominamos en este tema \textit{eficiencia cuántica global del LED}.
+	
+	\esp
+	
+	\begin{equation}
+		\eta = \frac{P_e}{i V} = \eta_e \eta_i \frac{h\nu}{e \cdot V}
+	\end{equation}
+	
+	\esp
+	
+	Una de las ventajas de los LED es que tienen un rendimiento luminoso (parámetro relacionado con la percepción visual de la luminosidad de las fuentes de luz) muy elevado, en comparación con muchas de las fuentes convencionales.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn12.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Distribución espectral} Nos preguntamos ahora cómo es la curva de emisión espectral típica de un LED, es decir, si representamos la fracción de energía emitida en cada longitud de onda, qué forma tiene esta curva. Dado que se trata de transiciones espontáneas y que la energía de los fotones emitidos está alrededor de un valor definido por el gap del material, no nos resulta extraño que aparezca una curva con forma de pico centrado en la longitud de onda de la transición y con un cierto ancho de banda. La curva de emisión espectral de los LED tiene entonces estas dos características principales: la frecuencia (o longitud de onda, según la variable dependiente de la curva) y la anchura espectral.
+	
+	\esp
+	
+	Para obtener la frecuencia de pico, utilizamos la curva de probabilidad de emisiones radiativas en función de la energía de los fotones emitidos ($r_{sp}(h\nu)$), cuya forma teórica puede obtenerse si consideramos una situación simplificada con quasi-niveles de Fermi mucho más distantes de las energías de las bandas que el valor de $k_B T$. Imponemos la condición de máximo, e igualando la primera derivada con respecto a la variable $x = h\nu - k_B T$, obtenemos la expresión para la frecuencia de pico: $h\nu_p = E_g + \frac{k_B T}{2}$. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn13.png}
+	\end{figure}
+	
+	\esp
+	
+	Esta expresión indica que la frecuencia de pico aumentaría con la temperatura, y por tanto la longitud de onda de pico debería disminuir. Sin embargo, el comportamiento observado entre 20 y 70 grados centígrados en los LED es inverso, la longitud de onda de pico crece con la temperatura. Esto es así porque la energía de gap también es dependiente con la temperatura, y decrece conforme crece $T$, compensando el efecto previsto en la ecuación anterior.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn14.png}
+	\end{figure}
+	
+	\esp
+	
+	El ancho de banda espectral puede calcularse en función de la longitud de onda de pico utilizando la siguiente expresión:
+	
+	\esp
+	
+	\begin{equation}
+		\Delta \lambda \approx 1,45 \lambda_{\text{máx}}^2 k_B T
+	\end{equation}
+	
+	\esp
+	
+	donde $k_B T$ está en $eV$ y el ancho de banda se obtiene en micras. Esta expresión se obtiene a partir de consideraciones sobre distribución energética y probabilidad de transición que requieren algunos conocimientos sobre Física Cuántica y Física de Estado Sólido. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn15.png}
+	\end{figure}
+	
+	\esp
+	
+	La conclusión, viendo la expresión anterior, es inmediata: para las longitudes de onda mayores (energías de gap menores), el ancho de banda del pico de emisión será también mayor. El rango de longitudes de onda de pico en los LED va entre 0,24 y 4,0 micras aproximadamente. Podemos ver en la figura 5 los diferentes compuestos y la localización de las curvas de emisión en función de la longitud de onda de pico.
+	
+	\esp
+	
+	\subsubsection{Materiales de LED}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn16.png}
+	\end{figure}
+	
+	\esp
+	
+	En cuanto a los materiales, ya hemos comentado que la longitud de onda de pico depende del material utilizado. En las longitudes de onda cortas, las condiciones de operación son más restringidas, puesto que la energía de gap es mayor y esto hace decrecer la eficiencia cuántica. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/pn17.png}
+	\end{figure}
+	
+	\esp
+	
+	Para atenuar este efecto, suele recurrirse a dopaje con elementos que puedan actuar de centros de recombinación para aumentar la eficiencia (por ejemplo, $GaAs$ dopado con $N$), o bien si tenemos LEDs que emiten en longitudes de onda cortas, podemos utilizar un conversor (fósforo que re-emite en el visible). Esto se hace también en los LED de espectro amplio (LED blancos).
+	
+	\esp
+	
+	Vemos en la tabla de las diapositivas de clase algunos tipos de semiconductores habituales en tecnología LED, con las longitudes de onda de pico de emisión y también los voltajes de operación más usuales.
+	
+	\esp
+	
+	Como resumen de las características que necesitamos en un material para construir LEDs, podemos decir que los mejores candidatos son compuestos binarios o ternarios, y es fundamental que sean de tipo directo. También deben tener eficiencias cuánticas internas de al menos 0,5.
 	\printbibliography[title={Bibliografía}]
 \end{document}
