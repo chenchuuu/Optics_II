@@ -523,5 +523,253 @@
 	\esp
 	
 	Como resumen de las características que necesitamos en un material para construir LEDs, podemos decir que los mejores candidatos son compuestos binarios o ternarios, y es fundamental que sean de tipo directo. También deben tener eficiencias cuánticas internas de al menos 0,5.
+	
+	\subsection{Tipos de LED}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tipo.png}
+	\end{figure}
+	
+	\esp
+	
+	En cuanto a la estructura de los dispositivos, distinguimos en primer lugar entre dos tipos básicos de emisión, \textit{de superficie} (es la que hemos estado viendo en las figuras anteriores), y \textit{de borde} (el LED emite por los bordes de la zona de deplexión). El cono de emisión es entonces más estrecho, como se muestra en la figura 6. En los LED de superficie, se emite desde un lado del diodo, y la luz que va hacia el otro lado es reflejada o reabsorbida para poder crear nuevos pares.
+	
+	\esp
+	En los LED la emisión es de tipo lambertiano (en todas direcciones con intensidad máxima en la normal a la superficie, y mínima en dirección rasante), pero podemos modificar esto con la ayuda de lentes de resina epoxy hemisféricas o parabólicas, si es necesario para obtener patrones de emisión más alargados. Este diseño ya se utiliza menos en general, en especial cuando se requiere algo más de intensidad en la emisión. O bien utilizar fibra óptica para reconducir la emisión y evitar pérdidas, como suele suceder en los LED tipo \textit{Burrus}, como el mostrado en la figura 6 izquierda.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tipo2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tipo3.png}
+	\end{figure}
+	
+	\esp
+	
+	En los LED \textit{superluminiscentes}, la emisión se produce como consecuencia de un proceso de emisión estimulada mediante un bombeo de fotones (los fundamentos de la emisión estimulada se verán en la sección de láseres), pero sin amplificación de la emisión porque se dejan salir los fotones sin restricciones por un extremo del LED, que es de emisión lateral. Para conseguir esto, se inclina la cavidad resonante. La ventaja es que tienen un ancho de banda espectral más reducido, mayor intensidad y más coherencia espacial, pero la estructura es más compleja generalmente, y con una mayor dependencia con la temperatura.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/tipo4.png}
+	\end{figure}
+	
+	\esp
+	
+	En cuanto a la distribución de longitudes de onda de emisión, podemos distinguir entre LEDs \textit{de espectro discreto} y LEDs \textit{blancos}. La tecnología para generar luz blanca con LEDs puede basarse en la adición de un estrato de material fosforescente (que ya mencionamos en la subsección anterior), o bien en el uso de varios LEDs (suelen ser rojo, verde y azul) para generar luz blanca por un proceso de mezcla aditiva, en el que el espectro generado es la envolvente de los espectros de los LED individuales, que necesitan tener ancho de banda relativamente elevado.
+	
+	\esp
+	Desde el punto de vista de la distribución espacial, como veremos en la sección de aplicaciones también, es muy común construir \textit{agrupaciones de LED} para conseguir una mayor intensidad y una distribución espacial más homogénea. Las agrupaciones más comunes son en forma de matriz (\textit{array}), o bien \textit{Chip On Board} (COB), en la que los LED se montan con un circuito común e incluyendo fósforos y difusores también. Los llamados \textit{LED planos} se utilizan también en formato matriz, para servir de fuentes traseras de retroiluminación en pantallas de gran formato, aunque la tecnología evoluciona hacia las pantallas menos voluminosas igualmente, por el ahorro energético que supone retroiluminar con LED.
+	
+	\esp
+	Los LED son dispositivos de muy bajo consumo y rendimientos superiores a otras fuentes convencionales (las corrientes suministradas son del orden de $mA$), así que agruparlos para formar configuraciones extensas puede suponer una ventaja. Además, tienen una respuesta muy rápida a la modulación (incluso de $GB/s$), lo que se presta bien a utilizarlos en iluminación cambiante en el tiempo, como las figuras en movimiento que vemos en los semáforos de peatones o los letreros luminosos.
+	
+	\subsubsection{Aplicaciones de los LED}
+	
+	Vamos a describir las diferentes aplicaciones dividiéndolas en función del criterio de longitud de onda de emisión, y considerando tres rangos: visible, infrarrojo y ultravioleta.
+	
+	\esp
+	\subsubsection{Aplicaciones de LED en visible}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aplic.png}
+	\end{figure}
+	
+	\esp
+	
+	Los LED de $GaAsP$, dopados adicionalmente con Nitrógeno para conseguir un aumento en la energía del gap y mover la emisión inicial infrarroja al visible, se utilizan bastante en indicadores y pilotos en electrónica de consumo, por su bajo coste de fabricación.
+	
+	\esp
+	Los LED de $AlInGaP$ emiten de forma bastante eficiente en el visible, y son los utilizados mayoritariamente en señales de tráfico (semáforos, señales de peligro) y letreros luminosos, especialmente en la zona de medias-altas longitudes de onda. En heteroestructura con $InGaP$ se utiliza a veces en circuitos de fibra de plástico que trabajan con longitud de onda roja de 650 nm y suelen incorporar también reflectores con estructura tipo multicapa de $AlAs$ y $AlGaAs$, para aumentar la potencia emitida. Para fuentes de alta intensidad entre 400 y 580 nm, se opta por LEDs de $InGaN$, bien en heteroestructura, o en disposición tipo \textit{pozo cuántico}, que se describirá brevemente en la siguiente sección.
+	
+	\esp
+	\subsubsection{Aplicaciones de LED en infrarrojo}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aplic2.png}
+	\end{figure}
+	
+	\esp
+	
+	Los LED de $GaAsP$ o bien $InGaAs$ pueden utilizar su emisión original en infrarrojo para emitir las señales en mandos de control remoto (por eso, somos capaces de ver estas señales con las cámaras de algunos móviles, que no filtran la región del infrarrojo cercano).
+	
+	\esp
+	El compuesto cuaternario $InGaAsP$ puede generar radiación cercana a 1,3 $\mu m$, y a veces se utilizan LEDs de este tipo para comunicaciones por fibra que no sean de largo recorrido ni muy rápidas, ya que en ese caso es mejor usar láseres de diodo o de fibra. La configuración habitual es tipo Burrus con conexión de fibra, como se muestra en la figura 6 izquierda, o bien se incorpora una lente para colimar el haz y acoplarlo posteriormente a la fibra.
+	
+	\esp
+	Las fuentes LED más potentes en infrarrojo se consiguen con compuestos cuaternarios en hetero-unión o bien haciendo uso de estructuras de tipo \textit{pozo cuántico}.
+	
+	\esp
+	\subsubsection{Aplicaciones de LED en Ultravioleta}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/aplic3.png}
+	\end{figure}
+	
+	\esp
+	
+	Los LED que emiten ultravioleta suelen ser de $AlGaN$ (que cubre entre 200 y 366 nm). Con energías más elevadas de gap, es más difícil controlar la eficiencia, así que suelen utilizarse configuraciones de hetero-unión tipo pozo cuántico, y se montan sobre zafiro transparente con tallado en forma de pirámides, para incrementar el número de fotones que pueden ser extraídos del material del LED. Las aplicaciones son muchísimas: a partir de 315 nm se utilizan en impresoras, detección de falsificaciones (en billetes, entradas y documentos de identidad, por ejemplo) y para curar algunos materiales como tintas, recubrimientos y adhesivos. Entre 100 y 280 nm, se utilizan para esterilizar, en sistemas de tratamiento de aguas, y también en medicina forense para detectar compuestos orgánicos debido a su fluorescencia. También en comunicaciones encubiertas a corta distancia o \textit{non line-of-sight} (NLOS).
+	
+	\section{Láser}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/laser.png}
+	\end{figure}
+	
+	\esp
+	
+	Para comprender el proceso de emisión en un láser, es necesario introducir conceptos básicos sobre la interacción de la radiación con la materia relativos a los procesos de absorción y emisión de fotones.
+	
+	\esp
+	
+	\subsection{Emisión estimulada}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/laser2.png}
+	\end{figure}
+	
+	\esp
+	
+	Einstein desarrolló en 1916-1917 un modelo teórico muy sencillo y elegante para describir los procesos que tienen lugar en un medio material en equilibrio con radiación e.m. Vamos a ver el proceso de construcción del modelo a partir de las hipótesis que se fueron formulando, y que llevaron a la suposición de Einstein de que debía existir un proceso en el medio no conocido hasta entonces y que se llamó \textit{emisión estimulada}.
+	
+	\esp
+	Partimos de algunos resultados conocidos, fundamentalmente la ecuación de Planck para la densidad de energía del cuerpo negro (radiación en una cavidad en equilibrio a temperatura $T$) expresada en función de la frecuencia:
+	
+	\esp
+	\begin{equation*}
+		u(\nu) = \frac{8\pi\nu^2}{c^3}\bar{E} = \frac{8\pi h\nu^3}{c^3}\frac{1}{e^{\frac{h\nu}{k_B T}} - 1}
+	\end{equation*}
+	
+	\esp
+	$K_B$ es la constante de Boltzmann.
+	También adopta Einstein como premisa la distribución de Maxwell-Boltzmann para el número de átomos por unidad de volumen en estado excitado en una cavidad llena de gas a temperatura $T$, según la expresión siguiente en función de la energía $E_i$ del estado excitado:
+	
+	\esp
+	\begin{equation*}
+		N_i = N_0 e^{-\frac{E_i}{k_B T}}
+	\end{equation*}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/laser2.png}
+	\end{figure}
+	
+	\esp
+	
+	Lo que viene a decirnos esta ecuación es algo muy intuitivo: cuanto mayor sea la energía de un estado excitado, menos átomos tendremos con electrones ocupando el mismo, o de otra forma, que se tiende de forma natural a ocupar los estados de menor energía. Esto lo vemos esquematizado en la figura 7.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/laser3.png}
+	\end{figure}
+	
+	\esp
+	Si consideramos dos estados con energías $E_1$ y $E_2$, con $E_2 > E_1$, es muy fácil obtener una relación entre el número de átomos con electrones ocupando los niveles $E_2$ y $E_1$ utilizando la distribución de Maxwell-Boltzmann, y este cociente queda en función de la frecuencia propia de la transición entre los estados 2 y 1, teniendo en cuenta que la energía de un posible fotón desprendido por esta transición sería $h\nu_{21} = E_2 - E_1$.
+	
+	\esp
+	\begin{equation*}
+		N_{12} = \frac{N_2}{N_1} = e^{-\frac{(E_2 - E_1)}{K_B T}}
+	\end{equation*}
+	
+	\esp
+	Si este medio en equilibrio en la cavidad a temperatura $T$ se ve sometido a una radiación de densidad $u(\nu)$ con frecuencias alrededor de la frecuencia de transición $\nu_{21}$, podrán producirse cambios de estado del nivel 1 al 2 por \textit{absorción} de fotones, cuyo número resultará proporcional al producto $N_1 u(\nu)$.
+	Llamaremos $B_{12}$ al coeficiente de proporcionalidad. Entonces, el número de fotones absorbidos será:
+	
+	\esp
+	\begin{equation*}
+		N_{abs} = B_{12} N_1 u(\nu)
+	\end{equation*}
+	
+	\esp
+	También pueden producirse \textit{transiciones espontáneas} hacia abajo, es decir, del nivel 2 al 1, con la emisión del fotón correspondiente. El número de estas transiciones será proporcional a $N_2$, pero independiente de la densidad de energía de la radiación presente, puesto que se trata de transiciones \textit{usuales} espontáneas. Denominamos $A_{21}$ a la constante de proporcionalidad. Entonces:
+	
+	\esp
+	\begin{equation*}
+		N_{esp} = A_{21} N_2
+	\end{equation*}
+	
+	\esp
+	Si el sistema está en equilibrio y tenemos sólo estos dos procesos presentes, el número excitaciones (transiciones hacia el nivel 2 desde el 1) debe igualar al de decaimientos (transiciones del nivel 2 al nivel 1), puesto que si no se vería afectado el balance energético del sistema. Igualando entonces $N_{abs}$ y $N_{esp}$, despejando la densidad de energía, y utilizando la relación entre el número de átomos $N_2$ y $N_1$ que hemos deducido antes, se llega entonces fácilmente a una expresión para la densidad de energía e.m.:
+	
+	\esp
+	\begin{equation*}
+		u_2(\nu) = \frac{A_{21}}{B_{12}} e^{-\frac{h\nu_{21}}{K_B T}}
+	\end{equation*}
+	
+	\esp
+	que como vemos no coincide con la distribución propuesta por Planck que hemos adoptado como premisa.
+	Así que esta expresión no resulta válida, y debemos habernos dejado algún proceso adicional sin considerar. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/laser4.png}
+	\end{figure}
+	
+	\esp
+	
+	Einstein propuso que este proceso sería de \textit{emisión estimulada}, es decir, que habría transiciones del nivel 2 al 1 condicionadas por la presencia de radiación e.m. de frecuencia coincidente con la de la transición ($\nu_{12}$). El número de emisiones estimuladas será proporcional a $N_2$ y a la densidad de energía de radiación, $u(\nu)$. Denominemos $B_{21}$ al coeficiente de proporcionalidad. Entonces:
+	
+	\esp
+	\begin{equation*}
+		N_{est} = B_{21} N_2 u(\nu)
+	\end{equation*}
+	
+	\esp
+	Volvemos ahora a plantear la igualdad que expresa la situación de equilibrio energético: $N_{esp} + N_{est} = N_{abs}$ y despejamos de nuevo la densidad de energía, con lo que nos queda una expresión que sí puede resultar compatible con la ecuación de Planck para la densidad de energía, siempre que se cumplan dos condiciones:
+	
+	\esp
+	\begin{itemize}
+		\item que el cociente $\frac{A_{21}}{B_{21}}$ sea inversamente proporcional al cubo de la longitud de onda en el vacío.
+		\item que las probabilidades de emisión estimulada $B_{21}$ y absorción $B_{12}$ sean iguales.
+	\end{itemize}
+	
+	\esp
+	De la primera condición se deduce que la probabilidad de emisión estimulada frente a la transición espontánea es menor conforme crece la frecuencia. Así que si pensamos en aprovechar la radiación por emisión estimulada, sería más difícil desarrollar un instrumento para ello en el rango de frecuencias altas (rayos X, UV). Esto efectivamente es cierto, aunque se han logrado resolver las dificultades que entraña. También por ello resultó más fácil desarrollar el máser que el láser.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/laser5.png}
+	\end{figure}
+	
+	\esp
+	
+	La segunda condición ya la hemos comentado: las probabilidades de absorción y de emisión estimulada son iguales. El proceso que predomine en el sistema dependerá de las proporciones relativas de $N_1$ y $N_2$. Si consideramos la variación con el tiempo del número de átomos en el estado excitado que decaigan por emisión espontánea, es muy fácil llegar a una ecuación diferencial cuya solución nos dice que $N_2$ decrece exponencialmente con el tiempo:
+	
+	\esp
+	\begin{equation*}
+		N_2 = N_2(0) e^{-A_{21}t} = N_2(0) e^{-\frac{t}{\tau_{21}}}
+	\end{equation*}
+	
+	\esp
+	La tasa de decaimiento es proporcional a $A_{21}$, y por tanto en un tiempo $\frac{1}{A_{21}}$ la población desciende en un factor $e$. A dicho tiempo denominamos \textit{vida media} del estado. Existen determinados estados con mucha mayor vida media que otros situados a su alrededor, y que se denominan \textit{metaestables}. La existencia de este tipo de estados veremos que es clave para que un medio pueda producir emisión láser.
+	
+	\esp
+	Un aspecto muy importante de la emisión estimulada es que el fotón emitido tiene exactamente las mismas características que el inductor en cuanto a fase, frecuencia, polarización, etc. Es como si en el proceso de emisión estimulada, se generasen \textit{clones} de los fotones que estimulan la emisión. Esto se muestra gráficamente en la figura 8, frente a las transiciones espontáneas que emiten fotones de características mucho menos uniformes.
+	
+	\esp
+	Podemos entonces pensar que lo interesante sería descartar los fotones de emisión espontánea y quedarse con los \textit{clones} de emisión estimulada, amplificando así progresivamente la radiación en la cavidad y obteniendo una emisión altamente coherente. Esta es la idea clave que subyace en el diseño del láser. Pero para ello, debemos asegurar en primer lugar que haya el suficiente número de electrones excitados, porque en la situación usual de equilibrio térmico, ya sabemos que la gran mayoría van a estar ocupando los niveles de menor energía, lo que no es favorable para el proceso de emisión estimulada. En la siguiente sección, vamos a ver qué resulta necesario para hacer funcionar el mecanismo de emisión del láser.
+	
 	\printbibliography[title={Bibliografía}]
 \end{document}
