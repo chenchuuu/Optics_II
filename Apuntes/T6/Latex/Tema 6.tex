@@ -771,5 +771,401 @@
 	\esp
 	Podemos entonces pensar que lo interesante sería descartar los fotones de emisión espontánea y quedarse con los \textit{clones} de emisión estimulada, amplificando así progresivamente la radiación en la cavidad y obteniendo una emisión altamente coherente. Esta es la idea clave que subyace en el diseño del láser. Pero para ello, debemos asegurar en primer lugar que haya el suficiente número de electrones excitados, porque en la situación usual de equilibrio térmico, ya sabemos que la gran mayoría van a estar ocupando los niveles de menor energía, lo que no es favorable para el proceso de emisión estimulada. En la siguiente sección, vamos a ver qué resulta necesario para hacer funcionar el mecanismo de emisión del láser.
 	
+	\subsection{Claves del mecanismo de emisión: inversión de población, medio activo y cavidades resonantes}
+	
+	\subsubsection{Inversión de población}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca.png}
+	\end{figure}
+	
+	\esp
+	
+	Hemos visto que las probabilidades de emisión estimulada y de absorción son iguales para un sistema como el descrito en el apartado anterior. Con radiación presente, el número de absorciones por unidad de volumen será $B_{12}N_1u(\nu)$, y el número de emisiones estimuladas será $B_{21}N_2u(\nu)$. Si hay más átomos en el nivel 1 (situación normal del sistema, puesto que es el nivel de menor energía), habrá un mayor número de absorciones, y por tanto una pérdida neta de energía de radiación (disminución del número de fotones presente por esta causa). Si, por el contrario, hay más átomos en estado excitado ($N_2 > N_1$), un estado no natural que habrá que crear actuando sobre el sistema, entonces potencialmente podrá haber más emisiones estimuladas que absorciones, y por tanto una creación neta de fotones en el sistema por este proceso (amplificación).
+	
+	\esp
+	Entonces, para que el láser pueda empezar a funcionar, necesitamos en primer lugar proporcionar energía al sistema de algún modo para crear una distribución de átomos con predominio en el estado excitado, denominada \textit{inversión de población}, en el \textit{medio activo} o medio en el que se producirá la emisión láser.
+	
+	\esp
+	Algunos de los mecanismos que se utilizan para crearla son:
+	
+	\esp
+	\begin{itemize}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca2.png}
+		\end{figure}
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca3.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Bombeo óptico.} Supongamos un material con tres niveles de energía (de menor a mayor: $o$, $m$ y $n$) como se ilustra en la figura 9 izquierda, al que proporcionamos radiación de frecuencia $\nu_{no}$. Habrá entonces muchas absorciones y los átomos tenderán a situarse en el nivel $n$. Desde allí, pueden producirse emisiones espontáneas a los niveles $m$ y $o$. La variación de población del nivel $m$ vendrá dada por: $\frac{dN_m}{dt} = A_{nm}N_n - A_{mo}N_m$. No consideramos las posibles emisiones estimuladas de los niveles $n$ a $m$ y $m$ a $o$ producidas por los fotones emitidos tras las transiciones espontáneas, pues los fotones emitidos tienen en principio cualquier dirección, y abandonan pronto la cavidad en la que está confinado el medio. Si el estado $m$ es tal que $A_{nm} \gg A_{no}$ y $A_{mo} \ll A_{nm}$, lo que denominamos \textit{estado metaestable}, entonces se podrá producir un aumento grande de la población que ocupa el nivel $m$, lo que constituye en principio cualquier inversión de población con respecto al estado $o$. Si ahora hacemos pasar por la cavidad del medio radiación de frecuencia $\nu_{mo}$, ésta podrá amplificarse por emisión estimulada. Este es el mecanismo que se utiliza en los láseres de rubí y típicamente en muchos en los que el medio activo es sólido. Maiman utilizó una lámpara de $Xe$ de elevada intensidad. El bombeo óptico suele ser más eficiente en sistemas con cuatro niveles, como el que vemos en la figura 9 derecha, en los que el bombeo lleva los electrones del nivel 0 al nivel 3, y la transición láser es entre los niveles 2 y 1. La razón fundamental de esta mayor eficiencia de los sistemas de cuatro niveles la proponemos para investigar en las actividades de clase. Como se indica en la figura, es también muy importante que puedan producirse transiciones rápidas entre los niveles 3 y 2 y entre los niveles 1 y 0, para poder asegurar que el bombeo y la inversión de población se mantengan de forma efectiva.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca4.png}
+		\end{figure}
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca5.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Bombeo eléctrico o colisional.} La transferencia de energía se realiza por conversión de energía cinética extraída de las colisiones entre electrones y átomos o átomos y moléculas entre sí. Se somete al medio activo a un haz de electrones, y esto hace que el sistema funcione mejor para medios activos en estado gaseoso. La transferencia de energía puede ser directa (de electrones a átomos, como en el láser de Ar-ión). También puede ser indirecta, de electrones a un gas y de éste al gas que constituye el medio activo. Por ejemplo, en el láser de $He$-$Ne$ se producen colisiones de los electrones con los átomos de $He$, llevándolos a un estado metaestable, y estos átomos colisionan a su vez con los de $Ne$, provocando la inversión de población.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca6.png}
+		\end{figure}
+		
+		\esp
+		
+		\item \textbf{Bombeo químico.} La energía procede de una reacción química, que en ocasiones da como producto directamente los átomos en estado excitado (láser de $HF$), o bien la reacción produce moléculas que sólo son estables en estado excitado (láser de excímer). Otra posibilidad es que la reacción libere directamente la energía necesaria para producir las transiciones a niveles excitados del elemento que producirá la emisión láser (como en el láser $DF$-$CO_2$).
+		
+		\item \textbf{Otros mecanismos de bombeo.} Algunos láseres funcionan gracias a bombeo con radiación de radiofrecuencia ($CO_2$), partículas nucleares, o electrones de alta potencia (láser \textit{FEL} o de electrones libres).
+	\end{itemize}
+	
+	\subsection{Medio activo}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca7.png}
+	\end{figure}
+	
+	\esp
+	
+	El material que produce la emisión láser con ayuda del mecanismo de bombeo (\textit{medio activo}) es una parte fundamental del sistema. Muchos láseres se nombran en función de su material, que, como hemos visto en los ejemplos mostrados en la subsección anterior, puede ser un gas ($He$-$Ne$, $CO_2$), un líquido (láseres \textit{de colorante}), o un sólido (rubí, $Nd$:$YAG$).
+	
+	\esp
+	El tipo de material y su configuración de estados metaestables y transiciones determina también la frecuencia y por tanto la longitud de onda en el vacío de la emisión. El rango de longitudes de onda posibles es muy amplio, desde el ultravioleta hasta el infrarrojo o incluso rayos $X$. En algunos láseres de estado sólido, se distingue entre el elemento o compuesto que produce la emisión láser y el que actúa como sustrato: por ejemplo en los de $Nd$:$YAG$ el Neodinio ($Nd$) es el emisor y el $YAG$ (granate de Ytrio-Aluminio) el sustrato. Como ya sabemos, el medio activo debe ser capaz de soportar una inversión de población y hacer posible la emisión estimulada subsiguiente. En el caso de láseres moleculares, como el de $CO_2$, las transiciones se producen entre niveles de energía rotacionales y vibracionales de la molécula de $CO_2$. La complejidad de los niveles moleculares es bastante mayor que la de los niveles atómicos, por lo general, con muchas más transiciones posibles.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca8.png}
+	\end{figure}
+	
+	\esp
+	Generalmente, es necesario introducir algún sistema de enfriamiento del medio, debido a la energía térmica generada por los sistemas de bombeo en un espacio confinado.
+	
+	\esp
+	
+	\subsection{Cavidades resonantes y modos de emisión. Ganancia}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca9.png}
+	\end{figure}
+	
+	\esp
+	
+	En realidad, el diseño de la cavidad que contiene al medio, que tratamos en este apartado, es parte fundamental del sistema de amplificación de la radiación junto con el medio activo. Para que el láser funcione adecuadamente, es imprescindible hacer circular la radiación por el material una y otra vez, de modo eficiente, de forma que se pueda producir el proceso de emisión estimulada y vaya creciendo la población de fotones \textit{clónicos}.
+	
+	\esp
+	Por eso se introducen siempre dos espejos en los extremos de la cavidad, y hay que diseñar esta cavidad \textit{resonante} cuidadosamente para que pueda producirse la amplificación de la emisión estimulada. El dispositivo es muy similar entonces al interferómetro de \textit{Fabry-Perot} estudiado en Óptica I, pero con una longitud fija y no modulable para la cavidad. Uno de los espejos suele ser parcialmente transparente en una determinada zona o en su totalidad, para permitir la salida de la emisión láser de la cavidad. Los espejos deben estar perfectamente alineados, y en los primeros prototipos eran externos al bloque que contiene al material, con un sistema de alineación muy preciso incorporado a parte. Luego, los espejos pasaron formar parte de la cavidad propiamente dicha. Hoy en día lo más común es incorporar espejos esféricos cóncavos en vez de planos, en distribución llamada \textit{confocal}, en la cual los dos focos coinciden aproximadamente en el centro de la cavidad. Se prefieren los espejos esféricos a los planos debido a que estos últimos son más difíciles de alinear. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca10.png}
+	\end{figure}
+	
+	\esp
+	
+	A veces, se incluyen también \textit{ventanas de Brewster} en los extremos de la cavidad antes de los espejos, para polarizar el haz y hacer más eficiente la transmisión de energía. Pero la mayoría de láseres de los que podemos manejar en el laboratorio no emiten luz polarizada.
+	
+	\esp
+	Un esquema global de la operación de un láser genérico puede verse en la figura 10. Vamos entonces a considerar la cavidad como un dispositivo que permite la amplificación de la emisión del láser, gracias a que los fotones pueden circular muchas veces en el interior, e ir generando otros fotones a su vez por emisión estimulada.
+	
+	\esp
+	Vamos a discutir ahora las condiciones necesarias para que este proceso de amplificación en el resonador óptico que es la cavidad funcione:
+	\begin{itemize}
+		\item el desfase en cada ciclo de circulación tiene que ser múltiplo de $2\pi$, para que se pueda amplificar la radiación circulante de forma coherente.
+		\item la ganancia neta de fotones en cada ciclo de circulación de la radiación en la cavidad tiene que ser mayor que las pérdidas que se produzcan por varios procesos (reflexiones en los espejos, absorción en el medio).
+	\end{itemize}
+	
+	\esp
+	Analizamos la primera condición. Esta implica que la longitud de la cavidad debe ajustarse cuidadosamente, ya que, si queremos que el amplificador funcione, necesitamos un desfase múltiplo par de $\pi$ en cada ciclo, y por tanto necesitamos que se cumpla que:
+	\begin{equation*}
+		\frac{2\pi\nu}{c} 2d = 2m\pi
+	\end{equation*}
+	
+	\esp
+	
+	donde $c$ indica la velocidad de propagación de la onda en el propio medio, y no en el vacío. Esto implica que nuestra cavidad sólo va a amplificar determinadas frecuencias y no otras. A las frecuencias que son amplificadas debido al valor de $2d$ escogido, las llamamos \textit{modos de vibración} del resonador. En esta primera aproximación al problema, no hemos considerado las modificaciones en la fase introducidas por el propio medio activo, y el resonador se denomina entonces \textit{resonador en frío}. Pero si consideramos un desfase introducido por el medio, entonces encontramos que las frecuencias de resonancia propias de la cavidad se modifican acercándose a la frecuencia central $\nu_0$ propia de la transición, como puede verse ilustrado en [2], capítulo 16.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca11.png}
+	\end{figure}
+	
+	\esp
+	
+	Asumiendo que se cumplan entonces ambas condiciones, el proceso de amplificación podrá comenzar, y se irán acumulando fotones en la cavidad; sin embargo, con el paso del tiempo la cavidad resonante se va saturando y la ganancia va decreciendo, y además se produce la salida de fotones por el espejo parcialmente transparente. Esto hace que las diferencias entre ganancia y pérdida vayan bajando, hasta que justo se igualen (punto de estado estacionario del oscilador láser). En este punto entonces es cuando el proceso puede tener lugar de forma prolongada en el tiempo.
+	
+	\esp
+	Vamos a caracterizar ahora los coeficientes de ganancia y pérdida del proceso (segunda condición para que funcione el resonador). Tenemos que considerar que se trata de un proceso de emisión estimulada, por tanto va a depender de la densidad de fotones presente en el medio, que a su vez va a depender de las transiciones que se produzcan entre los estados 2 y 1. Si representamos la probabilidad de transición en función de la frecuencia de radiación para la transición espontánea, obtenemos una curva normalizada que se denomina \textit{perfil de línea} o $g(\nu)$. Puede demostrarse (ver, por ejemplo, [2] capítulo 15, sección 3) que el coeficiente de ganancia de un amplificador del tipo que nos interesa es proporcional al perfil de línea, según la siguiente expresión:
+	
+	\esp
+	\begin{equation*}
+		\gamma_0(\nu) = N_0 \sigma(\nu) = N_0 \frac{\lambda^2}{8\pi t_{sp}} g(\nu)
+	\end{equation*}
+	
+	\esp
+	En esta expresión, $N_0 = N_2 - N_1$ es la diferencia entre la densidad de población en el estado 2 y en el estado 1, que dependerá de la potencia de bombeo. $t_{sp}$ es el tiempo efectivo de vida media para la transición debida a emisión estimulada (magnitud que puede medirse experimentalmente) y $\sigma(\nu)$ es el perfil de línea sin normalizar; tenemos entonces que el área bajo la curva del perfil de línea original es, precisamente, $\frac{\lambda^2}{8\pi t_{sp}}$. La longitud de onda en esta expresión es la del medio, y no la del vacío.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca12.png}
+	\end{figure}
+	
+	\esp
+	
+	En cada ciclo de amplificación, consideraremos entonces que la intensidad de la radiación circulante crece según la expresión: $I = I_0 e^{\gamma_0(\nu)2d}$, siendo $d$ la longitud de la cavidad resonante.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca13.png}
+	\end{figure}
+	
+	\esp
+	
+	Por otra parte, las pérdidas en la cavidad pueden producirse fundamentalmente por absorción y esparcimiento en el medio activo (que agrupamos en un coeficiente de pérdida $a_s$, y también por la reflexión en los dos espejos. Entonces, la intensidad en cada ciclo de circulación se vería reducida según la siguiente expresión:
+	
+	\esp
+	\begin{equation*}
+		I = I_0 R_1 R_2 e^{-a_s 2d}
+	\end{equation*}
+	
+	\esp
+	Es conveniente re-escribir esta expresión de forma que haya sólo un coeficiente global de pérdidas: $a_r = a_s + a_1 + a_2$, de forma que nos quede al final:
+	
+	\esp
+	\begin{equation*}
+		I = I_0 e^{-a_r 2d}
+	\end{equation*}
+	
+	\esp
+	Con lo cual:
+	
+	\esp
+	\begin{align*}
+		a_1 &= \frac{1}{2d} \ln \frac{1}{R_1} \\
+		a_2 &= \frac{1}{2d} \ln \frac{1}{R_2}
+	\end{align*}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca14.png}
+	\end{figure}
+	
+	\esp
+	
+	Teniendo ahora en cuenta el proceso de balance entre ganancia y pérdida, la primera condición para que el resonador amplifique realmente se podría expresar entonces así:
+	
+	\esp
+	\begin{equation*}
+		\gamma_0(\nu) > a_r
+	\end{equation*}
+	
+	\esp
+	En términos de densidad de fotones, el umbral mínimo para $N_0$, que llamamos $N_t$, sería entonces:
+	
+	\esp
+	\begin{equation*}
+		N_t = \frac{a_r}{\sigma(\nu)}
+	\end{equation*}
+	
+	\esp
+	que depende de la forma funcional del perfil de línea. Para una línea con forma de función de Lorentz, y evaluando en la frecuencia central $\nu_0$, puede verse que:
+	
+	\esp
+	\begin{equation*}
+		N_t = \frac{a_r 4\pi^2 t_{sp} \Delta \nu}{\lambda^2} = \frac{2\pi a_r}{\lambda^2}
+	\end{equation*}
+	
+	\esp
+	$N_t$ da idea del régimen de bombeo necesario para que el proceso funcione (expresado generalmente en fotones por $cm^3$), que lógicamente depende directamente de las pérdidas en la cavidad, y también de la ganancia a través del perfil de línea.
+	
+	\esp
+	
+	Debido a que el coeficiente de ganancia depende del perfil de línea directamente, habrá sólo un número de modos propios de la cavidad que sean posibles en el resonador. Esta consideración aúna entonces las dos condiciones discutidas antes.
+	
+	\esp
+	Como se ilustra en la figura 11, el número de modos teóricamente admisibles para la emisión láser sería $\frac{B}{\nu_F}$, siendo $B$ el ancho de la transición en frecuencias a la altura del factor de pérdidas total, y $\nu_F$ la distancia entre dos frecuencias de resonancia adyacentes, que lógicamente es de $\frac{c}{2d}$.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca15.png}
+	\end{figure}
+	
+	\esp
+	
+	No todos los modos teóricamente posibles van a sobrevivir pasado un cierto tiempo, debido a que los que están más cerca de $\nu_0$ tienen ventaja en cuanto a su coeficiente de ganancia, con lo cual van consumiendo fotones del proceso de bombeo a expensas de los otros modos, y van creciendo en intensidad hasta que eventualmente un solo modo domina la emisión, el que está más cerca de $\nu_0$. Esto está ilustrado en la figura 12. A veces, en este tipo de medios formados por una sola especie (medios con \textit{ensanchamiento homogéneo} de la curva de emisión) pueden también sobrevivir algunos modos si su frecuencia es tal que ocupan los nodos de la onda estacionaria que crea el modo principal, o bien su perfil de intensidad ocupa zonas transversales para las que el modo principal tiene baja intensidad. A esto se llama \textit{Spatial hole burning}.
+	
+	\esp
+	La situación es diferente para medios con \textit{ensanchamiento no homogéneo} de la curva de ganancia, porque esta curva sería una envolvente de muchas curvas de ganancia más estrechas de diferentes átomos o moléculas que forman el medio activo, y por tanto independientes entre sí. Los modos posibles según el ancho de la curva global van entonces consumiendo fotones de la curva de ganancia alrededor de sus frecuencias respectivas, sin que esto afecte a otros modos situados en otras zonas de la curva. En vez de una bajada global de la curva como se ve en la figura 12, encontraremos sólo bajadas parciales o \textit{agujeros} en la curva envolvente de ganancia. A este proceso se le llama \textit{spectral hole burning}, y puede verse ilustrado en la figura 13.
+	
+	\esp
+	
+	\textbf{Distribución espacial y polarización de los modos. Modos longitudinales y transversales}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca16.png}
+	\end{figure}
+	
+	\esp
+	
+	Vamos a describir muy brevemente ahora cómo caracterizar el perfil de intensidad y el estado de polarización de los modos que se amplifican en la cavidad resonante. Ya hemos mencionado que las cavidades están formadas usualmente por espejos esféricos confocales, y en esa situación, hay una serie de funciones de onda que cumplen la ecuación paraxial de Helmholtz (puede verse una explicación detallada en [2], sección 3.3) y que están definidas por su perfil de intensidad. El caso más simple sería un perfil tipo Gaussiano: pensemos que, por el hecho de ser los espejos esféricos, se va a producir una curvatura del frente de onda al concentrarse más cantidad de luz en la zona central del haz, y la cavidad se diseña de forma que el radio de curvatura del frente de ondas Gaussiano en los extremos de la cavidad coincida con el radio de curvatura de los espejos; esto significa que el haz hace múltiples veces exactamente el mismo recorrido dentro de la cavidad. Pero en general, los perfiles de intensidad que podemos encontrar en los modos dentro de la cavidad serían funciones gaussianas moduladas por polinomios de Hermitte de diferente orden, pero que comparten la forma funcional de la fase del modo gaussiano, con un desplazamiento en fase que depende del orden del polinomio, y por tanto se comportan igual en cuanto a su paso por diferentes elementos ópticos.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca17.png}
+	\end{figure}
+	
+	\esp
+	
+	En general, caracterizamos un modo de emisión en la cavidad resonante con tres números enteros $l, m, q$, y hablamos de modos \textit{transversales electro-magnéticos} o modos $TEM_{l,m,q}$. Los modos de igual $l, m$ y diferente $q$ tendrán distinta frecuencia pero idéntico perfil de intensidad, ya que los índices $l, m$ representan los órdenes de los polinomios de Gauss-Hermitte que caracterizan el perfil de intensidad a lo largo de los ejes horizontal ($l$) y vertical ($m$). La expresión para la frecuencia del modo $TEM_{l,m,q}$ es la siguiente (ver [2], sección 11.2, por ejemplo):
+	
+	\esp
+	\begin{equation*}
+		\nu_{l,m,q} = q\nu_F + (l + m + 1)\frac{\nu_F}{2}
+	\end{equation*}
+	
+	\esp
+	
+	donde $\nu_F = \frac{c}{2d}$ viene determinada por la longitud de la cavidad. La separación entre diferentes modos \textit{longitudinales} (modos con diferente valor de $q$) es por tanto siempre la misma, si bien la separación entre diferentes modos \textit{transversales} (modos de igual $q$ pero distinto $l, m$) depende de los valores de $l$ y $m$. 
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca18.png}
+	\end{figure}
+	
+	\esp
+	
+	Si la suma $l + m$ es igual en ambos modos transversales, entonces la distribución de frecuencias es la misma. Algunos ejemplos de los perfiles de intensidad típicos de estas distribuciones los podemos ver en la figura 14.
+	
+	\esp
+	Un ejemplo de \textit{spatial hole burning} puede darse con los modos $TEM_{q00}$ y $TEM_{q11}$, ya que estarían ocupando diferentes zonas del resonador, y por tanto no compiten directamente entre sí aunque se trate de un medio homogéneo. Esto se ilustra en la figura 15.
+	
+	\esp
+	La gran mayoría de láseres se diseñan de modo que el único modo con suficiente amplificación sea el $TEM_{q00}$, ya que es más fácil concentrar su distribución de intensidad al focalizarlo a la salida de la cavidad. Sin embargo, para obtener potencias de emisión elevadas a la salida, puede ser interesante operar con otros modos transversales. Hay diferentes sistemas de selección de modos tanto longitudinales (por ejemplo, introduciendo una cavidad Fabry-Perot con longitud bastante más pequeña que $d$ y espejos planos, algo inclinada con respecto al eje de los espejos) como transversales (basados en diafragmas colocados transversalmente al haz).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca19.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca20.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Polarización.}
+	En cuanto a la polarización, cada modo sostiene dos polarizaciones ortogonales independientes y de la misma intensidad (transversal eléctrica o transversal magnética), así que, si consideramos la simetría circular de los espejos, el resultado final es una distribución de igual intensidad en todas las direcciones transversales al haz (luz natural o no polarizada). Esto puede cambiar si se insertan elementos que modifiquen el estado de polarización dentro de la cavidad, como las ventanas de Brewster (medio activo tallado de forma que antes de llegar a los espejos se sufra una reflexión con ángulo de Brewster que selecciona para transmitirse la componente paralela al plano de incidencia) o polarizadores lineales.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/meca21.png}
+	\end{figure}
+	
+	\esp
+	
+	\textbf{Láseres pulsados.} Otro aspecto bastante importante en el diseño de la cavidad son los sistemas de modulación de pulso. Los láseres pueden emitir en \textit{modo continuo} (sin ningún tipo de modulación), pero para muchas aplicaciones es interesante que emitan pulsos de duración determinada (\textit{modo pulsante}). Para conseguir modular los pulsos, se utilizan diferentes sistemas, principalmente basados en un modulador interno a la cavidad, para evitar lo más posible pérdidas de energía. Entre los sistemas utilizados para construir los pulsos, destacan los siguientes:
+	
+	\esp
+	\begin{itemize}
+		\item Interruptor de ganancia (\textit{gain switching}). En este sistema, se modula periódicamente el sistema de bombeo, de forma que la ganancia en la cavidad va oscilando, mientras que el factor de pérdidas se mantiene constante.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca22.png}
+		\end{figure}
+		
+		\esp
+		
+		\item Interruptor de pérdidas (\textit{Q-switching}). Se modula el factor de pérdidas de la cavidad, actuando por ejemplo mediante un regulador tipo célula Pockels o Kerr acoplada a uno de los espejos. Esto hace que oscile el factor de calidad de la cavidad (balance entre energía acumulada en la cavidad y energía perdida). El coeficiente de ganancia no se altera, pero sí el de pérdida.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca23.png}
+		\end{figure}
+		
+		\esp
+		
+		\item Espejo rotatorio (\textit{cavity dumping}). Este sistema es un tipo especial de modulación de pérdidas, en el que se altera la transmitancia del espejo semi-transparente, oscilando entre 100 por cien en la zona \textit{ON} y 0 en la zona \textit{OFF} del ciclo de oscilación. Por analogía, es como si acumulásemos agua de un grifo con salida continua en un cubo, y periódicamente quitamos la tapa inferior para dejar salir el agua acumulada, y la volvemos a poner hasta que se llene el cubo. Se transforma así un flujo continuo en un flujo discontinuo.
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca24.png}
+		\end{figure}
+		
+		\esp
+		
+		\item Esclavitud de modos (\textit{mode locking}). Se consigue hacer que las fases de los diferentes modos longitudinales de la cavidad (en una cavidad multimodo) estén entrelazadas, de forma que los distintos modos se comportan como componentes de un solo pulso global (también puede verse como una onda periódica en el espacio y en el tiempo, como se demuestra en la pizarra de clase), con período inverso a la separación en frecuencia entre dos modos consecutivos, o sea, $T_F = \frac{2d}{c}$. El modulador interno actúa sincronizado con el recorrido de los pulsos, de forma que deja salir la radiación durante la duración del pulso y en los momentos en que el pulso llega al espejo semitransparente, pero no en otros instantes, bloqueando así otras ondas que puedan circular en la cavidad. 
+		
+		\esp
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{IMG/meca25.png}
+		\end{figure}
+		
+		\esp
+		
+		Para poner en marcha el sistema, se pueden utilizar \textit{moduladores activos} (tipo \textit{Q-switch}) que están sincronizados para dejar pasar la luz en los intervalos temporales $T_F$, y estar abiertos sólo durante la duración del pulso. La cavidad se deja oscilar con todos los modos posibles, hasta que se produce una combinación de fases entrelazadas (\textit{locked}) que genera el pulso. Este pulso sale de la cavidad debido al modulador activo, pero los otros modos, que no forman una función global periódica al no tener sus fases entrelazadas, se van perdiendo debido al modulador, lo que contribuye al factor de pérdidas de la cavidad. Otra posibilidad es usar moduladores pasivos (\textit{absorbentes saturables}) que transmiten o reflejan más o menos porción de la onda incidente en función de la intensidad de la misma, ya que la absorción en el medio depende de la intensidad de la onda (por ejemplo, \textit{SESAM: Semiconductor Saturable Absorber Mirror}). O bien, se puede conseguir también este efecto con una lente de medio Kerr, que concentra mucho más el haz de la onda con fases entrelazadas que los haces del resto de modos, combinada con un diafragma del tamaño adecuado para dejar pasar el pulso de mayor intensidad pero no el resto.
+	\end{itemize}
+	
+	\esp
+	El propio sistema de emisión estimulada y el diseño de las cavidades resonantes hacen que las fuentes láser tengan propiedades muy interesantes, como su monocromaticidad (con anchos de frecuencia que pueden llegar a ser menores de 1 Hz), que deriva en una elevada coherencia temporal y también espacial por la muy reducida extensión del haz; también presentan una muy buena direccionalidad (colimación) y elevada capacidad de enfoque. Por ejemplo, la abertura angular del haz gaussiano en un modo $TEM_{00}$ es del orden de $\frac{\lambda}{D}$, donde $D$ es la \textit{cintura} del haz o anchura a la salida de la cavidad. Esto hace que pueda recorrer grandes distancias sin que el haz se abra excesivamente.
+	
 	\printbibliography[title={Bibliografía}]
 \end{document}
