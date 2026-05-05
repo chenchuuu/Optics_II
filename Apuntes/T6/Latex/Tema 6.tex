@@ -1167,5 +1167,248 @@
 	\esp
 	El propio sistema de emisión estimulada y el diseño de las cavidades resonantes hacen que las fuentes láser tengan propiedades muy interesantes, como su monocromaticidad (con anchos de frecuencia que pueden llegar a ser menores de 1 Hz), que deriva en una elevada coherencia temporal y también espacial por la muy reducida extensión del haz; también presentan una muy buena direccionalidad (colimación) y elevada capacidad de enfoque. Por ejemplo, la abertura angular del haz gaussiano en un modo $TEM_{00}$ es del orden de $\frac{\lambda}{D}$, donde $D$ es la \textit{cintura} del haz o anchura a la salida de la cavidad. Esto hace que pueda recorrer grandes distancias sin que el haz se abra excesivamente.
 	
+	\esp
+	
+	\subsection{Tipos de láseres}
+	
+	Vamos a describir muy brevemente algunos ejemplos de diferentes tipos de láseres, clasificados según el criterio del medio activo que provoca la emisión. La variedad es enorme y no podemos cubrir en este curso ni una mínima parte de todos los sistemas que se han desarrollado o que están funcionando en la actualidad: como dijo A. Shawlov, “cualquier cosa podría lasear si se golpea lo suficientemente fuerte”. Así que ilustraremos sólo algunos ejemplos de especial relevancia por diferentes razones, como su uso extendido o su importancia para alguna aplicación específica. Algunos datos generales (que pueden sufrir constante actualización) sobre el rango de parámetros comprendido en los dispositivos láser son: longitudes de onda desde 1nm hasta 1mm; potencias de emisión en modo continuo desde mW hasta MW, y en modo pulsante de hasta ZW, o sea, $10^{21}$w; duración del pulso en láseres pulsantes desde ms hasta fs, o sea, $10^{-15}$s; dimensiones de la cavidad desde $\mu$m en algunos láseres de diodo hasta km en láseres para aplicaciones geológicas.
+	
+	\esp
+	\subsubsection{Láseres de diodo}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las.png}
+	\end{figure}
+	
+	\esp
+	
+	Los láseres de diodo son los que más se utilizan sin duda (y los que mayor cuota del mercado ocupan), puesto que ofrecen ventajas operativas importantes (pequeño tamaño, componentes base utilizados en la industria electrónica), y además pueden servir como mecanismos de bombeo para láseres de estado sólido. Se utilizan desde 1962, poco después de la aparición de los LED. Sobre todo son útiles en electro-óptica, por su alta eficiencia, moderada potencia (hasta 200mw aprox), capacidad de modulación rápida, duración y pequeño tamaño. El medio activo es una unión de semiconductor $p$-$n$, cuyo fundamento se ha tratado brevemente en este tema; normalmente se trata de materiales de los grupos III y V de la tabla periódica: por ejemplo, el AsGa (arseniuro de Galio), pero también pueden estar formados por tres tipos de átomos (como el $InGaAs$, arseniuro de Galio-Indio), o incluso ser compuestos cuaternarios (como el $InGaAsP$). Las transiciones ocurren entre las bandas de conducción y valencia, provocándose una inversión de población previamente haciendo circular una corriente de electrones que atraviesa el diodo. Las longitudes de onda oscilan entre 410 y 1600 nm. En la zona azul-verde del espectro, los compuestos pueden incluir también elementos de los grupos II y IV, como el Se o sulfuros.
+	
+	\esp
+	Hoy en día el diseño base está formado por una heteroestructura de semiconductor, como la que se ilustra en la figura 16 (derecha). Los espejos se consiguen mediante la reflexión en la interfase del propio semiconductor (previamente pulido) con el medio externo. Estos láseres tienen un volumen aproximado de 1/16 de $cm^3$, aunque pueden llegar a miniaturizarse hasta tamaños de micras, y una potencia típica de 20mw en continuo, aunque con un diseño adecuado llegan a emitir potencias de algunos Kw en modo continuo.
+	
+	\esp
+	El numero de modos longitudinales de la cavidad suele ser superior en los diodos láser que en los láseres de gas que se describirán después, porque el ancho de banda permitido por el régimen de ganancia es mayor. Para trabajar con un solo modo, se suelen utilizar espesores de unión muy pequeños, a veces con guías de gradiente de índice en vez de espejos.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las2.png}
+	\end{figure}
+	
+	\esp
+	Un subgrupo interesante dentro de los láseres de diodo son los \textit{láseres de pozo cuántico}, que pertenecen a la categoría de \textit{SELD} o \textit{surface emitting Laser Diodes}. La intensidad umbral de emisión en los láseres de diodo se reduce si se opera con espesores menores de la zona de medio activo. Esta es la ventaja fundamental de los láseres de pozo cuántico: los espesores de la zona de medio activo son menores de 10nm, frente a los 100nm mínimo de los láseres de diodo de heteroestructura. Al miniaturizar la zona activa, los efectos cuánticos ya no pueden ser ignorados, y diseñando el dispositivo de forma que el medio activo tenga unas transiciones de energía menor que la zona externa, se produce un \textit{pozo cuántico} que tiene el efecto de confinar las cargas en la zona activa. La potencia de salida es de unos 100mw, limitada para no dañar los materiales de las paredes de la cavidad. Pero se construyen estructuras en línea con múltiples pozos que logran emisiones de hasta 50w en modo continuo, con dimensiones de 1 micra x 1 cm. Son bastantes eficientes, y además como hemos comentado presentan emisión de superficie. Un ejemplo de esquema básico puede verse en la figura 16 izquierda.
+	
+	\esp
+
+	\subsubsection{Láseres de estado sólido}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las3.png}
+	\end{figure}
+	
+	\esp
+	
+	En los láseres de estado sólido, tanto el sustrato como en medio activo son sólidos y suelen ser cristales dopados. El sustrato puede ser de tipo cristalino, cerámico o vidrio ($SiO_2$, como en los láseres de fibra). Los sustratos cerámicos están aumentando su uso porque mantienen la composición química de los sustratos cristalinos y su transparencia, pero la eficiencia energética aumenta y también son más versátiles y fáciles de moldear (aunque desde este último punto de vista, los mejores sustratos son los de vidrio). Normalmente, el medio activo suele ser un ión que se introduce en una concentración de en torno al 1 por ciento (concentración molar) en el sustrato. Por ejemplo, en el láser de rubí de Maiman, el sustrato es rubí ($Al_2O_3$) y el dopante son iones de cromo ($Cr^{3+}$). La combinación de sustrato y medio activo forma un esquema de transición de tres niveles en este caso, que no es lo más eficiente. Usualmente, los iones dopantes que se emplean en láseres pertenecen al grupo de los metales de transición, lantánidos o actínidos.
+	
+	\esp
+	Un láser de estado sólido bastante utilizado es el de Nd:YAG (Neodinio como dopante en un sustrato de granate de Ytrio-aluminio). En la configuración con cuatro niveles, el bombeo suele ser óptico con un láser de diodo (por ejemplo, $AlGaAs$) que emite en 808 nm. La línea más común para el Nd:YAG es de 1.06415 $\mu m$, y muchas veces se inserta en la propia cavidad un cristal no lineal para producir el doblado en frecuencia, con lo cual a la salida se produce luz de 532 nm. Hay más posibilidades de longitud de onda jugando con las transiciones entre diferentes subniveles atómicos, entre 1022 y 1152 nm. Como es muy resistente al estrés térmico, puede alcanzar potencias de salida muy elevadas, del orden de varios $Kw$. En la figura 17, se muestra el esquema de niveles de este láser (simplificado), y también un posible diseño de la cavidad incluyendo el doblado de frecuencia y un dispositivo acusto-óptico para la selección de modos de vibración.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las4.png}
+	\end{figure}
+	
+	\esp
+	\textbf{Láseres de fibra} Los iones dopantes en los láseres de fibra son los mismos que en los de estado sólido (por ejemplo, Yterbio, Erbio o Tulio), y el sistema de bombeo puede ser óptico (con láseres de diodo) o bien de otros láseres de fibra (bombeo en tándem), especialmente si se desea incrementar la potencia de salida. La anchura espectral de las líneas es del orden de los KHz. Un aspecto interesante de estos láseres es que pueden integrarse en esquemas amplificadores, como los \textit{MOFA} (\textit{master oscillator fiber amplifier}) o bien \textit{MOPA} si se utiliza la amplificación paramétrica. La ventaja de incluir el amplificador es que puede aumentar las posibilidades de sintonizado del láser original, y todo el dispositivo puede integrarse bien	en los circuitos de fibra de telecomunicaciones. En el láser de Yterbio del \textit{NIF} (\textit{National Ignition Facility}) en los Estados Unidos, se utilizan hasta 192 amplificadores para conseguir aumentar la energía inicial del haz desde los $nj$ hasta los $kj$.
+
+	\subsubsection{Láseres de gas}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las5.png}
+	\end{figure}
+	
+	\esp
+	
+	En estos dispositivos, el medio activo es gaseoso, confinado en una célula y sometido a bombeo colisional u óptico. Suelen ser dispositivos bastante voluminosos. Algunos ejemplos son: el de $He-Ne$ (ya mencionado en secciones anteriores), $N_2-CO_2$, $Ar-in$. Las longitudes de onda posibles van desde $1mm$ hasta $150nm$. En el láser de $N_2-CO_2$ las transiciones ocurren entre varios niveles energéticos del $CO_2$, y el $N_2$ forma parte del sistema de bombeo colisional, de modo similar a lo que sucede en el láser de $He-Ne$. Es uno de los más utilizados en la industria, por su elevada eficiencia y potencia (hasta $10Kw$ en continuo), por lo que es ideal para las aplicaciones de troquelado y grabado. Emite en 10,6 micras (infrarrojo medio). En los láseres sellados, se añaden pequeñas cantidades de agua como refrigerante y para recuperar el $CO_2$, con potencias de aproximadamente $1mw$ en continuo. El láser de $Ar-ion$ es muy utilizado en cirugía y estudio de la materia (en modo pulsado).
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las6.png}
+	\end{figure}
+	
+	\esp
+	Otro subgrupo dentro de los láseres de gas con bastantes aplicaciones en medicina (como la cirugía ocular) son los láseres \textit{excimer}, o \textit{excited dimer}, que producen moléculas que sólo existen en un estado excitado, y cuyas transiciones tienen longitudes de onda dentro del rango ultravioleta. Un ejemplo es el láser de $F_2$, que produce emisión en $157nm$. También un mecanismo similar permite operar a los láseres \textit{exciplex} o \textit{excited complex}, pero en este caso la molécula está formada por dos átomos diferentes.
+	
+	\esp
+	
+	\subsubsection{Láseres de colorante (medio líquido)}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las7.png}
+	\end{figure}
+	
+	\esp
+	
+	En estos láseres, el medio activo es una disolución de colorante orgánico en agua o alcohol, a baja concentración (1 por 10,000 moléculas), aunque también hay versiones en las que el sustrato es sólido. Su principal ventaja es el gran número de niveles energéticos de las moléculas de colorante, lo que hace que sean sintonizables. Por ejemplo, el láser de \textit{Rodamina} puede producir longitudes de onda entre 560 Y 640 nm. El bombeo suele ser óptico con láseres de estado sólido o diodo, y el sintonizado se realiza utilizando elementos difractores en la cavidad, como redes de difracción. Las desventajas de estos sistemas son su necesidad continua de mantenimiento por la corta vida del colorante en solución (se degrada bastante rápidamente), y por eso ya no se utilizan mucho, tendiendo a ser sustituidos por láseres de estado sólido
+	
+	\esp
+	o de diodo sintonizables, a veces con dispositivos de doblado de frecuencia si se desea operar dentro del visible (por ejemplo, láser de zafiro-Titanio, que es muy sintonizable y emite cerca de los 800 nm). Otra alternativa es utilizar osciladores paramétricos, que ya se describieron en el Tema 5.
+	
+	\subsubsection{Otros ejemplos de láseres}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las8.png}
+	\end{figure}
+	
+	\esp
+	
+	Los llamados \textit{láseres químicos}, como el de fluoruro de hidrógeno ($HF$) fueron empleados como prototipos de armas láser a bordo de barcos de guerra, puesto que dan potencias de $MW$ en longitudes de onda de 2,7 a 2,9$\mu m$; ofrecen la ventaja de que el mismo medio actúa como emisor y como productor del mecanismo de bombeo, ya que una reacción química en el mismo produce moléculas en estado excitado, que son las que producen la emisión láser, y al decaer forman subproductos que vuelven a reaccionar con los componentes del medio activo para excitarlos. Sin embargo, se han dejado de utilizar paulatinamente por su gran tamaño, relativamente escasa eficiencia y su peligrosidad.
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/las9.png}
+	\end{figure}
+	
+	\esp
+	También merecen mención especial los láseres \textit{de electrones libres o FEL}. Están formados por haces de electrones libres (o sea, no ligados a átomos o moléculas) de alta energía, que se propagan sometidos a un campo magnético pulsante de polaridad alterna. La emisión proviene de la radiación de frenado de los electrones, que actúan a su vez como el mecanismo de bombeo del láser, siendo el medio activo la interacción con el campo e.m. generado por los imanes alternados. El haz de electrones se genera en un acelerador de partículas. Con un haz de $43Mev$ y periodicidad en el campo de $3,2cm$, obtenemos una emisión de $3,4\mu m$. Pueden hacerse sintonizables y con elevadas potencias de pico. Actualmente, estos láseres tienen aplicaciones en investigación biológica (análisis de estructuras celulares), medicina (ablación de tejido sin dañar del tejido adyacente, y también destrucción de lípidos local por calentamiento), y también hay algunas aplicaciones militares.
+	
+	\esp
+	Mucha más información sobre los diferentes tipos de láseres mencionados en esta sección (y otros muchos que no se han cubierto) puede encontrarse en las referencias básicas del tema: [2], [1], [4], entre otras. Se recomienda su consulta para poder alcanzar una mejor comprensión de los mecanismos de funcionamiento de los distintos tipos de láseres, y sus principales características.
+	
+	\subsection*{3.4. Principales aplicaciones del láser}
+	
+	Una vez repasados los principales tipos de láseres, vamos a ver muy brevemente algunas de sus aplicaciones más destacadas.
+
+	\subsubsection{Holografía}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app2.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app3.png}
+	\end{figure}
+	
+	\esp
+	
+	En primer lugar, la holografía. Esta técnica de hecho fue propuesta inicialmente sólo a nivel teórico en 1950, pero no fue posible implementarla hasta la aparición del láser. Esto fue así porque para que pueda registrarse el holograma es imprescindible que la fuente de luz sea muy coherente. Muy brevemente, la holografía se basa en el registro sobre una placa fotosensible del diagrama interferencial producido entre un haz de referencia y un haz coherente dirigido hacia el objeto. En la etapa de reconstrucción, una vez registrado el holograma, con un haz de referencia podemos obtener el proveniente del objeto según el registro de la placa, como se muestra en la figura 18. La característica más llamativa de la holografía es su carácter tridimensional, es decir, podemos obtener perspectivas del objeto desde varios ángulos, no como en fotografía (el ángulo de visión está fijo). Hay hologramas por reflexión y por transmisión. La mayoría de los que utilizamos comúnmente son por reflexión. También podemos registrar el holograma de objetos vibrando, y obtener así la distribución de nodos de un instrumento musical, o bien del mismo objeto en dos instantes de tiempo separados para ver cómo ha cambiado su superficie.
+	
+	\esp
+	\subsubsection{Aplicaciones médicas}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app4.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app5.png}
+	\end{figure}
+	
+	\esp
+	
+	Hay también una enorme gama de aplicaciones médicas, desde la medicina estética hasta la cirugía (extracción de piedras de riñón, coágulos en zonas delicadas, cirugía ocular, etc.). La cirugía por láser se basa en la elevada concentración de energía en un área muy reducida, que permite la ablación controlada y cicatrización de tejidos. La aplicación que registra un mayor grado de desarrollo actualmente es la cirugía refractiva por fotoablación (lasik, por ejemplo). Se basa en el \textit{tallado} de la córnea para compensar las ametropías e incluso aberraciones oculares.
+	
+	\subsubsection{Aplicaciones industriales}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app6.png}
+	\end{figure}
+	
+	\esp
+	
+	El láser tiene también muy interesantes aplicaciones en la industria. La gran potencia y precisión de los láseres industriales permite tallar piezas de metal de cualquier diseño, con una gran rapidez de corte. También se utiliza muchísimo en el marcado de objetos, por su rapidez y precisión. Desde cápsulas de gelatina hasta latas, industria del automóvil, y otros muchos campos. Muy destacable es la progresión de los sistemas de impresión 3D, que utilizan láseres para ir fundiendo y consolidando térmicamente el depósito de material (\textit{additive manufacturing}).
+	
+	\subsubsection{Telecomunicaciones}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app7.png}
+	\end{figure}
+	
+	\esp
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app8.png}
+	\end{figure}
+	
+	\esp
+	
+	Otro campo de gran interés son las telecomunicaciones. La capacidad de un canal de comunicación es proporcional a su ancho de banda. En la banda óptica, las frecuencias de emisión son muy elevadas (del orden de $10^{14}$ Hz), con lo que aunque la emisión sea muy coherente (ancho de banda estrecho), éste puede ser bastante elevado para las necesidades de transmisión de la información. Los cables de fibra óptica, de 144 fibras, pueden llevar aprox 50000 llamadas telefónicas ocupando muchísimo menos y de forma más rápida que los coaxiales. Trabajan con pulsos de luz utilizando el multiplexado temporal, como veremos en el siguiente tema. Lo que transmiten es en realidad la codificación digital (en bits) de la amplitud instantánea de la onda eléctrica generada por la voz en el emisor del teléfono, como vemos en el esquema de la figura . Las velocidades de transmisión son de hasta cientos de $GB/s$ hoy día.
+	
+	\subsubsection{Procesado de información}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app9.png}
+	\end{figure}
+	
+	\esp
+	
+	En el campo de procesado de la información, los láseres han supuesto una verdadera revolución. Por ejemplo, las impresoras láser, cuyo esquema vemos en la figura, funcionan cargando electrostáticamente de forma selectiva un cilindro de plástico. El láser polariza selectivamente las áreas de llenado para las distintas tintas, y después de polarizarse el cilindro se descarga el tóner sobre el mismo, y de él al folio, que está polarizado con mayor carga que el cilindro. Luego se descarga la carga estática al salir el folio del tambor de impresión.
+	
+	\esp
+	Los lectores y grabadores de CD y DVD funcionan también con un láser de infrarrojo como base. Los datos se codifican en binario en pequeñísimas discontinuidades de los surcos del CD o DVD, separados muy poca distancia. Con un motor dotado de sistema de alineación y las correcciones adecuadas, el proceso de descodificación de datos es muy rápido y eficiente. Cuando el láser de lectura pasa por los pozos y realces alternados, va produciéndose interferencia constructiva o destructiva (unos o ceros), y el lector interpreta la codificación de esta forma.
+	
+	\subsubsection{Estudio de la materia}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app10.png}
+	\end{figure}
+	
+	\esp
+	
+	Los láseres pulsantes (del orden de los \textit{attosegundos(as)} incluso) permiten estudiar procesos extremadamente rápidos que hasta hace pocos años resultaban inaccesibles, de igual modo que si fotografiamos a un atleta en movimiento o un coche de fórmula 1 con la velocidad estándar de nuestra cámara de fotos, sólo vemos una mancha borrosa. Pero si ajustamos la velocidad (tiempo de exposición), siempre que nuestra cámara pueda llegar al tiempo mínimo necesario, podremos obtener una foto nítida.
+	
+	\esp
+	Algunos procesos que se han podido estudiar son la dinámica de portadores de carga en semiconductores, procesos biológicos fotoquímicos, o cambios en la configuración de ciertas moléculas. También un láser forma parte esencial del \textit{AFM} (microscopio de fuerza atómica o \textit{atomic force microscope}), que funciona escaneando la superficie con una aguja cuya punta mide unos pocos nm, y el proceso de lectura de datos se produce con un láser que va registrando las oscilaciones de la aguja. Podemos llegar a visualizar detalles de átomos y moléculas de una determinada superficie.
+	
+	\subsubsection{Otras aplicaciones}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{IMG/app11.png}
+	\end{figure}
+	
+	\esp
+	
+	Hay muchísimas más aplicaciones: en física de la atmósfera (sistemas LIDAR para medir composición atmosférica, concentración de partículas, o incorporados en sistemas de ayuda activa a la conducción (\textit{ADAS})), militares, fusión atómica, ingeniería civil y construcción (el láser es la línea recta perfecta de trazo invisible), agricultura (eliminación selectiva de malas hierbas), espectroscopia RAMAN, etc. Este último se basa en las transiciones RAMAN, que se producen en determinados valores de energía propios de cada sustancia tras excitarla con un láser adecuado. También, por supuesto, los láseres de proyección utilizados en espectáculos y fiestas, y recientemente también en sistemas de proyección en general (cine, aulas o reuniones).
+	
+	\esp
+	Algunas aplicaciones recientes se basan en un fenómeno curioso relacionado con el láser: el \textit{speckle}, que se produce cuando iluminamos con un haz láser (mejor si está abierto) una superficie rugosa: observamos una serie de puntos brillantes y de manchas oscuras, como podemos ver esquematizado en la figura . Es un efecto de interferencia de la luz difundida. En un punto determinado del espacio,
+	
+	\esp
+	se produce una diferencia de fase que depende sólo de la diferencia de camino óptico recorrido (características de la superficie). Por eso, los puntos brillantes de \textit{speckle} se ven siempre enfocados, aunque desenfoquemos la superficie a través, por ejemplo, de un telescopio. Se forma también un sistema real de franjas que podemos ver utilizando un folio como pantalla. El efecto de paralaje puede utilizarse para determinar si un sujeto es miope o no (si es miope, el \textit{speckle} se moverá en sentido contrario cuando se mueva la cabeza del sujeto (que focaliza el patrón antes de la retina), si es emétrope o hipermétrope, se moverá en el mismo sentido que el sujeto. Pues bien, haciendo interferir los patrones de \textit{speckle} generados en un objeto que sufre un cierto proceso de cambio en su superficie con un patrón de referencia, se puede monitorizar el cambio sufrido con una resolución espacial muy elevada, y además caracterizar muy bien la superficie del objeto, sin requerir el uso de instrumentos de magnificación que pueden resultar incómodos de utilizar en los procesos de fabricación industrial.
+	
 	\printbibliography[title={Bibliografía}]
 \end{document}
